@@ -134,8 +134,10 @@ chain:
       tokens:
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
         - symbol: 'usdt'
           address: '0xA219439258ca9da29E9Cc4cE5596924745e12B93'
+          decimals: 6
 
     - id: 10
       code: op
@@ -145,8 +147,10 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
+          decimals: 6
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 100
       code: gnosis
@@ -156,6 +160,7 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
+          decimals: 6
 
     - id: 81457
       code: blast
@@ -165,6 +170,7 @@ chain:
       tokens:
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 3776
       code: astar-zkevm
@@ -174,6 +180,7 @@ chain:
       tokens:
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 1284
       code: moonbeam
@@ -183,8 +190,10 @@ chain:
       tokens:
         - symbol: 'xcUSDT'
           address: '0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d'
+          decimals: 6
         - symbol: 'xcPINK'
           address: '0xffffffff30478fafbe935e466da114e14fb3563d'
+          decimals: 10
 
   testnets:
     - id: 421614
@@ -195,10 +204,13 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x3b8Bb7348D4F581e67E2498574F73e4B9Fc51855'
+          decimals: 18
         - symbol: 'usdc'
           address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
+          decimals: 18
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 11155111
       code: sepolia
@@ -208,10 +220,13 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB'
+          decimals: 18
         - symbol: 'usdc'
           address: '0x0ac58Df0cc3542beC4cDa71B16D06C3cCc39f405'
+          decimals: 18
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 300
       code: zksync-sepolia
@@ -221,10 +236,13 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x3350f1ef046e21E052dCbA60Fc575919CCaFEdeb'
+          decimals: 6
         - symbol: 'usdc'
           address: '0x253adBFE99Fcd096B9b5502753F96CF78D42eaD0'
+          decimals: 6
         - symbol: 'eth'
           address: '0x0000000000000000000000000000000000000000'
+          decimals: 18
 
     - id: 167009
       code: taiko-hekla
@@ -234,8 +252,10 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+          decimals: 18
         - symbol: 'usdc'
           address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+          decimals: 18
 
     - id: 80085
       code: bera
@@ -245,8 +265,10 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+          decimals: 18
         - symbol: 'usdc'
           address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+          decimals: 18
 
     - id: 2710
       code: morph
@@ -256,8 +278,10 @@ chain:
       tokens:
         - symbol: 'usdt'
           address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+          decimals: 18
         - symbol: 'usdc'
           address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+          decimals: 18
 
 helix:
   bridge:
