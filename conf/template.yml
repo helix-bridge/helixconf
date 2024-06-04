@@ -1,0 +1,45 @@
+
+apollo:
+  lnv2:
+    chainId: '$chain.id'
+    chainName: '$chain.code'
+    defaultEndpoint: '$chain.defaultEndpoint'
+    oppositeEndpoint: '$chain.oppositeEndpoint'
+    tokens:
+      $type: 'array'
+      key: '$token.symbol'
+      fromSymbol: '$token.symbol'
+      fromAddress: '$token.address'
+      decimals: '$token.decimals'
+      remoteInfos:
+        $type: 'array'
+        toChain: '$remote.toChain'
+        toChainName: '$remote.toChainCode'
+        toSymbol: '$remote.toSymbol'
+        toAddress: '$remote.toAddress'
+        protocolFee: '$remote.protocolFee'
+        decimals: '$remote.decimals'
+        bridgeType: '$remote.bridgeType'
+        channel: '$remote.channel'
+
+
+
+  lnv3:
+    chainId: '$chain.id'
+    chain: '$chain.code'
+    url: '$chain.url'
+    level0Indexer: '$chain.level0Indexer'
+    bridge: 'lnv3'
+    symbols:
+      $type: 'array'
+      key: '$token.symbol'
+      symbol: '$token.symbol'
+      address: '$token.address'
+      outerAddress: '$token.address'
+      decimals: '$token.decimals'
+      protocolFee: '$token.protocolFee'
+    channels:
+      $type: 'array'
+      chain: '$channel.chain'
+      channel: '$channel.channel'
+

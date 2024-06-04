@@ -1,0 +1,6 @@
+
+apollo:
+  lnv2:
+    arbitrum:
+      defaultEndpoint: https://api.studio.thegraph.com/query/61328/ln-default-arbisepolia/v1.0.1
+      oppositeEndpoint: https://api.studio.thegraph.com/query/61328/ln-opposite-arbisepolia/v1.0.1

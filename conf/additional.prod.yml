@@ -1,0 +1,6 @@
+
+apollo:
+  lnv2:
+    arbitrum:
+      defaultEndpoint: https://api.studio.thegraph.com/query/59403/lndefault-arbitrum/v2.0.0
+      oppositeEndpoint: https://api.studio.thegraph.com/query/59403/lnopposite-arbitrum/v2.0.0
