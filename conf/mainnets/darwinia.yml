@@ -1,0 +1,44 @@
+id: 46
+code: darwinia-dvm
+name: Darwinia
+rpcs:
+  - https://rpc.darwinia.network
+tokens:
+  - symbol: ring
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+  - symbol: crab
+    address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
+    decimals: 18
+  - symbol: xwcrab
+    address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
+    decimals: 18
+  - symbol: ahPINK
+    address: '0x0000000000000000000000000000000000000404'
+    decimals: 10
+  - symbol: ahUSDT
+    address: '0x0000000000000000000000000000000000000403'
+    decimals: 6
+
+couples:
+  - chain: arbitrum
+    symbol: ring
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline
+  - chain: ethereum
+    symbol: ring
+    protocol: lnv2-opposite
+    fee: '100000000000000000000'
+    messager: msgline
+  - chain: crab
+    symbol: ring/xWRING
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline
+
+  - chain: crab
+    symbol: crab
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline

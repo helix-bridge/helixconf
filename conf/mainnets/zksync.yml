@@ -1,0 +1,29 @@
+id: 324
+code: zksync
+name: zksync
+rpcs:
+  - https://mainnet.era.zksync.io
+tokens:
+  - symbol: usdt
+    address: '0x493257fD37EDB34451f62EDf8D2a0C418852bA4C'
+    decimals: 6
+  - symbol: usdc
+    address: '0x3355df6D4c9C3035724Fd0e3914dE96A5a83aaf4'
+    decimals: 6
+couples:
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

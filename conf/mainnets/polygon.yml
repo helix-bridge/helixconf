@@ -1,0 +1,26 @@
+id: 137
+code: polygon
+name: Polygon
+rpcs:
+  - https://polygon-bor-rpc.publicnode.com
+tokens:
+  - symbol: ring
+    address: '0x9C1C23E60B72Bc88a043bf64aFdb16A02540Ae8f'
+    decimals: 18
+  - symbol: usdt
+    address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
+    decimals: 6
+couples:
+  - chain: arbitrum
+    symbol: ring
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: layerzero
+
+  - chain: arbitrum
+    symbol: RING
+    protocol: lnv3
+    fee: '30000000000000000000'
+    messager: layerzero
+
+

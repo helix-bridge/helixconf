@@ -1,0 +1,9 @@
+id: 81457
+code: blast
+name: Blast
+rpcs:
+  - https://rpc.blastblockchain.com
+tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18

@@ -1,0 +1,9 @@
+id: 3776
+code: astar-zkevm
+name: Astar zkEVM
+rpcs:
+  - https://rpc.startale.com/astar-zkevm
+tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18

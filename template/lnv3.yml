@@ -1,0 +1,19 @@
+chainId: '$chain.id'
+chainName: '$chain.code'
+rpc: '$chain.rpc'
+address: '$chain.address'
+level0Indexer: '$chain.level0Indexer'
+bridge: 'lnv3'
+tokens:
+  $type: 'array'
+  key: '$token.symbol'
+  symbol: '$token.symbol'
+  address: '$token.address'
+  outerAddress: '$token.address'
+  decimals: '$token.decimals'
+  protocolFee: '$token.protocolFee'
+channels:
+  $type: 'array'
+  chain: '$channel.chain'
+  channel: '$channel.channel'
+

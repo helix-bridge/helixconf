@@ -1,0 +1,18 @@
+id: 10
+code: op
+name: Op
+rpcs:
+  - https://optimism-rpc.publicnode.com
+tokens:
+  - symbol: 'usdt'
+    address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
+    decimals: 6
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+couples:
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero

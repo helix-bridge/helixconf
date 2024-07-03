@@ -1,0 +1,39 @@
+id: 5000
+code: mantle
+name: Mantle
+rpcs:
+  - https://mantle-rpc.publicnode.com
+tokens:
+  - symbol: usdt
+    address: '0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE'
+    decimals: 6
+  - symbol: usdc
+    address: '0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9'
+    decimals: 6
+couples:
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: zksync
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+
+  - chain: arbitrum
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero

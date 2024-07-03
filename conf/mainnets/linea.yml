@@ -1,0 +1,24 @@
+id: 59144
+code: linea
+name: Linea
+rpcs:
+  - https://linea.decubate.com
+tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+  - symbol: 'usdt'
+    address: '0xA219439258ca9da29E9Cc4cE5596924745e12B93'
+    decimals: 6
+couples:
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

@@ -1,0 +1,9 @@
+id: 100
+code: gnosis
+name: Gnosis
+rpcs:
+  - https://gnosis-rpc.publicnode.com
+tokens:
+  - symbol: 'usdt'
+    address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
+    decimals: 6

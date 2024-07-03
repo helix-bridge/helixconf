@@ -1,0 +1,37 @@
+id: 56
+code: bsc
+name: bsc
+rpcs:
+  - https://bsc-rpc.publicnode.com
+tokens:
+  - symbol: 'usdt'
+    address: '0x55d398326f99059fF775485246999027B3197955'
+    decimals: 6
+  - symbol: 'usdc'
+    address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
+    decimals: 6
+
+couples:
+  - chain: arbitrum
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: op
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: linea
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+  - chain: base
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+
