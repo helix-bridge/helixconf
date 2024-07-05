@@ -4,9 +4,15 @@ name: bera
 rpcs:
   - https://artio.rpc.berachain.com
 tokens:
+  - symbol: 'BERA'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
   - symbol: 'usdt'
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
     decimals: 18
+    type: erc20
   - symbol: 'usdc'
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
     decimals: 18
+    type: erc20

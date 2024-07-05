@@ -4,15 +4,18 @@ name: Arbitrum sepolia
 rpcs:
   - https://public.stackup.sh/api/v1/node/arbitrum-sepolia
 tokens:
-  - symbol: 'usdt'
-    address: '0x3b8Bb7348D4F581e67E2498574F73e4B9Fc51855'
-    decimals: 18
-  - symbol: 'usdc'
-    address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
-    decimals: 18
   - symbol: 'eth'
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
+    type: native
+  - symbol: 'usdt'
+    address: '0x3b8Bb7348D4F581e67E2498574F73e4B9Fc51855'
+    decimals: 18
+    type: erc20
+  - symbol: 'usdc'
+    address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
+    decimals: 18
+    type: erc20
 couples:
   - chain: sepolia
     symbol: usdc

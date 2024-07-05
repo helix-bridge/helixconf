@@ -4,15 +4,18 @@ name: Sepolia
 rpcs:
   - https://ethereum-sepolia-rpc.publicnode.com
 tokens:
-  - symbol: 'usdt'
-    address: '0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB'
-    decimals: 18
-  - symbol: 'usdc'
-    address: '0x0ac58Df0cc3542beC4cDa71B16D06C3cCc39f405'
-    decimals: 18
   - symbol: 'eth'
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
+    type: native
+  - symbol: 'usdt'
+    address: '0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB'
+    decimals: 18
+    type: erc20
+  - symbol: 'usdc'
+    address: '0x0ac58Df0cc3542beC4cDa71B16D06C3cCc39f405'
+    decimals: 18
+    type: erc20
 couples:
   - chain: arbitrum-sepolia
     symbol: usdc

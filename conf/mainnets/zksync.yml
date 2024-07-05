@@ -4,12 +4,18 @@ name: zksync
 rpcs:
   - https://mainnet.era.zksync.io
 tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
   - symbol: usdt
     address: '0x493257fD37EDB34451f62EDf8D2a0C418852bA4C'
     decimals: 6
+    type: erc20
   - symbol: usdc
     address: '0x3355df6D4c9C3035724Fd0e3914dE96A5a83aaf4'
     decimals: 6
+    type: erc20
 couples:
   - chain: arbitrum
     symbol: USDT

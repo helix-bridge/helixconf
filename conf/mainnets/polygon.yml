@@ -4,12 +4,18 @@ name: Polygon
 rpcs:
   - https://polygon-bor-rpc.publicnode.com
 tokens:
+  - symbol: MATIC
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
   - symbol: ring
     address: '0x9C1C23E60B72Bc88a043bf64aFdb16A02540Ae8f'
     decimals: 18
+    type: erc20
   - symbol: usdt
     address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
     decimals: 6
+    type: erc20
 couples:
   - chain: arbitrum
     symbol: ring

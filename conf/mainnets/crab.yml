@@ -7,21 +7,25 @@ tokens:
   - symbol: crab
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
+    type: native
   - symbol: ring
     address: '0x273131F7CB50ac002BDd08cA721988731F7e1092'
     decimals: 18
+    type: erc20
   - symbol: xWRING
+    name: xWRING
     address: '0x273131F7CB50ac002BDd08cA721988731F7e1092'
     decimals: 18
+    type: erc20
 
 couples:
-  - chain: darwinia
+  - chain: darwinia-dvm
     symbol: crab/xWCRAB
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
 
-  - chain: darwinia
+  - chain: darwinia-dvm
     symbol: xWRING/ring
     protocol: lnv2-default
     fee: '10000000000000000000'

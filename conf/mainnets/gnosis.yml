@@ -4,6 +4,12 @@ name: Gnosis
 rpcs:
   - https://gnosis-rpc.publicnode.com
 tokens:
-  - symbol: 'usdt'
+  - symbol: xDai
+    name: xDai
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
     address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
     decimals: 6
+    type: erc20

@@ -4,12 +4,18 @@ name: Mantle
 rpcs:
   - https://mantle-rpc.publicnode.com
 tokens:
+  - symbol: MNT
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 6
+    type: native
   - symbol: usdt
     address: '0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE'
     decimals: 6
+    type: erc20
   - symbol: usdc
     address: '0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9'
     decimals: 6
+    type: erc20
 couples:
   - chain: arbitrum
     symbol: USDT
