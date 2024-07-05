@@ -1,5 +1,5 @@
 
-address:
+protocol:
   lnv2-default: '0x8429D7Dfd91D6F970ba89fFC005e67D15f1E4739'
   lnv2-opposite: '0xbA96d83E2A04c4E50F2D6D7eCA03D70bA2426e5f'
   lnv3: '0x38627Cb033De66a1E07e73f5D0a7a7adFB6741fa'

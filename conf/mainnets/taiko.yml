@@ -16,3 +16,19 @@ tokens:
     address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
     decimals: 18
     type: erc20
+couples:
+
+  ## usdt
+  - chain: arbitrum-sepolia
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+
+  ## usdc
+  - chain: arbitrum-sepolia
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

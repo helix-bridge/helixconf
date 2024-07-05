@@ -30,24 +30,50 @@ tokens:
     decimals: 18
     type: erc20
 couples:
+
+  ## eth
+  - chain: blast
+    symbol: eth
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: linea
+    symbol: eth
+    protocol: lnv2-default
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: astar-zkevm
+    symbol: eth
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: op
+    symbol: eth
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+
+
+  ## ring
   - chain: ethereum
     symbol:
       from: RING
       to: RING
-    protocol: 'lnv2-opposite'
+    protocol: lnv2-opposite
     fee: '100000000000000000000'
-    messager: 'arbitrum-l2'
+    messager: arbitrum-l2
   - chain: polygon
     symbol: RING
-    protocol: 'lnv2-default'
+    protocol: lnv2-default
     fee: '100000000000000000000'
     messager: layerzero
   - chain: darwinia-dvm
     symbol: RING/RING
     protocol: lnv2-default
-    fee: '100000000000000000000'
-    messager: 'msgline'
+    fee: '10000000000000000000'
+    messager: msgline
 
+  ## usdt
   - chain: mantle
     symbol: USDT
     protocol: lnv2-default
@@ -68,7 +94,33 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: moonbeam
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
 
+  ## usdc
   - chain: mantle
     symbol: USDC
     protocol: lnv2-default

@@ -14,4 +14,15 @@ tokens:
     type: erc20
 couples:
 
+  ## usdt
+  - chain: polygon
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
 

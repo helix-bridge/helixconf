@@ -17,6 +17,9 @@ tokens:
     decimals: 6
     type: erc20
 couples:
+
+
+  ## usdc
   - chain: sepolia
     symbol: usdc
     protocol: lnv2-default
@@ -28,6 +31,7 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
 
+  ## usdt
   - chain: sepolia
     symbol: usdt
     protocol: lnv2-default
@@ -39,6 +43,7 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
 
+  ## eth
   - chain: sepolia
     symbol: eth
     protocol: lnv2-default

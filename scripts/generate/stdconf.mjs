@@ -1,7 +1,7 @@
 export function standardization(global, ccf) {
   _stdTokens(global, ccf);
   _stdCouples(global, ccf);
-  _cleanConf(global, ccf);
+  // _cleanConf(global, ccf);
 }
 
 function _stdCouples(global, ccf) {
@@ -11,6 +11,7 @@ function _stdCouples(global, ccf) {
     _stdMessager(global, ccf, couple);
     _stdProtocol(global, ccf, couple);
     _stdChain(global, ccf, couple);
+    _stdCategory(global, ccf, couple);
   }
 }
 
@@ -56,12 +57,25 @@ function _stdMessager(global, ccf, couple) {
 }
 
 function _stdProtocol(global, ccf, couple) {
-  if (!ccf.protocol || !couple.protocol) return;
+  if (!ccf.protocol) {
+    couple.protocol = {
+      name: couple.protocol,
+    };
+    return;
+  }
   const protocolAddress = ccf.protocol[couple.protocol];
   couple.protocol = {
     name: couple.protocol,
     address: protocolAddress,
   };
+}
+
+function _stdCategory(global, ccf, couple) {
+  if (couple.category) {
+    couple.category = couple.category.toUpperCase();
+    return;
+  }
+  couple.category = couple.symbol.from;
 }
 
 function _stdChain(global, ccf, couple) {
@@ -83,7 +97,7 @@ function _cleanConf(global, ccf) {
 }
 
 function __pickMessager(ccf, name) {
-  if (!ccf.messagers) return;
+  if (!ccf.messagers) return {name};
   for (const messager of ccf.messagers) {
     if (messager.name === name) return messager;
   }

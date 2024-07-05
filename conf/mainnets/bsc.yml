@@ -18,6 +18,8 @@ tokens:
     type: erc20
 
 couples:
+
+  ## usdt
   - chain: arbitrum
     symbol: usdt
     protocol: lnv2-default
@@ -33,11 +35,39 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
-
-  - chain: base
+  - chain: polygon
     symbol: usdt
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: polygon-zkEvm
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: mantle
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: scroll
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+
+  ## usdc
+  - chain: base
+    symbol: usdc
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
 
 

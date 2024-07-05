@@ -17,6 +17,8 @@ tokens:
     decimals: 6
     type: erc20
 couples:
+
+  ## usdt
   - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default

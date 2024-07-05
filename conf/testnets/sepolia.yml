@@ -17,6 +17,7 @@ tokens:
     decimals: 18
     type: erc20
 couples:
+  ## usdc
   - chain: arbitrum-sepolia
     symbol: usdc
     protocol: lnv2-default
@@ -29,6 +30,7 @@ couples:
     messager: layerzero
 
 
+  ## usdt
   - chain: arbitrum-sepolia
     symbol: usdt
     protocol: lnv2-default

@@ -13,12 +13,13 @@ tokens:
     decimals: 18
     type: erc20
 couples:
+
+  ## ring
   - chain: arbitrum
     symbol: RING
-    protocol: 'lnv2-default'
+    protocol: lnv2-default
     fee: '100000000000000000000'
-    messager:
-      name: 'arbitrum-l2'
+    messager: arbitrum-l2
   - chain: darwinia-dvm
     symbol: RING
     protocol: lnv2-default

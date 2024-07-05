@@ -12,7 +12,7 @@ tokens:
     address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
     decimals: 18
     type: erc20
-  - symbol: xwcrab
+  - symbol: xWCRAB
     name: xWCRAB
     address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
     decimals: 18
@@ -29,6 +29,8 @@ tokens:
     type: erc20
 
 couples:
+
+  ## ring
   - chain: arbitrum
     symbol: ring
     protocol: lnv2-default
@@ -44,9 +46,36 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
+    hidden: true
+  - chain: polygon
+    symbol: ring
+    protocol: lnv3
+    fee: '100000000000000000000'
+    messager: msgline
 
+  ## crab
   - chain: crab-dvm
-    symbol: crab
+    symbol: xWCRAB/crab
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
+    category: crab
+    hidden: true
+
+  ## ahUSDT
+  - chain: moonbeam
+    symbol: ahUSDT/xcUSDT
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: usdt
+
+  ## ahPINK
+  - chain: moonbeam
+    symbol: ahPINK/xcPINK
+    protocol: lnv3
+    fee: '10000000'
+    messager: msgline
+    category: pink
+
+

@@ -8,3 +8,12 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
+
+couples:
+  ## eth
+  - chain: arbitrum
+    symbol: eth
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+

@@ -19,15 +19,20 @@ tokens:
     type: erc20
 
 couples:
+
+  ## crab
   - chain: darwinia-dvm
     symbol: crab/xWCRAB
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
+    hidden: true
 
   - chain: darwinia-dvm
     symbol: xWRING/ring
     protocol: lnv2-default
     fee: '10000000000000000000'
     messager: msgline
+    category: ring
+    hidden: true
 

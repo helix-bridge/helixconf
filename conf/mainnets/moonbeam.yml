@@ -22,3 +22,27 @@ tokens:
     address: '0xffffffff30478fafbe935e466da114e14fb3563d'
     decimals: 10
     type: erc20
+couples:
+
+  # usdt
+  - chain: darwinia-dvm
+    symbol: xcUSDT/ahUSDT
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: usdt
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv3
+    fee: '10000000'
+    messager: msgline
+
+
+  ## pingk
+  - chain: darwinia-dvm
+    symbol: xcPINK/ahPINK
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: pink
+
