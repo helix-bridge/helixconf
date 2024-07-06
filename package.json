@@ -1,13 +1,16 @@
 {
-  "name": "helixconf",
+  "name": "helixconf-generate",
   "version": "1.0.0",
-  "description": "Helix conf",
+  "description": "Generate Helix conf",
   "scripts": {
     "generate": "zx scripts/generate/index.mjs"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
+    "@jvitela/mustache-wax": "^1.0.4",
+    "change-case": "^5.4.4",
+    "mustache": "^4.2.0",
     "zx": "^8.1.3"
   }
 }

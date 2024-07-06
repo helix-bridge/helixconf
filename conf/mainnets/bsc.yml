@@ -3,6 +3,9 @@ code: bsc
 name: bsc
 rpcs:
   - https://bsc-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
 tokens:
   - symbol: bnb
     address: '0x0000000000000000000000000000000000000000'

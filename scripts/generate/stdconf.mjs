@@ -1,7 +1,7 @@
 export function standardization(global, ccf) {
   _stdTokens(global, ccf);
   _stdCouples(global, ccf);
-  // _cleanConf(global, ccf);
+  _cleanConf(global, ccf);
 }
 
 function _stdCouples(global, ccf) {

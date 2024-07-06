@@ -3,6 +3,9 @@ code: polygon
 name: Polygon
 rpcs:
   - https://polygon-bor-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
 tokens:
   - symbol: MATIC
     address: '0x0000000000000000000000000000000000000000'

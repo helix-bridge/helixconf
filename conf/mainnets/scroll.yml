@@ -3,6 +3,9 @@ code: scroll
 name: Scroll
 rpcs:
   - https://scroll-mainnet.public.blastapi.io
+messagers:
+  - name: layerzero
+    address: '0x463d1730a8527ca58d48ef70c7460b9920346567'
 tokens:
   - symbol: eth
     address: '0x0000000000000000000000000000000000000000'

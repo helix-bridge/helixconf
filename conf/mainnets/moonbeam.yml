@@ -3,6 +3,9 @@ code: moonbeam
 name: Moonbeam
 rpcs:
   - https://moonbeam-rpc.dwellir.com
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
 tokens:
   - symbol: GLMR
     address: '0x0000000000000000000000000000000000000000'

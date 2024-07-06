@@ -1,5 +1,6 @@
 import * as helper from './_helper.mjs'
 import * as stdconf from './stdconf.mjs'
+import * as renderer from './renderer/index.mjs'
 
 
 const BIN_PATH = path.resolve(__filename, '../');
@@ -41,17 +42,25 @@ function reorganizationConf(conf) {
 }
 
 
+async function generateLangauge(lifecycle) {
+  const language = (argv['language'] || 'js').toUpperCase();
+  await renderer.render(lifecycle, language);
+}
+
 async function main() {
   const _networkArg = argv['network'];
   const networks = _networkArg
     ? (typeof _networkArg) === 'string' ? [_networkArg] : _networkArg
     : ['mainnets', 'testnets'];
   const lifecycle = {
+    workdir: WORK_PATH,
     networks,
   };
   const baseConf = await readConf(lifecycle);
   lifecycle.conf = reorganizationConf(baseConf);
   await fs.writeFile(`${WORK_PATH}/_tmp/output.json`, JSON.stringify(lifecycle.conf, null, 2));
+
+  await generateLangauge(lifecycle);
 }
 
 await main();

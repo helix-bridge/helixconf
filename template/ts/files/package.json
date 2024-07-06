@@ -1,0 +1,11 @@
+{
+  "name": "helixconf",
+  "version": "0.0.1",
+  "description": "Helix conf",
+  "scripts": {
+  },
+  "author": "HelixBridge",
+  "license": "MIT",
+  "devDependencies": {
+  }
+}

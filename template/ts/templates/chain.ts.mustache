@@ -1,0 +1,3 @@
+import {HelixChainConf} from '../helixconf'
+
+export const {{ chain.code | camel_case }}Chain: HelixChainConf = HelixChainConf.fromJson({{ &chain | json_stringify }});

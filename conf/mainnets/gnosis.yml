@@ -3,6 +3,9 @@ code: gnosis
 name: Gnosis
 rpcs:
   - https://gnosis-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
 tokens:
   - symbol: xDai
     name: xDai

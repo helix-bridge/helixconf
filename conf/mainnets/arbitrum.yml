@@ -10,8 +10,6 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x509354A4ebf98aCC7a65d2264694A65a2938cac9'
-  - name: msgline
-    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
@@ -128,7 +126,7 @@ couples:
     messager: layerzero
   - chain: scroll
     symbol: USDC
-    protol: lnv2-default
+    protocol: lnv2-default
     fee: '100000'
     messager: layerzero
 
