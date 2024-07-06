@@ -51,30 +51,33 @@ export interface CoupleFilter {
   symbol?: string
 }
 
-
 export class HelixChainConf {
-  private _network: _NetworkType;
-  private id: BigInt;
-  private code: string;
-  private name: string;
-  private rpcs: string[];
-  private protocol: Partial<Record<HelixProtocolName, string>>;
-  private messagers: ChainMessager[];
-  private tokens: ChainToken[];
-  private couples: ChainCouple[];
 
-  static fromJson(json): HelixChainConf {
-    const hcc = new HelixChainConf();
-    hcc._network = json._network;
-    hcc.id = BigInt(json.id);
-    hcc.code = json.code;
-    hcc.name = json.name;
-    hcc.rpcs = json.rpcs;
-    hcc.protocol = json.protocol;
-    hcc.messagers = json.messagers;
-    hcc.tokens = json.tokens;
-    hcc.couples = json.couples;
-    return hcc;
+  constructor(
+    public readonly _network: _NetworkType,
+    public readonly id: BigInt,
+    public readonly code: string,
+    public readonly name: string,
+    public readonly rpcs: string[],
+    public readonly protocol: Partial<Record<HelixProtocolName, string>>,
+    public readonly messagers: ChainMessager[],
+    public readonly tokens: ChainToken[],
+    public readonly couples: ChainCouple[],
+    ) {
+  }
+
+  static fromJson(json: any): HelixChainConf {
+    return new HelixChainConf(
+      json._network,
+      BigInt(json.id),
+      json.code,
+      json.name,
+      json.rpcs,
+      json.protocol,
+      json.messagers,
+      json.tokens,
+      json.couples,
+    );
   }
 
   categories(): string[] {
@@ -123,7 +126,7 @@ export class HelixChainConf {
 }
 
 
-function _equalsIgnoreCase(t1, t2) {
+function _equalsIgnoreCase(t1?: string, t2?: string) {
   if (!t1 || !t2) {
     return false;
   }

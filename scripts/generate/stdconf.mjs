@@ -52,6 +52,7 @@ function _stdSymbol(global, ccf, couple) {
 }
 
 function _stdMessager(global, ccf, couple) {
+  if (!ccf.messagers) ccf.messagers = [];
   if (!couple.messager) return;
   couple.messager = __pickMessager(ccf, couple.messager);
 }

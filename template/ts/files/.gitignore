@@ -1,0 +1,10 @@
+*.retry
+.DS_Store
+*.local.*
+
+node_modules
+
+/generated
+dist
+_tmp
+
