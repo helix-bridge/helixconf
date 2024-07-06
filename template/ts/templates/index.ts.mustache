@@ -1,0 +1,21 @@
+{{#chains}}
+import { {{ name | camel_case }}Chain } from './{{ network }}/{{ name }}'
+{{/chains}}
+import { HelixChainConf } from './helixconf'
+
+
+export class HelixChain {
+{{#chains}}
+  static {{ name | camel_case }}: HelixChainConf = {{ name | camel_case }}Chain;
+{{/chains}}
+  static get(name: string): HelixChainConf | undefined {
+    switch(name.toUpperCase()) {
+    {{#chains}}
+      case '{{ name | upper_case }}':
+        return {{ name | camel_case }}Chain;
+    {{/chains}}
+    }
+  }
+}
+
+

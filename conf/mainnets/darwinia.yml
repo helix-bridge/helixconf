@@ -1,0 +1,81 @@
+id: "46"
+code: darwinia-dvm
+name: Darwinia
+rpcs:
+  - https://rpc.darwinia.network
+tokens:
+  - symbol: ring
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: crab
+    address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
+    decimals: 18
+    type: erc20
+  - symbol: xWCRAB
+    name: xWCRAB
+    address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
+    decimals: 18
+    type: erc20
+  - symbol: ahPINK
+    name: ahPINK
+    address: '0x0000000000000000000000000000000000000404'
+    decimals: 10
+    type: erc20
+  - symbol: ahUSDT
+    name: ahUSDT
+    address: '0x0000000000000000000000000000000000000403'
+    decimals: 6
+    type: erc20
+
+couples:
+
+  ## ring
+  - chain: arbitrum
+    symbol: ring
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline
+  - chain: ethereum
+    symbol: ring
+    protocol: lnv2-opposite
+    fee: '100000000000000000000'
+    messager: msgline
+  - chain: crab-dvm
+    symbol: ring/xWRING
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline
+    hidden: true
+  - chain: polygon
+    symbol: ring
+    protocol: lnv3
+    fee: '100000000000000000000'
+    messager: msgline
+
+  ## crab
+  - chain: crab-dvm
+    symbol: xWCRAB/crab
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: msgline
+    category: crab
+    hidden: true
+
+  ## ahUSDT
+  - chain: moonbeam
+    symbol: ahUSDT/xcUSDT
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: usdt
+
+  ## ahPINK
+  - chain: moonbeam
+    symbol: ahPINK/xcPINK
+    protocol: lnv3
+    fee: '10000000'
+    messager: msgline
+    category: pink
+
+

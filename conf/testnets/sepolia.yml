@@ -1,0 +1,56 @@
+id: "11155111"
+code: sepolia
+name: Sepolia
+rpcs:
+  - https://ethereum-sepolia-rpc.publicnode.com
+tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: 'usdt'
+    address: '0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB'
+    decimals: 18
+    type: erc20
+  - symbol: 'usdc'
+    address: '0x0ac58Df0cc3542beC4cDa71B16D06C3cCc39f405'
+    decimals: 18
+    type: erc20
+couples:
+  ## usdc
+  - chain: arbitrum-sepolia
+    symbol: usdc
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: zksync-sepolia
+    symbol: usdc
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+
+  ## usdt
+  - chain: arbitrum-sepolia
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: zksync-sepolia
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+  - chain: arbitrum-sepolia
+    symbol: eth
+    protocol: lnv2-opposite
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: zksync-sepolia
+    symbol: eth
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+
+

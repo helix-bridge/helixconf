@@ -1,0 +1,22 @@
+id: "8453"
+code: base
+name: base
+rpcs:
+  - https://mainnet.base.org
+tokens:
+  - symbol: 'eth'
+    address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
+    decimals: 18
+    type: native
+  - symbol: 'usdc'
+    address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
+    decimals: 6
+    type: erc20
+
+couples:
+  ## usdc
+  - chain: bsc
+    symbol: usdc
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero

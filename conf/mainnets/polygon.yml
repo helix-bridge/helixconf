@@ -1,0 +1,77 @@
+id: "137"
+code: polygon
+name: Polygon
+rpcs:
+  - https://polygon-bor-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+tokens:
+  - symbol: MATIC
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: ring
+    address: '0x9C1C23E60B72Bc88a043bf64aFdb16A02540Ae8f'
+    decimals: 18
+    type: erc20
+  - symbol: usdt
+    address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
+    decimals: 6
+    type: erc20
+couples:
+
+  ## ring
+  - chain: arbitrum
+    symbol: ring
+    protocol: lnv2-default
+    fee: '100000000000000000000'
+    messager: layerzero
+  - chain: darwinia-dvm
+    symbol: RING
+    protocol: lnv3
+    fee: '30000000000000000000'
+    messager: msgline
+
+  ## usdt
+  - chain: polygon-zkEvm
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: linea
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

@@ -1,0 +1,34 @@
+id: "167000"
+code: taiko
+name: taiko
+rpcs:
+  - https://rpc.taiko.xyz
+tokens:
+  - symbol: eth
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
+    address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+    decimals: 18
+    type: erc20
+  - symbol: usdc
+    address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
+    decimals: 18
+    type: erc20
+couples:
+
+  ## usdt
+  - chain: arbitrum-sepolia
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+
+  ## usdc
+  - chain: arbitrum-sepolia
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

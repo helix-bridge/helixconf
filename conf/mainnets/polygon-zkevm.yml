@@ -1,0 +1,28 @@
+id: "1101"
+code: polygon-zkEvm
+name: Polygon zkEVM
+rpcs:
+  - https://zkevm-rpc.com
+tokens:
+  - symbol: eth
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
+    address: '0x1E4a5963aBFD975d8c9021ce480b42188849D41d'
+    decimals: 6
+    type: erc20
+couples:
+
+  ## usdt
+  - chain: polygon
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

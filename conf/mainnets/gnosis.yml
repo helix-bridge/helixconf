@@ -1,0 +1,56 @@
+id: "100"
+code: gnosis
+name: Gnosis
+rpcs:
+  - https://gnosis-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
+tokens:
+  - symbol: xDai
+    name: xDai
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
+    address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
+    decimals: 6
+    type: erc20
+couples:
+
+  ## usdt
+  - chain: bsc
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: linea
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: mantle
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero

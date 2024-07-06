@@ -1,0 +1,51 @@
+id: "1284"
+code: moonbeam
+name: Moonbeam
+rpcs:
+  - https://moonbeam-rpc.dwellir.com
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+tokens:
+  - symbol: GLMR
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: ETH
+    address: '0xfa9343c3897324496a05fc75abed6bac29f8a40f'
+    decimals: 18
+    type: erc20
+  - symbol: xcUSDT
+    name: xcUSDT
+    address: '0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d'
+    decimals: 6
+    type: erc20
+  - symbol: xcPINK
+    name: xcPINK
+    address: '0xffffffff30478fafbe935e466da114e14fb3563d'
+    decimals: 10
+    type: erc20
+couples:
+
+  # usdt
+  - chain: darwinia-dvm
+    symbol: xcUSDT/ahUSDT
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: usdt
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv3
+    fee: '10000000'
+    messager: msgline
+
+
+  ## pingk
+  - chain: darwinia-dvm
+    symbol: xcPINK/ahPINK
+    protocol: lnv3
+    fee: '1000'
+    messager: msgline
+    category: pink
+

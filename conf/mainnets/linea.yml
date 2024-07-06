@@ -1,0 +1,62 @@
+id: "59144"
+code: linea
+name: Linea
+rpcs:
+  - https://linea.decubate.com
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+tokens:
+  - symbol: 'eth'
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: 'usdt'
+    address: '0xA219439258ca9da29E9Cc4cE5596924745e12B93'
+    decimals: 6
+    type: erc20
+couples:
+  ## eth
+  - chain: arbitrum
+    symbol: eth
+    protocol: lnv2-default
+    fee: '10000000000000'
+    messager: layerzero
+
+  ## usdt
+  - chain: arbitrum
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+

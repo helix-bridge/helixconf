@@ -1,0 +1,18 @@
+{
+  "name": "helixconf-generate",
+  "version": "1.0.0",
+  "description": "Generate Helix conf",
+  "scripts": {
+    "generate": "zx scripts/generate/index.mjs",
+    "build:ts": "npm run generate -- --language=ts && cd generated/typescript && npm i && npm run build",
+    "test:ts": "npm run build:ts && cd generated/typescript && npm run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jvitela/mustache-wax": "^1.0.4",
+    "change-case": "^5.4.4",
+    "mustache": "^4.2.0",
+    "zx": "^8.1.3"
+  }
+}

@@ -1,0 +1,82 @@
+id: "5000"
+code: mantle
+name: Mantle
+rpcs:
+  - https://mantle-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+tokens:
+  - symbol: MNT
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 6
+    type: native
+  - symbol: usdt
+    address: '0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE'
+    decimals: 6
+    type: erc20
+  - symbol: usdc
+    address: '0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9'
+    decimals: 6
+    type: erc20
+couples:
+
+  # usdt
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: zksync
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: linea
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+
+
+  ## usdc
+  - chain: arbitrum
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero

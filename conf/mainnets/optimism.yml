@@ -1,0 +1,62 @@
+id: "10"
+code: op
+name: Op
+rpcs:
+  - https://optimism-rpc.publicnode.com
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+tokens:
+  - symbol: eth
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
+    address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
+    decimals: 6
+    type: erc20
+couples:
+
+  ## eth
+  - chain: arbitrum
+    symbol: eth
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+
+  ## usdt
+  - chain: bsc
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: linea
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
