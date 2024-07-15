@@ -1,0 +1,14 @@
+id: "84532"
+code: base-sepolia
+name: base-sepolia
+rpcs:
+  - https://sepolia.base.org
+tokens:
+  - symbol: eth
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+  - symbol: usdt
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+    decimals: 18
+    type: erc20

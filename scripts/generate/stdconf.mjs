@@ -1,7 +1,13 @@
 export function standardization(global, ccf) {
+  _stdGeneric(global, ccf);
   _stdTokens(global, ccf);
   _stdCouples(global, ccf);
   _cleanConf(global, ccf);
+}
+
+function _stdGeneric(global, ccf) {
+  if (!ccf.messagers) ccf.messagers = [];
+  if (!ccf.couples) ccf.couples = [];
 }
 
 function _stdCouples(global, ccf) {
@@ -52,7 +58,6 @@ function _stdSymbol(global, ccf, couple) {
 }
 
 function _stdMessager(global, ccf, couple) {
-  if (!ccf.messagers) ccf.messagers = [];
   if (!couple.messager) return;
   couple.messager = __pickMessager(ccf, couple.messager);
 }
