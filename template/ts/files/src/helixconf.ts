@@ -114,18 +114,8 @@ export class HelixChainConf {
   //   this._data[key] = value;
   // }
 
-  static fromJson(json: any): HelixChainConf {
-    return new HelixChainConf({
-      _network: json._network,
-      id: BigInt(json.id),
-      code: json.code,
-      name: json.name,
-      rpcs: json.rpcs,
-      protocol: json.protocol,
-      messagers: json.messagers,
-      tokens: json.tokens,
-      couples: json.couples,
-    });
+  keys(): Array<keyof HelixChainConfType> {
+    return Object.keys(this._data) as Array<keyof HelixChainConfType>;
   }
 
   categories(): string[] {
@@ -190,6 +180,21 @@ export class HelixChainConf {
       tokens: this.tokens,
       couples: this.couples,
     };
+  }
+
+
+  static fromJson(json: any): HelixChainConf {
+    return new HelixChainConf({
+      _network: json._network,
+      id: BigInt(json.id),
+      code: json.code,
+      name: json.name,
+      rpcs: json.rpcs,
+      protocol: json.protocol,
+      messagers: json.messagers,
+      tokens: json.tokens,
+      couples: json.couples,
+    });
   }
 
 }

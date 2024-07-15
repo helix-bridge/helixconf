@@ -1,6 +1,6 @@
 {
   "name": "helixconf",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "Helix conf",
   "main": "dist/src/index.js",
   "scripts": {
