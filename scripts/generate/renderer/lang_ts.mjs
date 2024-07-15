@@ -31,9 +31,9 @@ async function renderChain(lifecycle) {
   }
   chainList[chainList.length - 1].last = true
 
-  const indexTpl = await fs.readFile(`${langTs.templateDir}/index.ts.mustache`, 'utf8');
+  const indexTpl = await fs.readFile(`${langTs.templateDir}/helpers.ts.mustache`, 'utf8');
   const output = Mustache.render(indexTpl, {chains: chainList});
-  await fs.writeFile(`${langTs.srcDir}/index.ts`, output);
+  await fs.writeFile(`${langTs.srcDir}/helpers.ts`, output);
 }
 
 async function copyFiles(lifecycle) {
