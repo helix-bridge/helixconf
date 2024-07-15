@@ -24,6 +24,11 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: bsc
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: polygon
     symbol: USDT
     protocol: lnv2-default
@@ -34,9 +39,19 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: linea
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: op
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: mantle
@@ -44,13 +59,28 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: mantle
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: scroll
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum
     symbol: USDT
-    protocol: lnv2-default
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

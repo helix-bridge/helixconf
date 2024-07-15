@@ -36,6 +36,11 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
+  - chain: arbitrum
+    symbol: ring
+    protocol: lnv3
+    fee: '100000000000000000000'
+    messager: msgline
   - chain: ethereum
     symbol: ring
     protocol: lnv2-opposite
