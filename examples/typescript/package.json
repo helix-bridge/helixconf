@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "helixconf": "^0.0.7"
+    "helixconf": "^0.0.8"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

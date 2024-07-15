@@ -18,7 +18,7 @@ async function main() {
   console.log(HelixChain.darwiniaDvm.categories());
   console.log('--------- seg  ---------');
   console.log('filterCouple: ')
-  console.log(JSON.stringify(HelixChain.darwiniaDvm.filterCouple({symbol: 'ring'})));
+  console.log(JSON.stringify(HelixChain.darwiniaDvm.filterCouples({symbol: 'ring'})));
   console.log('--------- seg  ---------');
 }
 
