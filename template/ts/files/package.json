@@ -1,8 +1,8 @@
 {
   "name": "helixconf",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "Helix conf",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest"

@@ -51,37 +51,91 @@ export interface CoupleFilter {
   symbol?: string
 }
 
-export class HelixChainConf {
+export interface HelixChainConfType {
+  _network: _NetworkType
+  id: BigInt
+  code: string
+  name: string
+  rpcs: string[]
+  protocol: Partial<Record<HelixProtocolName, string>>
+  messagers: ChainMessager[]
+  tokens: ChainToken[]
+  couples: ChainCouple[]
+}
 
-  constructor(
-    public readonly _network: _NetworkType,
-    public readonly id: BigInt,
-    public readonly code: string,
-    public readonly name: string,
-    public readonly rpcs: string[],
-    public readonly protocol: Partial<Record<HelixProtocolName, string>>,
-    public readonly messagers: ChainMessager[],
-    public readonly tokens: ChainToken[],
-    public readonly couples: ChainCouple[],
-    ) {
+export class HelixChainConf {
+  private readonly _data: HelixChainConfType;
+
+  constructor(initialData: HelixChainConfType) {
+    this._data = initialData;
   }
 
+  get _network(): _NetworkType {
+    return this._data._network;
+  }
+
+  get id(): BigInt {
+    return this._data.id;
+  }
+
+  get code(): string {
+    return this._data.code;
+  }
+
+  get name(): string {
+    return this._data.name;
+  }
+
+  get rpcs(): string[] {
+    return this._data.rpcs;
+  }
+
+  get protocol(): Partial<Record<HelixProtocolName, string>> {
+    return this._data.protocol;
+  }
+
+  get messagers(): ChainMessager[] {
+    return this._data.messagers;
+  }
+
+  get tokens(): ChainToken[] {
+    return this._data.tokens;
+  }
+
+  get couples(): ChainCouple[] {
+    return this._data.couples;
+  }
+
+  get<K extends keyof HelixChainConfType>(key: K): HelixChainConfType[K] {
+    return this._data[key];
+  }
+
+  // set<K extends keyof HelixChainConfType>(key: K, value: HelixChainConfType[K]): void {
+  //   this._data[key] = value;
+  // }
+
   static fromJson(json: any): HelixChainConf {
-    return new HelixChainConf(
-      json._network,
-      BigInt(json.id),
-      json.code,
-      json.name,
-      json.rpcs,
-      json.protocol,
-      json.messagers,
-      json.tokens,
-      json.couples,
-    );
+    return new HelixChainConf({
+      _network: json._network,
+      id: BigInt(json.id),
+      code: json.code,
+      name: json.name,
+      rpcs: json.rpcs,
+      protocol: json.protocol,
+      messagers: json.messagers,
+      tokens: json.tokens,
+      couples: json.couples,
+    });
   }
 
   categories(): string[] {
-    return this.couples.map(item => item.category);
+    const categories = this.couples.map(item => item.category);
+    return categories.reduce((acc: string[], item: string) => {
+      if (!acc.includes(item)) {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
   }
 
   filterCouple(filter: CoupleFilter): ChainCouple[] {
@@ -121,6 +175,21 @@ export class HelixChainConf {
       }
       return true;
     });
+  }
+
+
+  toJSON() {
+    return {
+      _network: this._network,
+      id: this.id,
+      code: this.code,
+      name: this.name,
+      rpcs: this.rpcs,
+      protocol: this.protocol,
+      messagers: this.messagers,
+      tokens: this.tokens,
+      couples: this.couples,
+    };
   }
 
 }
