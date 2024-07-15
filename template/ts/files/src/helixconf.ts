@@ -23,6 +23,7 @@ export interface ChainCouple {
   protocol: HelixProtocol
   symbol: CoupleSymbol
   chain: CoupleChain
+  hidden?: boolean
 }
 
 export interface CoupleChain {
