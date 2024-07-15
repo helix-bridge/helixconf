@@ -16,6 +16,9 @@ async function readConf(lifecycle) {
     const filesOfNetwork = await fs.readdir(pathNetwork);
     for (const fileName of filesOfNetwork) {
       if (fileName === '$.yml') continue;
+      if (!(fileName.toLowerCase().endsWith('.yml') || fileName.toLowerCase().endsWith('.yaml'))) {
+        continue;
+      }
       const rawNetwork = await fs.readFile(`${pathNetwork}/${fileName}`, 'utf8');
       const networkConf = YAML.parse(rawNetwork);
       chainMap[networkConf.code] = {
