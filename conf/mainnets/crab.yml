@@ -4,11 +4,11 @@ name: Crab
 rpcs:
   - https://crab-rpc.darwinia.network
 tokens:
-  - symbol: crab
+  - symbol: CRAB
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: ring
+  - symbol: RING
     address: '0x273131F7CB50ac002BDd08cA721988731F7e1092'
     decimals: 18
     type: erc20
@@ -20,19 +20,19 @@ tokens:
 
 couples:
 
-  ## crab
+  ## CRAB
   - chain: darwinia-dvm
-    symbol: crab/xWCRAB
+    symbol: CRAB/xWCRAB
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
     hidden: true
 
   - chain: darwinia-dvm
-    symbol: xWRING/ring
+    symbol: xWRING/RING
     protocol: lnv2-default
     fee: '10000000000000000000'
     messager: msgline
-    category: ring
+    category: RING
     hidden: true
 

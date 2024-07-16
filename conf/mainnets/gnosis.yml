@@ -12,13 +12,13 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: usdt
+  - symbol: USDT
     address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
     decimals: 6
     type: erc20
 couples:
 
-  ## usdt
+  ## USDT
   - chain: bsc
     symbol: USDT
     protocol: lnv2-default
@@ -32,6 +32,11 @@ couples:
   - chain: polygon
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: linea

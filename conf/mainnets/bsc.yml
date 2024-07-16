@@ -7,15 +7,15 @@ messagers:
   - name: layerzero
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
 tokens:
-  - symbol: bnb
+  - symbol: BNB
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: usdt
+  - symbol: USDT
     address: '0x55d398326f99059fF775485246999027B3197955'
     decimals: 18
     type: erc20
-  - symbol: usdc
+  - symbol: USDC
     address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
     decimals: 18
     type: erc20
@@ -24,90 +24,90 @@ couples:
 
   ## usdt
   - chain: arbitrum
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: op
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: op
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: linea
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: linea
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: polygon
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: polygon
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: polygon-zkEvm
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: mantle
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: mantle
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: scroll
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: scroll
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: gnosis
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: gnosis
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
 
-  ## usdc
+  ## USDC
   - chain: base
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: base
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

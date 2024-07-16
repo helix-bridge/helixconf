@@ -4,11 +4,11 @@ name: base
 rpcs:
   - https://mainnet.base.org
 tokens:
-  - symbol: 'eth'
+  - symbol: ETH
     address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
     decimals: 18
     type: native
-  - symbol: 'usdc'
+  - symbol: USDC
     address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
     decimals: 6
     type: erc20
@@ -16,7 +16,7 @@ tokens:
 couples:
   ## usdc
   - chain: bsc
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero

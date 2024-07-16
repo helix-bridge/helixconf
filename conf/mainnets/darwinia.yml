@@ -4,11 +4,11 @@ name: Darwinia
 rpcs:
   - https://rpc.darwinia.network
 tokens:
-  - symbol: ring
+  - symbol: RING
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: crab
+  - symbol: CRAB
     address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
     decimals: 18
     type: erc20
@@ -30,41 +30,41 @@ tokens:
 
 couples:
 
-  ## ring
+  ## RING
   - chain: arbitrum
-    symbol: ring
+    symbol: RING
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
   - chain: arbitrum
-    symbol: ring
+    symbol: RING
     protocol: lnv3
     fee: '100000000000000000000'
     messager: msgline
   - chain: ethereum
-    symbol: ring
+    symbol: RING
     protocol: lnv2-opposite
     fee: '100000000000000000000'
     messager: msgline
   - chain: crab-dvm
-    symbol: ring/xWRING
+    symbol: RING/xWRING
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
     hidden: true
   - chain: polygon
-    symbol: ring
+    symbol: RING
     protocol: lnv3
     fee: '100000000000000000000'
     messager: msgline
 
-  ## crab
+  ## CRAB
   - chain: crab-dvm
-    symbol: xWCRAB/crab
+    symbol: xWCRAB/CRAB
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: msgline
-    category: crab
+    category: CRAB
     hidden: true
 
   ## ahUSDT
@@ -73,7 +73,7 @@ couples:
     protocol: lnv3
     fee: '1000'
     messager: msgline
-    category: usdt
+    category: USDT
 
   ## ahPINK
   - chain: moonbeam

@@ -4,7 +4,7 @@ name: Blast
 rpcs:
   - https://rpc.blastblockchain.com
 tokens:
-  - symbol: 'eth'
+  - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
@@ -12,7 +12,7 @@ tokens:
 couples:
   ## eth
   - chain: arbitrum
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
