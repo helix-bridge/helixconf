@@ -58,6 +58,7 @@ async function main() {
   };
   const baseConf = await readConf(lifecycle);
   lifecycle.conf = reorganizationConf(baseConf);
+  await fs.mkdirp(`${WORK_PATH}/_tmp`);
   await fs.writeFile(`${WORK_PATH}/_tmp/output.json`, JSON.stringify(lifecycle.conf, null, 2));
 
   await generateLangauge(lifecycle);
