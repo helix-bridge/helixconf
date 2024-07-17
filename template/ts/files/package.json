@@ -9,6 +9,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helix-bridge/helixconf.git"
+  },
+  "bugs": {
+    "url": "https://github.com/helix-bridge/helixconf/issues"
+  },
+  "homepage": "https://github.com/helix-bridge/helixconf",
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest",
