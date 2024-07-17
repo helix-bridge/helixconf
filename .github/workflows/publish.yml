@@ -31,5 +31,5 @@ jobs:
       - name: Publish ts
         run: |
           cd generated/typescript
-          npm run release
+          npm publish --access=public
 

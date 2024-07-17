@@ -1,11 +1,8 @@
 {
   "name": "@helixbridge/helixconf",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Helix conf",
   "main": "dist/src/index.js",
-  "workspaces": [
-    "."
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -19,8 +16,7 @@
   "homepage": "https://github.com/helix-bridge/helixconf",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "test": "jest",
-    "release": "lerna publish from-package --yes --no-private --no-verify-access"
+    "test": "jest"
   },
   "author": "HelixBridge",
   "license": "MIT",
@@ -29,7 +25,6 @@
     "jest": "^29.7.0",
     "ts-jest": "^29.1.5",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3",
-    "lerna": "^8.1.6"
+    "typescript": "^5.5.3"
   }
 }
