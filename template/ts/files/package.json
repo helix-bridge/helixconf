@@ -12,7 +12,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest",
-    "release": "lerna publish --yes --no-verify-access"
+    "release": "lerna publish from-package --yes --no-verify-access"
   },
   "author": "HelixBridge",
   "license": "MIT",
