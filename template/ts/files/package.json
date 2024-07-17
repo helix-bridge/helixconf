@@ -1,6 +1,6 @@
 {
   "name": "@helixbridge/helixconf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helix conf",
   "main": "dist/src/index.js",
   "workspaces": [
