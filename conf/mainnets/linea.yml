@@ -7,56 +7,96 @@ messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
 tokens:
-  - symbol: 'eth'
+  - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: 'usdt'
+  - symbol: USDT
     address: '0xA219439258ca9da29E9Cc4cE5596924745e12B93'
     decimals: 6
     type: erc20
 couples:
   ## eth
   - chain: arbitrum
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '10000000000000'
     messager: layerzero
-
-  ## usdt
   - chain: arbitrum
-    symbol: usdt
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+
+  ## USDT
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: bsc
-    symbol: usdt
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: polygon
-    symbol: usdt
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: op
-    symbol: usdt
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: mantle
-    symbol: usdt
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: scroll
-    symbol: usdt
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: gnosis
-    symbol: usdt
-    protocol: lnv2-default
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
 

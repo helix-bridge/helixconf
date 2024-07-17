@@ -31,22 +31,27 @@ couples:
 
   ## eth
   - chain: blast
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
   - chain: linea
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '10000000000000'
     messager: layerzero
+  - chain: linea
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
   - chain: astar-zkevm
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
   - chain: op
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
@@ -65,9 +70,19 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: layerzero
+  - chain: polygon
+    symbol: RING
+    protocol: lnv3
+    fee: '100000000000000000000'
+    messager: layerzero
   - chain: darwinia-dvm
     symbol: RING/RING
     protocol: lnv2-default
+    fee: '10000000000000000000'
+    messager: msgline
+  - chain: darwinia-dvm
+    symbol: RING
+    protocol: lnv3
     fee: '10000000000000000000'
     messager: msgline
 
@@ -75,6 +90,11 @@ couples:
   - chain: mantle
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: mantle
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: zksync
@@ -87,9 +107,19 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: bsc
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
   - chain: linea
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: linea
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: polygon
@@ -97,9 +127,19 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
   - chain: op
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: gnosis
@@ -107,9 +147,19 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: gnosis
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
   - chain: scroll
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: moonbeam

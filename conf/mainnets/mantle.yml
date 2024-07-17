@@ -11,20 +11,25 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 6
     type: native
-  - symbol: usdt
+  - symbol: USDT
     address: '0x201EBa5CC46D216Ce6DC03F6a759e8E766e956aE'
     decimals: 6
     type: erc20
-  - symbol: usdc
+  - symbol: USDC
     address: '0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9'
     decimals: 6
     type: erc20
 couples:
 
-  # usdt
+  # USDT
   - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: zksync
@@ -39,6 +44,11 @@ couples:
     messager: layerzero
   - chain: scroll
     symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
@@ -47,9 +57,19 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: bsc
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
   - chain: linea
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: linea
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: op
@@ -57,9 +77,19 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
   - chain: polygon
     symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
   - chain: gnosis
@@ -67,16 +97,31 @@ couples:
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
+  - chain: gnosis
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
 
 
-  ## usdc
+  ## USDC
   - chain: arbitrum
+    symbol: USDC
+    protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
     symbol: USDC
     protocol: lnv2-default
     fee: '100000'
     messager: layerzero
   - chain: scroll
     symbol: USDC
-    protocol: lnv2-default
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
