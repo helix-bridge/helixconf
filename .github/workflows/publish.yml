@@ -25,9 +25,12 @@ jobs:
       - name: Build template
         run: npm run build:ts
 
-      - name: Publish ts
+      - name: Setup npm token
+        run: echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish ts
         run: |
           cd generated/typescript
           npm run release
