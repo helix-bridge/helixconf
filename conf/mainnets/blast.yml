@@ -3,6 +3,8 @@ code: blast
 name: Blast
 rpcs:
   - https://rpc.blastblockchain.com
+protocol:
+  lnv3: '0xB180D7DcB5CC161C862aD60442FA37527546cAFC'
 tokens:
   - symbol: 'eth'
     address: '0x0000000000000000000000000000000000000000'
