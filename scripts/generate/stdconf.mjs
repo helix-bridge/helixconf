@@ -8,6 +8,9 @@ export function standardization(global, ccf) {
 function _stdGeneric(global, ccf) {
   if (!ccf.messagers) ccf.messagers = [];
   if (!ccf.couples) ccf.couples = [];
+  if (!ccf.tokens) ccf.tokens = [];
+  if (!ccf.rpcs) ccf.rpcs = [];
+  if (!ccf.protocol) ccf.protocol = {};
 }
 
 function _stdCouples(global, ccf) {
@@ -28,6 +31,16 @@ function _stdTokens(global, ccf) {
     if (!token.name) {
       token.name = token.symbol;
     }
+    const alias = token.alias || [];
+    const stdAlias = [];
+    for (let i = alias.length; i-- > 0;) {
+      if (!alias[i]) continue;
+      stdAlias.push(alias[i].toUpperCase());
+    }
+    if (stdAlias.indexOf(token.symbol) == -1) {
+      stdAlias.push(token.symbol);
+    }
+    token.alias = stdAlias;
   }
 }
 

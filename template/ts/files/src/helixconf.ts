@@ -12,8 +12,9 @@ export interface ChainToken {
   symbol: string
   address: string
   decimals: number
-  type: TokenType,
+  type: TokenType
   name: string
+  alias: string[]
 }
 
 export interface ChainCouple {
@@ -117,6 +118,15 @@ export class HelixChainConf {
 
   keys(): Array<keyof HelixChainConfType> {
     return Object.keys(this._data) as Array<keyof HelixChainConfType>;
+  }
+
+  token(symbol: string): ChainToken | undefined {
+    const uppercaseSymbol = symbol.toUpperCase();
+    for (const token of this.tokens) {
+      if (token.alias.indexOf(uppercaseSymbol) != -1) {
+        return token;
+      }
+    }
   }
 
   categories(): string[] {

@@ -1,6 +1,6 @@
 {
   "name": "@helixbridge/helixconf",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Helix conf",
   "main": "dist/src/index.js",
   "publishConfig": {
