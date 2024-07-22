@@ -3,6 +3,10 @@ code: astar-zkevm
 name: Astar zkEVM
 rpcs:
   - https://rpc.startale.com/astar-zkevm
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0xD476650e03a45E70202b0bcAfa04E1513920f83a'
 messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'

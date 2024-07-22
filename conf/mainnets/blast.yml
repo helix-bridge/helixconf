@@ -5,6 +5,9 @@ rpcs:
   - https://rpc.blastblockchain.com
 protocol:
   lnv3: '0xB180D7DcB5CC161C862aD60442FA37527546cAFC'
+messagers:
+  - name: msgline
+    address: '0x98982b1685a63596834a05C1288dA7fbF27d684E'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
