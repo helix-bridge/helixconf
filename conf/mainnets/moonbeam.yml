@@ -3,6 +3,10 @@ code: moonbeam
 name: Moonbeam
 rpcs:
   - https://moonbeam-rpc.dwellir.com
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
@@ -11,13 +15,9 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: ETH
-    address: '0xfa9343c3897324496a05fc75abed6bac29f8a40f'
-    decimals: 18
-    type: erc20
-  - symbol: USDT
+  - symbol: xcUSDT
     alias:
-      - xcUSDT
+      - USDT
     name: xcUSDT
     address: '0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d'
     decimals: 6
