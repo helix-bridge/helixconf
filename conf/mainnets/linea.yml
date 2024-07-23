@@ -3,6 +3,10 @@ code: linea
 name: Linea
 rpcs:
   - https://linea.decubate.com
+protocol:
+  lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'

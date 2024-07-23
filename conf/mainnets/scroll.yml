@@ -3,6 +3,10 @@ code: scroll
 name: Scroll
 rpcs:
   - https://scroll-mainnet.public.blastapi.io
+protocol:
+  lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x463d1730a8527ca58d48ef70c7460b9920346567'
@@ -20,6 +24,23 @@ tokens:
     decimals: 6
     type: erc20
 couples:
+
+  ## ETH
+  - chain: op
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: base
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
 
   ## USDT
   - chain: mantle
@@ -111,6 +132,31 @@ couples:
     fee: '100000'
     messager: layerzero
   - chain: arbitrum
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: base
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis 
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: op
     symbol: USDC
     protocol: lnv3
     fee: '100000'

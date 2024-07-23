@@ -3,6 +3,10 @@ code: polygon
 name: Polygon
 rpcs:
   - https://polygon-bor-rpc.publicnode.com
+protocol:
+  lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
@@ -17,6 +21,10 @@ tokens:
     type: erc20
   - symbol: USDT
     address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
+    decimals: 6
+    type: erc20
+  - symbol: USDC
+    address: '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'
     decimals: 6
     type: erc20
 couples:
@@ -115,3 +123,34 @@ couples:
     fee: '100000'
     messager: layerzero
 
+  ## usdc
+  - chain: base
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis 
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
