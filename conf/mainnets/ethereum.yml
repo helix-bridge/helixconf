@@ -3,6 +3,11 @@ code: ethereum
 name: Ethereum
 rpcs:
   - https://ethereum-rpc.publicnode.com
+messagers:
+  - name: arbitrum-l2
+    address: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
+  - name: msgline
+    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 tokens:
   - symbol: RING
     address: '0x0000000000000000000000000000000000000000'

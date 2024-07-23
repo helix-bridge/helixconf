@@ -3,6 +3,10 @@ code: gnosis
 name: Gnosis
 rpcs:
   - https://gnosis-rpc.publicnode.com
+protocol:
+  lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
@@ -16,76 +20,112 @@ tokens:
     address: '0x4ECaBa5870353805a9F068101A40E0f32ed605C6'
     decimals: 6
     type: erc20
+  - symbol: USDC
+    address: '0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83'
+    decimals: 6
+    type: erc20
 couples:
 
   ## USDT
   - chain: bsc
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: bsc
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: polygon
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: polygon
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: linea
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: linea
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: op
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: op
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: mantle
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: mantle
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: scroll
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: scroll
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default
-    fee: '100000000000000000'
+    fee: '100000'
     messager: layerzero
   - chain: arbitrum
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '100000'
+    messager: layerzero
+
+  ## usdc
+  - chain: base
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain:  arbitrum
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: op
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
     messager: layerzero

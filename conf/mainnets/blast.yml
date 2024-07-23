@@ -4,10 +4,14 @@ name: Blast
 rpcs:
   - https://rpc.blastblockchain.com
 protocol:
+  lnv2-default: null
+  lnv2-opposite: null
   lnv3: '0xB180D7DcB5CC161C862aD60442FA37527546cAFC'
 messagers:
   - name: msgline
     address: '0x98982b1685a63596834a05C1288dA7fbF27d684E'
+  - name: layerzero
+    address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'

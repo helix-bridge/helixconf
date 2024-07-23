@@ -3,6 +3,10 @@ code: op
 name: Op
 rpcs:
   - https://optimism-rpc.publicnode.com
+protocol:
+  lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
 messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
@@ -15,10 +19,24 @@ tokens:
     address: '0x94b008aA00579c1307B0EF2c499aD98a8ce58e58'
     decimals: 6
     type: erc20
+  - symbol: USDC
+    address: '0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85'
+    decimals: 6
+    type: erc20
 couples:
 
   ## ETH
   - chain: arbitrum
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: base
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
+  - chain: scroll
     symbol: ETH
     protocol: lnv3
     fee: '10000000000000'
@@ -92,6 +110,37 @@ couples:
     messager: layerzero
   - chain: gnosis
     symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+
+  - chain: base
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: gnosis 
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: bsc
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: scroll
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: polygon
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: USDC
     protocol: lnv3
     fee: '100000'
     messager: layerzero
