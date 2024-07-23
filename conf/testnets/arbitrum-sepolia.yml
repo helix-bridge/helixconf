@@ -41,9 +41,44 @@ couples:
     fee: '100000000000000000'
     category: usdc
     messager: layerzero
+  - chain: sepolia
+    symbol: usdc
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    category: usdc
   - chain: zksync-sepolia
     symbol: usdc
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdc
+  - chain: morph
+    symbol: usdc
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdc
+  - chain: bera
+    symbol: usdc
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdc
+  - chain: taiko-hekla
+    symbol: usdc
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdc
+  - chain: sepolia
+    symbol: usdc
+    protocol: lnv3
+    fee: '100000000000000000'
+    category: usdc
+    messager: layerzero
+  - chain: zksync-sepolia
+    symbol: usdc
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
@@ -72,9 +107,44 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
     category: usdt
+  - chain: sepolia
+    symbol: usdt
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: zksync-sepolia
     symbol: usdt
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdt
+  - chain: morph
+    symbol: usdt
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdt
+  - chain: bera
+    symbol: usdt
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdt
+  - chain: taiko-hekla
+    symbol: usdt
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdt
+  - chain: sepolia
+    symbol: usdt
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: usdt
+  - chain: zksync-sepolia
+    symbol: usdt
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: usdt
@@ -85,9 +155,39 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
     category: eth
+  - chain: sepolia
+    symbol: eth
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+    category: eth
+  - chain: morph
+    symbol: eth
+    protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+    category: eth
+  - chain: zksync-sepolia
+    symbol: eth
+    protocol: lnv2-opposite
+    fee: '100000000000000000'
+    messager: layerzero
+    category: eth
   - chain: zksync-sepolia
     symbol: eth
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+    category: eth
+  - chain: sepolia
+    symbol: eth
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+    category: eth
+  - chain: zksync-sepolia
+    symbol: eth
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: eth

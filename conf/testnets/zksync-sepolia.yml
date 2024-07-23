@@ -25,9 +25,19 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: sepolia
+    symbol: usdc
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: arbitrum-sepolia
     symbol: usdc
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: arbitrum-sepolia
+    symbol: usdc
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
@@ -37,9 +47,19 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: sepolia
+    symbol: usdt
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: arbitrum-sepolia
     symbol: usdt
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: arbitrum-sepolia
+    symbol: usdt
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
@@ -49,8 +69,18 @@ couples:
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
+  - chain: sepolia
+    symbol: eth
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
   - chain: arbitrum-sepolia
     symbol: eth
     protocol: lnv2-default
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: arbitrum-sepolia
+    symbol: eth
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
