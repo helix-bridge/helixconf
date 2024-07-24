@@ -1,5 +1,10 @@
 # helixconf
 
+## Install
+
+```shell
+npm i @helixbridge/helixconf
+```
 
 ## Typescript
 
