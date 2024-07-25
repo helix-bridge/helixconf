@@ -140,3 +140,13 @@ couples:
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
+  - chain: mantle
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
+  - chain: avalanche
+    symbol: USDC
+    protocol: lnv3
+    fee: '100000000000000000'
+    messager: layerzero
