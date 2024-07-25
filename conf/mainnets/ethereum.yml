@@ -9,7 +9,7 @@ messagers:
   - name: msgline
     address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 tokens:
-  - symbol: RING
+  - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
