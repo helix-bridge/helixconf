@@ -129,6 +129,15 @@ export class HelixChainConf {
     }
   }
 
+  messager(name: string): ChainMessager | undefined {
+    const uppercaseMessagerName = name.toUpperCase();
+    for (const messager of this.messagers) {
+      if (messager.name.toUpperCase() === uppercaseMessagerName) {
+        return messager;
+      }
+    }
+  }
+
   categories(): string[] {
     const categories = this.couples.map(item => item.category);
     return categories.reduce((acc: string[], item: string) => {
