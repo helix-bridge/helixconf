@@ -27,7 +27,7 @@ async function renderChain(lifecycle) {
     await fs.mkdirp(networkDir);
     const output = Mustache.render(chainTpl, {chain: cf});
     await fs.writeFile(`${networkDir}/${name}.ts`, output);
-    chainList.push({network: cf._network, name: name, id: cf.id});
+    chainList.push({network: cf._network, name: name});
   }
   chainList[chainList.length - 1].last = true
 
