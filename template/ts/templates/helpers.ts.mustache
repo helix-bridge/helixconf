@@ -28,12 +28,8 @@ export class HelixChain {
   static get(chain: string | number | BigInt): HelixChainConf | undefined {
     const typeofName = typeof chain;
     if (typeofName === 'string') {
-      switch(chain.toString().toUpperCase()) {
-      {{#chains}}
-        case '{{ name | upper_case }}':
-          return {{ name | camel_case }}Chain;
-      {{/chains}}
-      }
+      const upperCaseChainName = chain.toString().toUpperCase();
+      return HelixChain.chains().find(item => item.name.toUpperCase() === upperCaseChainName);
     }
     if (typeofName === 'number' || typeofName === 'bigint') {
       return HelixChain.chains().find(item => item.id.toString() === chain.toString());
