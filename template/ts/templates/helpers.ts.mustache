@@ -8,12 +8,31 @@ export class HelixChain {
 {{#chains}}
   static {{ name | camel_case }}: HelixChainConf = {{ name | camel_case }}Chain;
 {{/chains}}
-  static get(name: string): HelixChainConf | undefined {
-    switch(name.toUpperCase()) {
-    {{#chains}}
-      case '{{ name | upper_case }}':
-        return {{ name | camel_case }}Chain;
-    {{/chains}}
+
+  static names(): string[] {
+    return [
+      {{#chains}}
+      '{{ name | camel_case }}',
+      {{/chains}}
+    ];
+  }
+
+  static chains(): HelixChainConf[] {
+    return [
+      {{#chains}}
+      HelixChain.{{ name | camel_case }},
+      {{/chains}}
+    ];
+  }
+
+  static get(chain: string | number | BigInt): HelixChainConf | undefined {
+    const typeofName = typeof chain;
+    if (typeofName === 'string') {
+      const upperCaseChainName = chain.toString().toUpperCase();
+      return HelixChain.chains().find(item => item.name.toUpperCase() === upperCaseChainName);
+    }
+    if (typeofName === 'number' || typeofName === 'bigint') {
+      return HelixChain.chains().find(item => item.id.toString() === chain.toString());
     }
   }
 }
