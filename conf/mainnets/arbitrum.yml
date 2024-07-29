@@ -2,7 +2,7 @@ id: "42161"
 code: arbitrum
 name: Arbitrum
 rpcs:
-  - https://polygon-bor-rpc.publicnode.com
+  - https://arb1.arbitrum.io/rpc
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: '0x48d769d5C7ff75703cDd1543A1a2ed9bC9044A23'
