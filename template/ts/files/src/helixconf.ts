@@ -15,6 +15,7 @@ export interface ChainToken {
   type: TokenType
   name: string
   alias: string[]
+  logo: string
 }
 
 export interface ChainCouple {
