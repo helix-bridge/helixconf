@@ -8,14 +8,17 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
   - symbol: usdt
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
     decimals: 18
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
   - symbol: usdc
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
     decimals: 18
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 couples:
   ## usdt
   - chain: arbitrum-sepolia

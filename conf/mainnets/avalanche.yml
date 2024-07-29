@@ -15,10 +15,12 @@ tokens:
     address: '0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7'
     decimals: 6
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
   - symbol: USDC
     address: '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E'
     decimals: 6
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 couples:
   ## usdc
   - chain: base

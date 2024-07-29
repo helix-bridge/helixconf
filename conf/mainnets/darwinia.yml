@@ -8,6 +8,7 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/ring.png
   - symbol: xWCRAB
     alias:
       - CRAB
@@ -15,11 +16,13 @@ tokens:
     address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
     decimals: 18
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/crab.png
   - symbol: ahPINK
     name: ahPINK
     address: '0x0000000000000000000000000000000000000404'
     decimals: 10
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/pink.png
   - symbol: ahUSDT
     alias:
       - USDT
@@ -27,6 +30,7 @@ tokens:
     address: '0x0000000000000000000000000000000000000403'
     decimals: 6
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
 
 couples:
 

@@ -15,18 +15,22 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/matic.svg
   - symbol: RING
     address: '0x9C1C23E60B72Bc88a043bf64aFdb16A02540Ae8f'
     decimals: 18
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/ring.png
   - symbol: USDT
     address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F'
     decimals: 6
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
   - symbol: USDC
     address: '0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359'
     decimals: 6
     type: erc20
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 couples:
 
   ## RING
