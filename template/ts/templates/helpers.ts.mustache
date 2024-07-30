@@ -25,7 +25,7 @@ export class HelixChain {
     ];
   }
 
-  static get(chain: string | number | BigInt): HelixChainConf | undefined {
+  static get(chain: string | number | bigint): HelixChainConf | undefined {
     const typeofName = typeof chain;
     if (typeofName === 'string') {
       const upperCaseChainName = chain.toString().toUpperCase();
