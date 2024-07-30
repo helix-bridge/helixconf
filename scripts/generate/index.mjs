@@ -2,6 +2,7 @@ import * as helper from './_helper.mjs'
 import * as stdconf from './stdconf.mjs'
 import * as renderer from './renderer/index.mjs'
 
+// $.verbose = true;
 
 const BIN_PATH = path.resolve(__filename, '../');
 const WORK_PATH = path.resolve(BIN_PATH, '../../');
