@@ -29,7 +29,7 @@ export interface ChainCouple {
 }
 
 export interface CoupleChain {
-  id: BigInt
+  id: bigint
   code: string
   name: string
 }
@@ -56,7 +56,7 @@ export interface CoupleFilter {
 
 export interface HelixChainConfType {
   _network: _NetworkType
-  id: BigInt
+  id: bigint
   code: string
   name: string
   rpcs: string[]
@@ -77,7 +77,7 @@ export class HelixChainConf {
     return this._data._network;
   }
 
-  get id(): BigInt {
+  get id(): bigint {
     return this._data.id;
   }
 

@@ -182,7 +182,8 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples
         if (token.type === "native") {
           expect(token.decimals).toBe(18);
         } else {
-          const provider = new ethers.providers.JsonRpcProvider(rpcs[0]);
+          const rpc = rpcs[0];
+          const provider = await new ethers.JsonRpcProvider(rpc);
           const contract = new ethers.Contract(
             token.address,
             erc20Abi,
