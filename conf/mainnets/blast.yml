@@ -2,7 +2,7 @@ id: "81457"
 code: blast
 name: Blast
 rpcs:
-  - https://rpc.blastblockchain.com
+  - https://rpc.blast.io
 protocol:
   lnv2-default: null
   lnv2-opposite: null
