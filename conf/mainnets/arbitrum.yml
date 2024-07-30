@@ -176,10 +176,11 @@ couples:
     fee: '100000'
     messager: layerzero
   - chain: moonbeam
-    symbol: USDT
+    symbol: USDT/xcUSDT
     protocol: lnv3
     fee: '100000'
     messager: layerzero
+    category: usdt
 
   ## usdc
   - chain: mantle

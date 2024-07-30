@@ -44,7 +44,7 @@ couples:
     protocol: lnv3
     fee: '10000000'
     messager: msgline
-
+    category: usdt
 
   ## pingk
   - chain: darwinia-dvm

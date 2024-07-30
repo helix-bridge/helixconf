@@ -3,6 +3,10 @@ code: base-sepolia
 name: base-sepolia
 rpcs:
   - https://sepolia.base.org
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0x29D148A9e87C763292a33A55B9dBcAf44A194102'
 tokens:
   - symbol: eth
     address: '0x0000000000000000000000000000000000000000'
