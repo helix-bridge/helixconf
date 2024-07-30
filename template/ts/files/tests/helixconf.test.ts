@@ -190,9 +190,7 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples
             provider
           );
           const contractDecimals = await contract.decimals();
-          console.log(contractDecimals);
-          console.log(token.decimals);
-          expect(contractDecimals).toBe(token.decimals);
+          expect(contractDecimals).toBe(BigInt(token.decimals));
         }
       });
     }
