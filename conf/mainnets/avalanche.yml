@@ -11,6 +11,11 @@ messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
 tokens:
+  - symbol: AVAX
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
   - symbol: USDT
     address: '0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7'
     decimals: 6
