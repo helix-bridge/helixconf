@@ -8,3 +8,5 @@ node_modules
 dist
 _tmp
 
+package-lock.json
+*.lock
