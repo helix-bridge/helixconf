@@ -189,7 +189,10 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples
             erc20Abi,
             provider
           );
-          expect(await contract.decimals()).toBe(token.decimals);
+          const contractDecimals = await contract.decimals();
+          console.log(contractDecimals);
+          console.log(token.decimals);
+          expect(contractDecimals).toBe(token.decimals);
         }
       });
     }
