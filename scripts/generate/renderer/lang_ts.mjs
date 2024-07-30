@@ -48,6 +48,7 @@ async function renderChain(lifecycle) {
 }
 
 async function copyFiles(lifecycle) {
-  const {conf, langTs} = lifecycle;
+  const {workdir, conf, langTs} = lifecycle;
   await fs.copy(langTs.filesDir, langTs.baseDir, {overwrite: true});
+  await fs.copy(`${workdir}/abis`, `${langTs.baseDir}/tests/abis`);
 }
