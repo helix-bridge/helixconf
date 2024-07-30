@@ -8,7 +8,7 @@
     "test:ts": "npm run build:ts && cd generated/typescript && npm run test"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@jvitela/mustache-wax": "^1.0.4",
     "change-case": "^5.4.4",
