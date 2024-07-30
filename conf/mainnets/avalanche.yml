@@ -1,4 +1,4 @@
-id: "43114"
+id: '43114'
 code: avalanche
 name: Avalanche
 rpcs:
@@ -33,7 +33,7 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-  - chain: gnosis 
+  - chain: gnosis
     symbol: USDC
     protocol: lnv3
     fee: '100000'

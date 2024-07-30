@@ -3,6 +3,7 @@ export function standardization(global, ccf) {
   _stdTokens(global, ccf);
   _stdCouples(global, ccf);
   _cleanConf(global, ccf);
+  _stdContracts(global, ccf);
 }
 
 function _stdGeneric(global, ccf) {
@@ -11,6 +12,11 @@ function _stdGeneric(global, ccf) {
   if (!ccf.tokens) ccf.tokens = [];
   if (!ccf.rpcs) ccf.rpcs = [];
   if (!ccf.protocol) ccf.protocol = {};
+  if (!ccf.contracts) ccf.contracts = {};
+}
+
+function _stdContracts(global, ccf) {
+  // ccf.contracts;
 }
 
 function _stdCouples(global, ccf) {

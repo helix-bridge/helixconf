@@ -1,4 +1,5 @@
-id: "42161"
+id: '42161'
+lzid: '110'
 code: arbitrum
 name: Arbitrum
 rpcs:
@@ -7,6 +8,9 @@ protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: '0x48d769d5C7ff75703cDd1543A1a2ed9bC9044A23'
   lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
+contracts:
+  dao: '0x000000000f681D85374225EdEeADC25560C1fb3F'
+  eth2arb-receive: '0xc95D939Da72ECe8Bd794d42EaEd28974CDb0ADa2'
 messagers:
   - name: layerzero
     address: '0x509354A4ebf98aCC7a65d2264694A65a2938cac9'
@@ -198,7 +202,7 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-  - chain: gnosis 
+  - chain: gnosis
     symbol: USDC
     protocol: lnv3
     fee: '100000'

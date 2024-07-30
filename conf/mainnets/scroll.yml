@@ -1,4 +1,5 @@
-id: "534352"
+id: '534352'
+lzid: '214'
 code: scroll
 name: Scroll
 rpcs:
@@ -144,7 +145,7 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-  - chain: gnosis 
+  - chain: gnosis
     symbol: USDC
     protocol: lnv3
     fee: '100000'

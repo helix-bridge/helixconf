@@ -1,8 +1,12 @@
-id: "1"
+id: '1'
+lzid: '101'
 code: ethereum
 name: Ethereum
 rpcs:
   - https://ethereum-rpc.publicnode.com
+contracts:
+  dao: '0x000000000f681D85374225EdEeADC25560C1fb3F'
+  eth2arb-send: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
 messagers:
   - name: arbitrum-l2
     address: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
