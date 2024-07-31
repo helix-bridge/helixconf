@@ -8,29 +8,27 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/ring.png
   - symbol: xWCRAB
     alias:
       - CRAB
-    name: xWCRAB
     address: '0x656567Eb75b765FC320783cc6EDd86bD854b2305'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/crab.png
+    logo: crab.png
   - symbol: ahPINK
-    name: ahPINK
+    alias:
+      - PINK
     address: '0x0000000000000000000000000000000000000404'
     decimals: 10
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/pink.png
+    logo: pink.png
   - symbol: ahUSDT
     alias:
       - USDT
-    name: ahUSDT
     address: '0x0000000000000000000000000000000000000403'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
+    logo: usdt.png
 
 couples:
 
@@ -57,7 +55,7 @@ couples:
     messager: msgline
     hidden: true
   - chain: polygon
-    symbol: RING
+    symbol: RING/Ring
     protocol: lnv3
     fee: '100000000000000000000'
     messager: msgline

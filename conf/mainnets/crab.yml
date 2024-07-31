@@ -2,21 +2,20 @@ id: "44"
 code: crab-dvm
 name: Crab
 rpcs:
+  - https://crab-rpc.dcdao.box
   - https://crab-rpc.darwinia.network
 tokens:
   - symbol: CRAB
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/crab.png
   - symbol: xWRING
     alias:
       - RING
-    name: xWRING
     address: '0x273131F7CB50ac002BDd08cA721988731F7e1092'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/ring.png
+    logo: ring.png
 
 couples:
 

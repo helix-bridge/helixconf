@@ -24,23 +24,26 @@ function _stdCouples(global, ccf) {
   }
 }
 
-
 function _stdTokens(global, ccf) {
   for (const token of ccf.tokens) {
-    token.symbol = token.symbol.toUpperCase();
-    if (!token.name) {
-      token.name = token.symbol;
-    }
     const alias = token.alias || [];
     const stdAlias = [];
     for (let i = alias.length; i-- > 0;) {
       if (!alias[i]) continue;
-      stdAlias.push(alias[i].toUpperCase());
+      stdAlias.push(alias[i]);
     }
-    if (stdAlias.indexOf(token.symbol) == -1) {
+    if (!stdAlias.find(item => item.toUpperCase() === token.symbol.toUpperCase())) {
       stdAlias.push(token.symbol);
     }
     token.alias = stdAlias;
+    if (!token.logo) {
+      token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.symbol.toLowerCase()}.png`;
+    }
+    if (token.logo) {
+      if (!token.logo.startsWith('http://') && !token.logo.startsWith("https://")) {
+        token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.logo}`;
+      }
+    }
   }
 }
 
@@ -50,20 +53,18 @@ function _stdSymbol(global, ccf, couple) {
     const pairs = rawSymbol.split('/');
     if (pairs.length === 1) {
       couple.symbol = {
-        from: pairs[0].toUpperCase(),
-        to: pairs[0].toUpperCase(),
+        from: pairs[0],
+        to: pairs[0],
       };
       return;
     }
     couple.symbol = {
-      from: pairs[0].toUpperCase(),
-      to: pairs[1].toUpperCase(),
+      from: pairs[0],
+      to: pairs[1],
     };
     return;
   }
   if (rawSymbol.from && rawSymbol.to) {
-    rawSymbol.from = rawSymbol.from.toUpperCase();
-    rawSymbol.to = rawSymbol.to.toUpperCase();
     return;
   }
   console.log(chalk.red('missing symbol; symbol: {from, to}'));
@@ -94,7 +95,7 @@ function _stdCategory(global, ccf, couple) {
     couple.category = couple.category.toUpperCase();
     return;
   }
-  couple.category = couple.symbol.from;
+  couple.category = couple.symbol.from.toUpperCase();
 }
 
 function _stdChain(global, ccf, couple) {

@@ -11,8 +11,19 @@ export async function render(lifecycle) {
   lifecycle.langTs = langTs;
 
   await fs.mkdirp(langTs.srcDir);
-  await copyFiles(lifecycle)
+  await clean(lifecycle);
+  await copyFiles(lifecycle);
   await renderChain(lifecycle);
+}
+
+async function clean(lifecycle) {
+  const {langTs} = lifecycle;
+  const files = await fs.readdir(langTs.baseDir);
+  for (const file of files) {
+    if (file === 'node_modules') continue;
+    const path = `${langTs.baseDir}/${file}`;
+    await fs.remove(path);
+  }
 }
 
 async function renderChain(lifecycle) {
@@ -38,5 +49,16 @@ async function renderChain(lifecycle) {
 
 async function copyFiles(lifecycle) {
   const {conf, langTs} = lifecycle;
-  await fs.copy(langTs.filesDir, langTs.baseDir, {overwrite: true});
+  const notCopies = [
+    '/node_modules'
+  ];
+  await fs.copy(langTs.filesDir, langTs.baseDir, {
+    overwrite: true,
+    filter: (src, dest) => {
+      for (const nc of notCopies) {
+        if (src.indexOf(nc) > -1) return false;
+      }
+      return true;
+    },
+  });
 }
