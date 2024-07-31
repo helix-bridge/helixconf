@@ -5,7 +5,7 @@
   "scripts": {
     "codegen": "zx scripts/generate/index.mjs",
     "build:ts": "npm run codegen -- --language=ts && cd generated/typescript && npm i && npm run build",
-    "test:ts": "rm -rf generated && npm run build:ts && cd generated/typescript && npm run test"
+    "test:ts": "npm run build:ts && cd generated/typescript && npm run test"
   },
   "author": "",
   "license": "ISC",
