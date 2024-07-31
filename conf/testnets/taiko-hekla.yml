@@ -3,6 +3,10 @@ code: taiko-hekla
 name: taiko-hekla
 rpcs:
   - https://rpc.hekla.taiko.xyz
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0xD476650e03a45E70202b0bcAfa04E1513920f83a'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'

@@ -3,6 +3,10 @@ code: zksync-sepolia
 name: zksync-sepolia
 rpcs:
   - https://zksync-sepolia.drpc.org
+protocol:
+  lnv2-default: '0xBe23e871318E49C747CB909AC65aCCFAEAac3a37'
+  lnv2-opposite: null
+  lnv3: '0xDc55fF59F82AA50D8A4A61dB8CcaDffD26Fb7dD2'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'

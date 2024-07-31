@@ -3,6 +3,10 @@ code: zircuit
 name: zircuit
 rpcs:
   - https://zircuit1.p2pify.com
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0x369642b7b9cf4eAc16b07797F77e1C0907Ea62c1'
 tokens:
   - symbol: USDT
     address: '0x9C80EdD342b5D179c3a87946fC1F0963BfcaAa09'

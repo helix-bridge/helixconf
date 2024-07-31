@@ -3,6 +3,10 @@ code: bera
 name: bera
 rpcs:
   - https://artio.rpc.berachain.com
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0x00e7EFf0826dfCDf2AA5945dFF710B48f4AA7E64'
 tokens:
   - symbol: BERA
     address: '0x0000000000000000000000000000000000000000'
