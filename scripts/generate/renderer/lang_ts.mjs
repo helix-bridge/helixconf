@@ -55,7 +55,6 @@ async function copyFiles(lifecycle) {
   await fs.copy(langTs.filesDir, langTs.baseDir, {
     overwrite: true,
     filter: (src, dest) => {
-      console.log(src, dest);
       for (const nc of notCopies) {
         if (src.indexOf(nc) > -1) return false;
       }
