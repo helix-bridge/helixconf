@@ -1,7 +1,5 @@
 import { HelixChain } from "../src/";
-import { ethers } from "ethers";
 import {Onlinechain} from "./common/onlinechain";
-// import abiErc20 from "./abis/erc20.json";
 
 
 describe("helixconf_test", () => {
@@ -12,19 +10,19 @@ describe("helixconf_test", () => {
     await oc.init();
   });
 
-  test("test_chainId", async () => {
+  test("check-proxy-admin", async () => {
     // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
     // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
     // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-    await oc.test();
+    await oc.checkProxyAdmin();
   });
 
-  test("test_chainId2", async () => {
-    // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
-    // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
-    // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-    await oc.test();
-  });
+  // test("test_chainId2", async () => {
+  //   // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
+  //   // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
+  //   // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
+  //   await oc.test();
+  // });
 });
 
 // describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples }) => {

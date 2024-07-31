@@ -8,8 +8,9 @@ protocol:
   lnv2-default: '0x767Bc046c989f5e63683fB530f939DD34b91ceAC'
   lnv2-opposite: null
   lnv3: null
-contracts:
+additional:
   dao: '0x38b9145b6F4f363C42C83F62Ee09df0Ade6F8Dec'
+contract:
   proxy-admin: '0xA0d8a3C04580a8503ed3Ff30deBb22B83EE615F4'
 messagers:
   - name: layerzero

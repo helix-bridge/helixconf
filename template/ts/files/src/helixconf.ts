@@ -1,6 +1,8 @@
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
+export type HelixContractName = 'proxy-admin' | 'operator'
+  | 'protocol-fee-receiver' | 'eth2arb-receive' | 'eth2arb-send';
 
 
 export interface ChainMessager {
@@ -57,10 +59,13 @@ export interface CoupleFilter {
 export interface HelixChainConfType {
   _network: _NetworkType
   id: bigint
+  lzid?: bigint
   code: string
   name: string
   rpcs: string[]
-  protocol: Partial<Record<HelixProtocolName, string>>
+  protocol: Record<HelixProtocolName, string>
+  contract: Record<HelixContractName, string>
+  additional: Record<string, string>
   messagers: ChainMessager[]
   tokens: ChainToken[]
   couples: ChainCouple[]
@@ -81,6 +86,10 @@ export class HelixChainConf {
     return this._data.id;
   }
 
+  get lzid(): bigint | undefined {
+    return this._data.lzid;
+}
+
   get code(): string {
     return this._data.code;
   }
@@ -93,7 +102,15 @@ export class HelixChainConf {
     return this._data.rpcs;
   }
 
-  get protocol(): Partial<Record<HelixProtocolName, string>> {
+  get additional(): Record<string, string> {
+    return this._data.additional;
+  }
+
+  get contract(): Record<HelixContractName, string> {
+    return this._data.contract
+  }
+
+  get protocol(): Record<HelixProtocolName, string> {
     return this._data.protocol;
   }
 
@@ -193,6 +210,9 @@ export class HelixChainConf {
     return {
       _network: this._network,
       id: this.id,
+      lzid: this.lzid,
+      contract: this.contract,
+      additional: this.additional,
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
@@ -208,6 +228,9 @@ export class HelixChainConf {
     return new HelixChainConf({
       _network: json._network,
       id: BigInt(json.id),
+      lzid: json.lzid ? BigInt(json.lzid) : undefined,
+      contract: json.contract,
+      additional: json.additional,
       code: json.code,
       name: json.name,
       rpcs: json.rpcs,
