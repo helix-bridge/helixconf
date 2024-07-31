@@ -75,12 +75,12 @@ couples:
     fee: '100000000000000000000'
     messager: arbitrum-l2
   - chain: polygon
-    symbol: RING
+    symbol: RING/Ring
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: layerzero
   - chain: polygon
-    symbol: RING
+    symbol: RING/Ring
     protocol: lnv3
     fee: '100000000000000000000'
     messager: layerzero

@@ -16,7 +16,7 @@ tokens:
     decimals: 18
     type: native
     logo: matic.svg
-  - symbol: RING
+  - symbol: Ring
     address: '0x9C1C23E60B72Bc88a043bf64aFdb16A02540Ae8f'
     decimals: 18
     type: erc20
@@ -32,17 +32,17 @@ couples:
 
   ## RING
   - chain: arbitrum
-    symbol: RING
+    symbol: Ring/RING
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: layerzero
   - chain: arbitrum
-    symbol: RING
+    symbol: Ring/RING
     protocol: lnv3
     fee: '100000000000000000000'
     messager: layerzero
   - chain: darwinia-dvm
-    symbol: RING
+    symbol: Ring/RING
     protocol: lnv3
     fee: '30000000000000000000'
     messager: msgline

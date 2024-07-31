@@ -15,7 +15,7 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: USDT
+  - symbol: USDt
     address: '0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7'
     decimals: 6
     type: erc20

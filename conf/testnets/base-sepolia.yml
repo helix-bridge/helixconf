@@ -16,6 +16,10 @@ tokens:
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
     decimals: 18
     type: erc20
+  - symbol: USDC
+    address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+    decimals: 18
+    type: erc20
 couples:
   - chain: sepolia
     symbol: USDT

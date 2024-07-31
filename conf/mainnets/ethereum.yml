@@ -2,7 +2,7 @@ id: "1"
 code: ethereum
 name: Ethereum
 rpcs:
-  - https://ethereum-rpc.publicnode.com
+  - https://eth.llamarpc.com
 messagers:
   - name: arbitrum-l2
     address: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
