@@ -18,12 +18,12 @@ tokens:
     type: erc20
 couples:
   - chain: sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

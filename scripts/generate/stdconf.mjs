@@ -53,20 +53,18 @@ function _stdSymbol(global, ccf, couple) {
     const pairs = rawSymbol.split('/');
     if (pairs.length === 1) {
       couple.symbol = {
-        from: pairs[0].toUpperCase(),
-        to: pairs[0].toUpperCase(),
+        from: pairs[0],
+        to: pairs[0],
       };
       return;
     }
     couple.symbol = {
-      from: pairs[0].toUpperCase(),
-      to: pairs[1].toUpperCase(),
+      from: pairs[0],
+      to: pairs[1],
     };
     return;
   }
   if (rawSymbol.from && rawSymbol.to) {
-    rawSymbol.from = rawSymbol.from.toUpperCase();
-    rawSymbol.to = rawSymbol.to.toUpperCase();
     return;
   }
   console.log(chalk.red('missing symbol; symbol: {from, to}'));
@@ -97,7 +95,7 @@ function _stdCategory(global, ccf, couple) {
     couple.category = couple.category.toUpperCase();
     return;
   }
-  couple.category = couple.symbol.from;
+  couple.category = couple.symbol.from.toUpperCase();
 }
 
 function _stdChain(global, ccf, couple) {

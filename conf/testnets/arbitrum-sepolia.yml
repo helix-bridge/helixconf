@@ -18,66 +18,66 @@ tokens:
     type: erc20
 couples:
   - chain: morph
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: bera
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: taiko-hekla
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-opposite
     fee: '100000000000000000'
     category: usdc
     messager: layerzero
   - chain: sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     category: usdc
   - chain: zksync-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: morph
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: bera
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: taiko-hekla
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
   - chain: sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
-    category: usdc
+    category: USDC
     messager: layerzero
   - chain: zksync-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
@@ -150,43 +150,43 @@ couples:
     category: usdt
 
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-opposite
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: morph
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: zksync-sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-opposite
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: zksync-sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
     category: eth
   - chain: zksync-sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

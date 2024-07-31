@@ -21,66 +21,66 @@ couples:
 
   ## usdc
   - chain: sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
   ## usdt
   - chain: sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
   ## eth
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: arbitrum-sepolia
-    symbol: eth
+    symbol: ETH
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

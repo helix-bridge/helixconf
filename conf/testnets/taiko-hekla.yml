@@ -19,14 +19,14 @@ tokens:
 couples:
   ## usdt
   - chain: arbitrum-sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
   ## usdc
   - chain: arbitrum-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
