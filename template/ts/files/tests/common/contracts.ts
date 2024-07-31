@@ -1,11 +1,9 @@
 
 import {
   Wallet,
-  providers,
   Contract,
-  ContractInterface,
-  BigNumber,
-  utils,
+  Interface , InterfaceAbi,
+  ContractRunner,
 } from "ethers";
 
 const abiDarwiniaMsgLine = require('../abis/abiDarwiniaMsgLine.json');
@@ -24,8 +22,8 @@ export class EthereumContract {
   public address: string;
   constructor(
     address: string,
-    abi: ContractInterface,
-    signer: Wallet | providers.Provider
+    abi: Interface | InterfaceAbi,
+    signer: ContractRunner
   ) {
     this.contract = new Contract(address, abi, signer);
     this.address = address;
@@ -33,7 +31,7 @@ export class EthereumContract {
 }
 
 export class ProxyAdmin extends EthereumContract {
-  constructor(address: string, signer: Wallet | providers.Provider) {
+  constructor(address: string, signer: ContractRunner) {
     super(address, abiProxyAdmin, signer);
   }
 

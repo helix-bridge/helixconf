@@ -1,21 +1,29 @@
 import { HelixChain } from "../src/";
 import { ethers } from "ethers";
+import {Onlinechain} from "./common/onlinechain";
 // import abiErc20 from "./abis/erc20.json";
 
 
 describe("helixconf_test", () => {
-  test("test_chainId", () => {
+
+  const oc = new Onlinechain(HelixChain.chains());
+
+  beforeAll(async () => {
+    await oc.init();
+  });
+
+  test("test_chainId", async () => {
     // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
     // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
     // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-    console.log(abiErc20);
+    await oc.test();
+  });
 
-
-          // const contract = new ethers.Contract(
-          //   token.address,
-          //   erc20Abi,
-          //   provider
-          // );
+  test("test_chainId2", async () => {
+    // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
+    // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
+    // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
+    await oc.test();
   });
 });
 
