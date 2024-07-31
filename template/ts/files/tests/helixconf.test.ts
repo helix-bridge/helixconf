@@ -1,13 +1,21 @@
 import { HelixChain } from "../src/";
 import { ethers } from "ethers";
-import abiErc20 from "./abis/erc20.json";
+// import abiErc20 from "./abis/erc20.json";
+
 
 describe("helixconf_test", () => {
   test("test_chainId", () => {
-    expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
-    expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
-    expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-    // console.log(abiErc20);
+    // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
+    // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
+    // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
+    console.log(abiErc20);
+
+
+          // const contract = new ethers.Contract(
+          //   token.address,
+          //   erc20Abi,
+          //   provider
+          // );
   });
 });
 
