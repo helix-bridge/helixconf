@@ -1,0 +1,28 @@
+id: "48899"
+code: zircuit
+name: zircuit
+rpcs:
+  - https://zircuit1.p2pify.com
+tokens:
+  - symbol: USDT
+    address: '0x9C80EdD342b5D179c3a87946fC1F0963BfcaAa09'
+    decimals: 18
+    type: erc20
+  - symbol: USDC
+    address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
+    decimals: 18
+    type: erc20
+couples:
+
+  # usdt
+  - chain: arbitrum-sepolia
+    symbol: USDT
+    protocol: lnv3
+    fee: '1000000000000000'
+    messager: layerzero
+  - chain: arbitrum-sepolia
+    symbol: USDC
+    protocol: lnv3
+    fee: '1000000000000000'
+    messager: layerzero
+
