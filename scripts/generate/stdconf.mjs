@@ -32,7 +32,7 @@ function _stdTokens(global, ccf) {
       if (!alias[i]) continue;
       stdAlias.push(alias[i]);
     }
-    if (stdAlias.indexOf(token.symbol) === -1) {
+    if (!stdAlias.find(item => item.toUpperCase() === token.symbol.toUpperCase())) {
       stdAlias.push(token.symbol);
     }
     token.alias = stdAlias;
