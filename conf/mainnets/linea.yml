@@ -15,12 +15,10 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
   - symbol: USDT
     address: '0xA219439258ca9da29E9Cc4cE5596924745e12B93'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
 couples:
   ## eth
   - chain: arbitrum

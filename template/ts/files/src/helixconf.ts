@@ -13,7 +13,6 @@ export interface ChainToken {
   address: string
   decimals: number
   type: TokenType
-  name: string
   alias: string[]
   logo: string
 }
@@ -122,12 +121,7 @@ export class HelixChainConf {
   }
 
   token(symbol: string): ChainToken | undefined {
-    const uppercaseSymbol = symbol.toUpperCase();
-    for (const token of this.tokens) {
-      if (token.alias.indexOf(uppercaseSymbol) != -1) {
-        return token;
-      }
-    }
+    return this.tokens.find(item => _equalsIgnoreCase(item.symbol, symbol));
   }
 
   messager(name: string): ChainMessager | undefined {

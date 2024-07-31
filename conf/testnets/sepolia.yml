@@ -4,21 +4,18 @@ name: Sepolia
 rpcs:
   - https://ethereum-sepolia-rpc.publicnode.com
 tokens:
-  - symbol: 'eth'
+  - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
-  - symbol: 'usdt'
+  - symbol: USDT
     address: '0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
-  - symbol: 'usdc'
+  - symbol: USDC
     address: '0x0ac58Df0cc3542beC4cDa71B16D06C3cCc39f405'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 couples:
   ## usdc
   - chain: arbitrum-sepolia

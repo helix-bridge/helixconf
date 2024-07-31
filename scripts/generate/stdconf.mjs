@@ -24,23 +24,26 @@ function _stdCouples(global, ccf) {
   }
 }
 
-
 function _stdTokens(global, ccf) {
   for (const token of ccf.tokens) {
-    token.symbol = token.symbol.toUpperCase();
-    if (!token.name) {
-      token.name = token.symbol;
-    }
     const alias = token.alias || [];
     const stdAlias = [];
     for (let i = alias.length; i-- > 0;) {
       if (!alias[i]) continue;
-      stdAlias.push(alias[i].toUpperCase());
+      stdAlias.push(alias[i]);
     }
-    if (stdAlias.indexOf(token.symbol) == -1) {
+    if (stdAlias.indexOf(token.symbol) === -1) {
       stdAlias.push(token.symbol);
     }
     token.alias = stdAlias;
+    if (!token.logo) {
+      token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.symbol.toLowerCase()}.png`;
+    }
+    if (token.logo) {
+      if (!token.logo.startsWith('http://') && !token.logo.startsWith("https://")) {
+        token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.logo}`;
+      }
+    }
   }
 }
 

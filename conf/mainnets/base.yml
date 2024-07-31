@@ -15,12 +15,10 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
   - symbol: USDC
     address: '0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 
 couples:
   # eth
@@ -51,7 +49,7 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-  - chain: gnosis 
+  - chain: gnosis
     symbol: USDC
     protocol: lnv3
     fee: '100000'
