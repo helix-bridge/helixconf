@@ -2,6 +2,7 @@ id: "44"
 code: crab-dvm
 name: Crab
 rpcs:
+  - https://crab-rpc.dcdao.box
   - https://crab-rpc.darwinia.network
 tokens:
   - symbol: CRAB
