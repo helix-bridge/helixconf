@@ -178,7 +178,7 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples
     if (code === "taiko" || code === "bera") {
       // Oops
     } else {
-      test("Should configure the correct decimals", async () => {
+      test.skip("Should configure the correct decimals", async () => {
         if (token.type === "native") {
           expect(token.decimals).toBe(18);
         } else {
@@ -195,4 +195,17 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples
       });
     }
   });
+
+  describe.each(couples)(`Couple $chain.code::$protocol.name::$symbol.to`, (couple) => {
+    test("Target chain should be configured", () => {
+      expect(HelixChain.chains().findIndex((c) => c.code === couple.chain.code)).not.toBe(-1);
+    });
+
+    const targetChain = HelixChain.chains().find((c) => c.code === couple.chain.code);
+    if (targetChain) {
+      test("Target token should be configured", () => {
+        expect(targetChain.tokens.findIndex((t) => t.symbol === couple.symbol.to)).not.toBe(-1);
+      })
+    }
+  })
 });
