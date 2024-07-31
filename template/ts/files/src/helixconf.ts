@@ -121,7 +121,11 @@ export class HelixChainConf {
   }
 
   token(symbol: string): ChainToken | undefined {
-    return this.tokens.find(item => _equalsIgnoreCase(item.symbol, symbol));
+    for (const token of this.tokens) {
+      if (token.alias.find(item => _equalsIgnoreCase(item, symbol))) {
+        return token;
+      }
+    }
   }
 
   messager(name: string): ChainMessager | undefined {
