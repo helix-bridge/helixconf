@@ -50,12 +50,16 @@ async function renderChain(lifecycle) {
 async function copyFiles(lifecycle) {
   const {conf, langTs} = lifecycle;
   const notCopies = [
-    'node_modules'
+    '/node_modules'
   ];
   await fs.copy(langTs.filesDir, langTs.baseDir, {
     overwrite: true,
     filter: (src, dest) => {
-      return !notCopies.contains(src);
+      console.log(src, dest);
+      for (const nc of notCopies) {
+        if (src.indexOf(nc) > -1) return false;
+      }
+      return true;
     },
   });
 }
