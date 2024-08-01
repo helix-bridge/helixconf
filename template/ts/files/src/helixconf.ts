@@ -1,6 +1,7 @@
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
+export type ChainIndexerType = 'thegraph' | 'ponder' | 'hyperindex';
 
 
 export interface ChainMessager {
@@ -18,7 +19,8 @@ export interface ChainToken {
 }
 
 export interface ChainIndexer {
-  apollo: string
+  type: ChainIndexerType
+  endpoint: string
 }
 
 export interface ChainCouple {
@@ -82,7 +84,7 @@ export interface HelixChainConfType {
   rpcs: string[]
   protocol: Partial<Record<HelixProtocolName, string>>
   messagers: ChainMessager[]
-  indexer: ChainIndexer,
+  indexers: ChainIndexer[],
   tokens: ChainToken[]
   couples: ChainCouple[]
 }
@@ -98,6 +100,10 @@ export class HelixChainConf {
     return this._data._network;
   }
 
+  get testnet(): boolean {
+    return this._network === 'testnets';
+  }
+
   get id(): bigint {
     return this._data.id;
   }
@@ -110,8 +116,8 @@ export class HelixChainConf {
     return this._data.name;
   }
 
-  get indexer(): ChainIndexer {
-    return this._data.indexer;
+  get indexers(): ChainIndexer[] {
+    return this._data.indexers;
   }
 
   get rpcs(): string[] {
@@ -175,6 +181,10 @@ export class HelixChainConf {
       return await options.picker(this.rpcs);
     }
     return this.pickRpcSync({strategy: strategy});
+  }
+
+  indexer(type: ChainIndexerType): ChainIndexer | undefined {
+    return this.indexers.find(item => item.type === type);
   }
 
   keys(): Array<keyof HelixChainConfType> {
@@ -255,7 +265,7 @@ export class HelixChainConf {
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
-      indexer: this.indexer,
+      indexers: this.indexers,
       protocol: this.protocol,
       messagers: this.messagers,
       tokens: this.tokens,
@@ -271,7 +281,7 @@ export class HelixChainConf {
       code: json.code,
       name: json.name,
       rpcs: json.rpcs,
-      indexer: json.indexer,
+      indexers: json.indexers,
       protocol: json.protocol,
       messagers: json.messagers,
       tokens: json.tokens,

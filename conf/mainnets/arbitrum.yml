@@ -10,6 +10,9 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x509354A4ebf98aCC7a65d2264694A65a2938cac9'
+indexers:
+  - type: thegraph
+    endpoint: https://thegraph.com/test
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
