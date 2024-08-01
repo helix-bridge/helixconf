@@ -17,6 +17,10 @@ export interface ChainToken {
   logo: string
 }
 
+export interface ChainIndexer {
+  apollo: string
+}
+
 export interface ChainCouple {
   category: string
   messager: ChainMessager
@@ -78,6 +82,7 @@ export interface HelixChainConfType {
   rpcs: string[]
   protocol: Partial<Record<HelixProtocolName, string>>
   messagers: ChainMessager[]
+  indexer: ChainIndexer,
   tokens: ChainToken[]
   couples: ChainCouple[]
 }
@@ -103,6 +108,10 @@ export class HelixChainConf {
 
   get name(): string {
     return this._data.name;
+  }
+
+  get indexer(): ChainIndexer {
+    return this._data.indexer;
   }
 
   get rpcs(): string[] {
@@ -246,6 +255,7 @@ export class HelixChainConf {
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
+      indexer: this.indexer,
       protocol: this.protocol,
       messagers: this.messagers,
       tokens: this.tokens,
@@ -261,6 +271,7 @@ export class HelixChainConf {
       code: json.code,
       name: json.name,
       rpcs: json.rpcs,
+      indexer: json.indexer,
       protocol: json.protocol,
       messagers: json.messagers,
       tokens: json.tokens,
