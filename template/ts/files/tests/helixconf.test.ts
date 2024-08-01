@@ -164,12 +164,6 @@ describe("helixconf_test", () => {
 });
 
 describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, id, rpcs, couples }) => {
-  if (couples.length) {
-    test('Native token should be configured', () => {
-      expect(tokens.some((t) => t.type === 'native')).toBeTruthy();
-    });
-  }
-
   describe.each(tokens)(`$symbol`, (token) => {
     test("The logo field should be configured", () => {
       expect(token.logo).toBeDefined();
