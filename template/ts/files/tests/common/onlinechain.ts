@@ -13,52 +13,52 @@ export interface OnlineChainInfo {
   contract: OnlineChainContract
 }
 
-type CheckCallback = (code: string, oci: OnlineChainInfo) => Promise<void>;
+// type CheckCallback = (code: string, oci: OnlineChainInfo) => Promise<void>;
 
 export class Onlinechain {
 
-  private readonly onlineChainMap: Record<string, OnlineChainInfo> = {};
+  private readonly _onlinechainMap: Record<string, OnlineChainInfo> = {};
 
 
   constructor(
-    private readonly chains: HelixChainConf[],
   ) {
   }
 
-  async init() {
-    for (const chain of this.chains) {
-      const provider = await new ethers.JsonRpcProvider(chain.rpcs[0]);
-      const cct = chain.contract;
-
-      let contractProxyAdmin;
-      if (cct["proxy-admin"]) {
-        contractProxyAdmin = new ProxyAdmin(cct["proxy-admin"], provider);
-      }
-
-      this.onlineChainMap[chain.code] = {
-        chain,
-        provider,
-        contract: {
-          proxyAdmin: contractProxyAdmin,
-        },
-      } as OnlineChainInfo;
-    }
+  public get onlinechains(): OnlineChainInfo[] {
+    return Object.values(this._onlinechainMap);
   }
 
-  private async _run(callback: CheckCallback) {
-    const names = Object.keys(this.onlineChainMap);
-    for (const name of names) {
-      await callback(name, this.onlineChainMap[name]);
-    }
+  public async onlinechain(chain: HelixChainConf): Promise<OnlineChainInfo> {
+    await this.init(chain);
+    return this._onlinechainMap[chain.code];
   }
 
-  async checkProxyAdmin() {
-    await this._run(async (code: string, oci: OnlineChainInfo) => {
-      const {chain, contract} = oci;
-      console.log(chain.code);
-      const owner = await contract.proxyAdmin?.owner();
-      console.log(owner, chain.additional['dao']);
-    });
+  private async init(chain: HelixChainConf) {
+    if (this._onlinechainMap[chain.code]) {
+      return;
+    }
+
+    const provider = await new ethers.JsonRpcProvider(chain.rpcs[0]);
+    const cct = chain.contract;
+
+    let contractProxyAdmin;
+    if (cct["proxy-admin"]) {
+      contractProxyAdmin = new ProxyAdmin(cct["proxy-admin"], provider);
+    }
+
+    this._onlinechainMap[chain.code] = {
+      chain,
+      provider,
+      contract: {
+        proxyAdmin: contractProxyAdmin,
+      },
+    } as OnlineChainInfo;
+    // console.log(`pushed ${chain.code} to onlinechains`);
+  }
+
+  async proxyAdminOwner(oci: OnlineChainInfo) {
+    const {chain, contract} = oci;
+    return await contract.proxyAdmin?.owner();
   }
 
 }

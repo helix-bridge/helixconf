@@ -71,6 +71,10 @@ export interface HelixChainConfType {
   couples: ChainCouple[]
 }
 
+export interface ChainsOptions {
+  network?: _NetworkType
+}
+
 export class HelixChainConf {
   private readonly _data: HelixChainConfType;
 

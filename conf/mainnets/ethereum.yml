@@ -4,8 +4,6 @@ code: ethereum
 name: Ethereum
 rpcs:
   - https://ethereum-rpc.publicnode.com
-additional:
-  dao: '0x000000000f681D85374225EdEeADC25560C1fb3F'
 contract:
   eth2arb-send: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
 messagers:

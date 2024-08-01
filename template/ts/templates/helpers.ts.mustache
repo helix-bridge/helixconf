@@ -1,7 +1,7 @@
 {{#chains}}
 import { {{ name | camel_case }}Chain } from './{{ network }}/{{ name }}'
 {{/chains}}
-import { HelixChainConf } from './helixconf'
+import { HelixChainConf, ChainsOptions } from './helixconf'
 
 
 export class HelixChain {
@@ -17,12 +17,15 @@ export class HelixChain {
     ];
   }
 
-  static chains(): HelixChainConf[] {
-    return [
+  static chains(options?: ChainsOptions): HelixChainConf[] {
+    const chains = [
       {{#chains}}
       HelixChain.{{ name | camel_case }},
       {{/chains}}
     ];
+    const network = options?.network;
+    if (!network) return chains;
+    return chains.filter(item => item._network === network);
   }
 
   static get(chain: string | number | bigint): HelixChainConf | undefined {

@@ -8,8 +8,6 @@ protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: null
   lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
-additional:
-  dao: '0x000000000f681D85374225EdEeADC25560C1fb3F'
 messagers:
   - name: layerzero
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'

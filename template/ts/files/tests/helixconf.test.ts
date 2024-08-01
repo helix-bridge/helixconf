@@ -1,28 +1,23 @@
-import { HelixChain } from "../src/";
+
 import {Onlinechain} from "./common/onlinechain";
+import {Category, TestSource} from "./common/testsource";
 
+describe("helixconf-test", () => {
 
-describe("helixconf_test", () => {
+  const oc = new Onlinechain();
 
-  const oc = new Onlinechain(HelixChain.chains());
-
-  beforeAll(async () => {
-    await oc.init();
+  test.each(TestSource.chains({category: Category.ProxyAdmin}))
+  ('proxy admin -> [$_data.code]', async (chain) => {
+    console.log('-----> ', chain.code, chain.rpcs);
+    const oci = await oc.onlinechain(chain);
+    const owner = await oc.proxyAdminOwner(oci);
+    expect(chain.additional.dao).toBe(owner);
   });
 
-  test("check-proxy-admin", async () => {
-    // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
-    // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
-    // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-    await oc.checkProxyAdmin();
+  test.each(TestSource.chains())('token -> [$_data.code]', async (chain) => {
+    const oci = await oc.onlinechain(chain);
   });
 
-  // test("test_chainId2", async () => {
-  //   // expect(42161n).toStrictEqual(HelixChain.arbitrum.id);
-  //   // expect(46n).toStrictEqual(HelixChain.darwiniaDvm.id);
-  //   // expect(44n).toStrictEqual(HelixChain.crabDvm.id);
-  //   await oc.test();
-  // });
 });
 
 // describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, rpcs, couples }) => {
