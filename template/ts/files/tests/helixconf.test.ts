@@ -62,14 +62,14 @@ describe.each(TestSource.chains())
     });
   });
 
-  // test(`should configure the correct proxy admin dao -> ${code}`, async () => {
-  //   if (TestSource.isSkip({category: Category.ProxyAdmin, chain})) {
-  //     return;
-  //   }
-  //   const oci = await oc.onlinechain(chain);
-  //   const owner = await oc.proxyAdminOwner(oci);
-  //   expect(chain.additional.dao).toBe(owner);
-  // });
+  test(`should configure the correct proxy admin dao -> ${code}`, async () => {
+    if (TestSource.isSkip({category: Category.ProxyAdmin, chain})) {
+      return;
+    }
+    const oci = await oc.onlinechain(chain);
+    const owner = await oc.proxyAdminOwner(oci);
+    expect(chain.additional.dao).toBe(owner);
+  });
 
 });
 
