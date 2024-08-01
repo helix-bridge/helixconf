@@ -92,7 +92,7 @@ couples:
   - chain: darwinia-dvm
     symbol: RING
     protocol: lnv3
-    fee: '10000000000000000000'
+    fee: '30000000000000000000'
     messager: msgline
 
   ## usdt
