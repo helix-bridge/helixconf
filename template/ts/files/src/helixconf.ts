@@ -11,6 +11,7 @@ export interface ChainMessager {
 
 export interface ChainToken {
   symbol: string
+  name: string
   address: string
   decimals: number
   type: TokenType
@@ -102,6 +103,10 @@ export class HelixChainConf {
 
   get testnet(): boolean {
     return this._network === 'testnets';
+  }
+
+  get nativeCurrency(): ChainToken {
+    return this.tokens.find(item => item.type === 'native')!;
   }
 
   get id(): bigint {

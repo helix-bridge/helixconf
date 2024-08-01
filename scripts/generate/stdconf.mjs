@@ -49,6 +49,9 @@ function _stdTokens(global, ccf) {
       stdAlias.push(token.symbol);
     }
     token.alias = stdAlias;
+    if (!token.name) {
+      token.name = token.symbol;
+    }
     if (!token.logo) {
       token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.symbol.toLowerCase()}.png`;
     }
