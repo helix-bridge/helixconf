@@ -60,5 +60,6 @@ async function copyFiles(lifecycle) {
       }
       return true;
     },
-  });  await fs.copy(`${workdir}/abis`, `${langTs.baseDir}/tests/abis`);
+  });
+  await fs.copy(`${workdir}/abis`, `${langTs.baseDir}/tests/abis`);
 }
