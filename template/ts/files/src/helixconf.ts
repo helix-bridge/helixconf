@@ -127,7 +127,11 @@ export class HelixChainConf {
   //   this._data[key] = value;
   // }
 
-  async rpc(options?: PickRPCOptions): Promise<string> {
+  rpc(): string {
+    return this.rpcs[0];
+  }
+
+  async pickRpc(options?: PickRPCOptions): Promise<string> {
     const strategy = options?.strategy ?? PickRPCStrategy.First;
     switch (strategy) {
       case PickRPCStrategy.Custom: {
