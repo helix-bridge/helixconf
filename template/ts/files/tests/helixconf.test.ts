@@ -62,7 +62,7 @@ describe.each(TestSource.chains())
     });
   });
 
-  test(`should configure the correct proxy admin dao -> ${code}`, async () => {
+  test(`should configure the correct proxy admin dao > ${code}`, async () => {
     if (TestSource.isSkip({category: Category.ProxyAdmin, chain})) {
       return;
     }
