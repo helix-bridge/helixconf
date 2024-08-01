@@ -29,7 +29,7 @@ export class HelixChain {
     const typeofName = typeof chain;
     if (typeofName === 'string') {
       const upperCaseChainName = chain.toString().toUpperCase();
-      return HelixChain.chains().find(item => item.name.toUpperCase() === upperCaseChainName);
+      return HelixChain.chains().find(item => item.code.toUpperCase() === upperCaseChainName);
     }
     if (typeofName === 'number' || typeofName === 'bigint') {
       return HelixChain.chains().find(item => item.id.toString() === chain.toString());

@@ -53,6 +53,23 @@ export interface CoupleFilter {
   symbol?: string
 }
 
+export interface PickRPCOptions {
+  strategy: PickRPCStrategy,
+  picker?: (rpcs: string[]) => Promise<string>,
+}
+
+export interface PickRPCOptionsSync {
+  strategy: PickRPCStrategy,
+  picker?: (rpcs: string[]) => string,
+}
+
+export enum PickRPCStrategy {
+  Custom,
+  First,
+  Best,
+  Random,
+}
+
 export interface HelixChainConfType {
   _network: _NetworkType
   id: bigint
@@ -108,6 +125,10 @@ export class HelixChainConf {
     return this._data.couples;
   }
 
+  get rpc(): string {
+    return this.pickRpcSync();
+  }
+
   get<K extends keyof HelixChainConfType>(key: K): HelixChainConfType[K] {
     return this._data[key];
   }
@@ -115,6 +136,37 @@ export class HelixChainConf {
   // set<K extends keyof HelixChainConfType>(key: K, value: HelixChainConfType[K]): void {
   //   this._data[key] = value;
   // }
+
+  pickRpcSync(options?: PickRPCOptionsSync): string {
+    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    switch (strategy) {
+      case PickRPCStrategy.Custom: {
+        if (!(options?.picker)) {
+          return this.rpcs[0];
+        }
+        return options.picker(this.rpcs);
+      }
+      case PickRPCStrategy.Random: {
+        const len = this.rpcs.length;
+        return this.rpcs[Math.floor(Math.random() * len)];
+      }
+      case PickRPCStrategy.Best: // todo: pick best rpc url, maybe check latency
+      case PickRPCStrategy.First:
+      default:
+        return this.rpcs[0];
+    }
+  }
+
+  async pickRpc(options?: PickRPCOptions): Promise<string> {
+    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    if (strategy === PickRPCStrategy.Custom) {
+      if (!(options?.picker)) {
+        return this.rpcs[0];
+      }
+      return await options.picker(this.rpcs);
+    }
+    return this.pickRpcSync({strategy: strategy});
+  }
 
   keys(): Array<keyof HelixChainConfType> {
     return Object.keys(this._data) as Array<keyof HelixChainConfType>;
