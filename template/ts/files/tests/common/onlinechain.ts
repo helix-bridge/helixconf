@@ -1,10 +1,11 @@
 import { ethers } from "ethers";
 
-import { HelixChainConf } from "../../src/";
-import { ProxyAdmin } from "./contracts"
+import {ChainToken, HelixChainConf} from "../../src/";
+import {Erc20, ProxyAdmin} from "./contracts"
 
 export interface OnlineChainContract {
   proxyAdmin?: ProxyAdmin
+  erc20?: Record<string, Erc20>
 }
 
 export interface OnlineChainInfo {
@@ -19,9 +20,7 @@ export class Onlinechain {
 
   private readonly _onlinechainMap: Record<string, OnlineChainInfo> = {};
 
-
-  constructor(
-  ) {
+  constructor() {
   }
 
   public get onlinechains(): OnlineChainInfo[] {
@@ -51,6 +50,7 @@ export class Onlinechain {
       provider,
       contract: {
         proxyAdmin: contractProxyAdmin,
+        erc20: {},
       },
     } as OnlineChainInfo;
     // console.log(`pushed ${chain.code} to onlinechains`);
@@ -59,6 +59,19 @@ export class Onlinechain {
   async proxyAdminOwner(oci: OnlineChainInfo) {
     const {chain, contract} = oci;
     return await contract.proxyAdmin?.owner();
+  }
+
+  async erc20(oci: OnlineChainInfo, token: ChainToken) {
+    const {provider, contract} = oci;
+    if (!contract.erc20) {
+      contract.erc20 = {};
+    }
+    if (contract.erc20[token.symbol]) {
+      return contract.erc20[token.symbol];
+    }
+    const contractErc20 = new Erc20(token.address, provider);
+    contract.erc20[token.symbol] = contractErc20;
+    return contractErc20;
   }
 
 }
