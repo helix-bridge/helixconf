@@ -16,17 +16,15 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/bnb.svg
+    logo: bnb.svg
   - symbol: USDT
     address: '0x55d398326f99059fF775485246999027B3197955'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
   - symbol: USDC
     address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 
 couples:
 

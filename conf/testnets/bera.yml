@@ -3,35 +3,48 @@ code: bera
 name: bera
 rpcs:
   - https://artio.rpc.berachain.com
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0x00e7EFf0826dfCDf2AA5945dFF710B48f4AA7E64'
 tokens:
-  - symbol: 'BERA'
+  - symbol: BERA
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/bera.svg
-  - symbol: 'usdt'
+    logo: bera.svg
+  - symbol: USDT
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
-  - symbol: 'usdc'
+  - symbol: USDC
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 
 couples:
   ## usdt
   - chain: arbitrum-sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+  - chain: arbitrum-sepolia
+    symbol: USDT
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
 
   ## usdc
   - chain: arbitrum-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv2-default
+    fee: '100000'
+    messager: layerzero
+
+  - chain: arbitrum-sepolia
+    symbol: USDC
+    protocol: lnv3
     fee: '100000'
     messager: layerzero
 

@@ -3,33 +3,34 @@ code: taiko-hekla
 name: taiko-hekla
 rpcs:
   - https://rpc.hekla.taiko.xyz
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0xD476650e03a45E70202b0bcAfa04E1513920f83a'
 tokens:
-  - symbol: eth
+  - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
-  - symbol: usdt
+  - symbol: USDT
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
-  - symbol: usdc
+  - symbol: USDC
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
 couples:
   ## usdt
   - chain: arbitrum-sepolia
-    symbol: usdt
+    symbol: USDT
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
 
   ## usdc
   - chain: arbitrum-sepolia
-    symbol: usdc
+    symbol: USDC
     protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero

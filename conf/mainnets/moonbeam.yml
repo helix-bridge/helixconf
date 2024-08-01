@@ -15,21 +15,21 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
+    logo: eth.png
   - symbol: xcUSDT
     alias:
       - USDT
-    name: xcUSDT
     address: '0xFFFFFFfFea09FB06d082fd1275CD48b191cbCD1d'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
+    logo: usdt.png
   - symbol: xcPINK
-    name: xcPINK
+    alias:
+      - PINK
     address: '0xffffffff30478fafbe935e466da114e14fb3563d'
     decimals: 10
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/pink.png
+    logo: pink.png
 couples:
 
   # usdt

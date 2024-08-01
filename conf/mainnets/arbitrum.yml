@@ -18,22 +18,18 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/eth.png
   - symbol: USDT
     address: '0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdt.png
   - symbol: USDC
     address: '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8'
     decimals: 6
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/usdc.png
   - symbol: RING
     address: '0x9e523234D36973f9e38642886197D023C88e307e'
     decimals: 18
     type: erc20
-    logo: https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/ring.png
 couples:
 
   ## eth
@@ -82,12 +78,12 @@ couples:
     fee: '100000000000000000000'
     messager: arbitrum-l2
   - chain: polygon
-    symbol: RING
+    symbol: RING/Ring
     protocol: lnv2-default
     fee: '100000000000000000000'
     messager: layerzero
   - chain: polygon
-    symbol: RING
+    symbol: RING/Ring
     protocol: lnv3
     fee: '100000000000000000000'
     messager: layerzero
