@@ -7,6 +7,10 @@ describe.each(TestSource.chains())
 ('helix chain config check -> $_data.code', (chain) => {
   const {tokens, code, rpcs, couples} = chain;
 
+  test('native token should be configured', () => {
+    expect(tokens.some((t) => t.type === 'native')).toBeTruthy();
+  });
+
   describe.each(tokens)(`check token [${code}]:$symbol`, (token) => {
     test(`the logo field should be configured > [${code}]:${token.symbol}`, () => {
       expect(token.logo).toBeDefined();
