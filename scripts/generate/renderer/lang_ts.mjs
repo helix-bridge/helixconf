@@ -12,7 +12,7 @@ export async function render(lifecycle) {
 
   await fs.mkdirp(langTs.srcDir);
   await clean(lifecycle);
-  await copyFiles(lifecycle)
+  await copyFiles(lifecycle);
   await renderChain(lifecycle);
 }
 
