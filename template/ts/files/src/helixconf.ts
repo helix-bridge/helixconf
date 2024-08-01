@@ -53,6 +53,17 @@ export interface CoupleFilter {
   symbol?: string
 }
 
+export interface PickRPCOptions {
+  strategy: PickRPCStrategy,
+  picker?: (rpcs: string[]) => Promise<string>,
+}
+
+export enum PickRPCStrategy {
+  Custom,
+  First,
+  Best,
+}
+
 export interface HelixChainConfType {
   _network: _NetworkType
   id: bigint
@@ -115,6 +126,22 @@ export class HelixChainConf {
   // set<K extends keyof HelixChainConfType>(key: K, value: HelixChainConfType[K]): void {
   //   this._data[key] = value;
   // }
+
+  async rpc(options?: PickRPCOptions): Promise<string> {
+    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    switch (strategy) {
+      case PickRPCStrategy.Custom: {
+        if (!(options?.picker)) {
+          return this.rpcs[0];
+        }
+        return await options.picker(this.rpcs);
+      }
+      case PickRPCStrategy.First:
+      case PickRPCStrategy.Best:
+      default:
+        return this.rpcs[0];
+    }
+  }
 
   keys(): Array<keyof HelixChainConfType> {
     return Object.keys(this._data) as Array<keyof HelixChainConfType>;
