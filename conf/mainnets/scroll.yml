@@ -10,6 +10,11 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x463d1730a8527ca58d48ef70c7460b9920346567'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-scroll/v1.0.1
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
