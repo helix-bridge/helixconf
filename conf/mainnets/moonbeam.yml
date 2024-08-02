@@ -42,7 +42,7 @@ couples:
   - chain: arbitrum
     symbol: xcUSDT/USDT
     protocol: lnv3
-    fee: '10000000'
+    fee: '1000'
     messager: msgline
     category: usdt
 
