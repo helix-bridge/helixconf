@@ -3,6 +3,11 @@ code: darwinia-dvm
 name: Darwinia
 rpcs:
   - https://rpc.darwinia.network
+indexers:
+  - type: thegraph
+    endpoint: https://thegraph-g1.darwinia.network/helix/subgraphs/name/lnv3/darwinia
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: RING
     address: '0x0000000000000000000000000000000000000000'

@@ -1,6 +1,7 @@
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
+export type ChainIndexerType = 'thegraph' | 'ponder' | 'hyperindex';
 
 
 export interface ChainMessager {
@@ -10,11 +11,17 @@ export interface ChainMessager {
 
 export interface ChainToken {
   symbol: string
+  name: string
   address: string
   decimals: number
   type: TokenType
   alias: string[]
   logo: string
+}
+
+export interface ChainIndexer {
+  type: ChainIndexerType
+  endpoint: string
 }
 
 export interface ChainCouple {
@@ -78,6 +85,7 @@ export interface HelixChainConfType {
   rpcs: string[]
   protocol: Partial<Record<HelixProtocolName, string>>
   messagers: ChainMessager[]
+  indexers: ChainIndexer[],
   tokens: ChainToken[]
   couples: ChainCouple[]
 }
@@ -93,6 +101,14 @@ export class HelixChainConf {
     return this._data._network;
   }
 
+  get testnet(): boolean {
+    return this._network === 'testnets';
+  }
+
+  get nativeCurrency(): ChainToken {
+    return this.tokens.find(item => item.type === 'native')!;
+  }
+
   get id(): bigint {
     return this._data.id;
   }
@@ -103,6 +119,10 @@ export class HelixChainConf {
 
   get name(): string {
     return this._data.name;
+  }
+
+  get indexers(): ChainIndexer[] {
+    return this._data.indexers;
   }
 
   get rpcs(): string[] {
@@ -166,6 +186,10 @@ export class HelixChainConf {
       return await options.picker(this.rpcs);
     }
     return this.pickRpcSync({strategy: strategy});
+  }
+
+  indexer(type: ChainIndexerType): ChainIndexer | undefined {
+    return this.indexers.find(item => item.type === type);
   }
 
   keys(): Array<keyof HelixChainConfType> {
@@ -246,6 +270,7 @@ export class HelixChainConf {
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
+      indexers: this.indexers,
       protocol: this.protocol,
       messagers: this.messagers,
       tokens: this.tokens,
@@ -261,6 +286,7 @@ export class HelixChainConf {
       code: json.code,
       name: json.name,
       rpcs: json.rpcs,
+      indexers: json.indexers,
       protocol: json.protocol,
       messagers: json.messagers,
       tokens: json.tokens,

@@ -10,6 +10,11 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-polygon/v1.0.0
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: MATIC
     address: '0x0000000000000000000000000000000000000000'

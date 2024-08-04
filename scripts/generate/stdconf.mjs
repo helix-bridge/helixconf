@@ -1,5 +1,9 @@
+import * as helper from './_helper.mjs'
+
 export function standardization(global, ccf) {
   _stdGeneric(global, ccf);
+  _stdMessagers(global, ccf);
+  _stdIndexers(global, ccf);
   _stdTokens(global, ccf);
   _stdCouples(global, ccf);
   _cleanConf(global, ccf);
@@ -11,6 +15,15 @@ function _stdGeneric(global, ccf) {
   if (!ccf.tokens) ccf.tokens = [];
   if (!ccf.rpcs) ccf.rpcs = [];
   if (!ccf.protocol) ccf.protocol = {};
+  if (!ccf.indexers) ccf.indexers = [];
+}
+
+function _stdMessagers(global, ccf) {
+  ccf.messagers = helper.filterArray(ccf.messagers, (one, two) => one.name === two.name);
+}
+
+function _stdIndexers(global, ccf) {
+  ccf.indexers = helper.filterArray(ccf.indexers, (one, two) => one.type === two.type);
 }
 
 function _stdCouples(global, ccf) {
@@ -36,6 +49,9 @@ function _stdTokens(global, ccf) {
       stdAlias.push(token.symbol);
     }
     token.alias = stdAlias;
+    if (!token.name) {
+      token.name = token.symbol;
+    }
     if (!token.logo) {
       token.logo = `https://raw.githubusercontent.com/helix-bridge/helix-ui/main/packages/assets/images/tokens/${token.symbol.toLowerCase()}.png`;
     }

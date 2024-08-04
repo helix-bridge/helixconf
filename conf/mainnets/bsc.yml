@@ -10,6 +10,11 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-bsc/v1.0.0
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: BNB
     address: '0x0000000000000000000000000000000000000000'

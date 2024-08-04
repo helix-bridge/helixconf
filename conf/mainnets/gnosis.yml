@@ -10,6 +10,11 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x3F7DF5866591e7E48D18C8EbeAE61Bc343a63283'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-gnosis/v1.0.0
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: xDAI
     address: '0x0000000000000000000000000000000000000000'
