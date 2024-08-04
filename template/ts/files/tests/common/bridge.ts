@@ -9,7 +9,7 @@ import {ChainToken, HelixChainConf, HelixProtocol} from "../../src";
 import {Messager} from "./messager";
 
 
-export class BridgeEndpoint {
+export class BridgeProtocol {
 
   private readonly bridgeContract: LnBridgeContract;
 
@@ -62,8 +62,8 @@ export class Bridge {
   constructor(
     private readonly sourceChain: HelixChainConf,
     private readonly targetChain: HelixChainConf,
-    private readonly sourceBridgeEndpoint: BridgeEndpoint,
-    private readonly targetBridgeEndpoint: BridgeEndpoint,
+    private readonly sourceBridgeEndpoint: BridgeProtocol,
+    private readonly targetBridgeEndpoint: BridgeProtocol,
     private readonly sourceMessager: Messager,
     private readonly targetMessager: Messager,
     private readonly protocol: HelixProtocol,

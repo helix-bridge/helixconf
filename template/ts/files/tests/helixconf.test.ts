@@ -1,6 +1,6 @@
 import {Onlinechain} from "./common/onlinechain";
 import {Category, TestSource} from "./common/testsource";
-import {BridgeEndpoint} from "./common/bridge";
+import {BridgeProtocol} from "./common/bridge";
 import {HelixChain} from "../src";
 
 const oc = new Onlinechain();
@@ -77,35 +77,35 @@ describe.each(TestSource.chains())
   //   expect(chain.additional.dao.toLowerCase()).toBe(owner.toLowerCase());
   // });
   //
-  describe.each(messagers)(`check messager [${code}]: $name`, message => {
-    // test(`check message dao > [${code}]:${message.name}`, async () => {
-    //   const oci = await oc.onlinechain(chain);
-    //   const messager = await oc.messager(oci, message);
-    //   const mdao = await messager.dao();
-    //   expect(chain.additional.dao.toLowerCase()).toBe(mdao.toLowerCase());
-    // });
-
-    test(`check message operator > [${code}]:${message.name}`, async () => {
-      const oci = await oc.onlinechain(chain);
-      const messager = await oc.messager(oci, message);
-      const moperator = await messager.operator();
-      expect(chain.additional.operator.toLowerCase()).toBe(moperator.toLowerCase());
-    });
-  });
-
-  // describe.each(couples)(`check coupe [${code}->$chain.code]: $symbol.from->$symbol.to`, couple => {
-  //   test(`check bridge dao > [${code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to}`, async () => {
-  //     for (const c of [
-  //       chain,
-  //       HelixChain.get(couple.chain.code)!
-  //     ]) {
-  //       const oci = await oc.onlinechain(c);
-  //       const be = oc.bridgeEndpoint(oci, couple.protocol);
-  //       const bdao = await be.dao();
-  //       expect(c.additional.dao.toLowerCase()).toBe(bdao.toLowerCase());
-  //     }
+  // describe.each(messagers)(`check messager [${code}]: $name`, message => {
+  //   test(`check message dao > [${code}]:${message.name}`, async () => {
+  //     const oci = await oc.onlinechain(chain);
+  //     const messager = await oc.messager(oci, message);
+  //     const mdao = await messager.dao();
+  //     expect(chain.additional.dao.toLowerCase()).toBe(mdao.toLowerCase());
+  //   });
+  //
+  //   test(`check message operator > [${code}]:${message.name}`, async () => {
+  //     const oci = await oc.onlinechain(chain);
+  //     const messager = await oc.messager(oci, message);
+  //     const moperator = await messager.operator();
+  //     expect(chain.additional.operator.toLowerCase()).toBe(moperator.toLowerCase());
   //   });
   // });
+
+  describe.each(couples)(`check coupe [${code}->$chain.code]: $symbol.from->$symbol.to`, couple => {
+    test(`check bridge dao > [${code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to}`, async () => {
+      for (const c of [
+        chain,
+        HelixChain.get(couple.chain.code)!
+      ]) {
+        const oci = await oc.onlinechain(c);
+        const be = oc.protocol(oci, couple.protocol);
+        const bdao = await be.dao();
+        expect(c.additional.dao.toLowerCase()).toBe(bdao.toLowerCase());
+      }
+    });
+  });
 
 });
 

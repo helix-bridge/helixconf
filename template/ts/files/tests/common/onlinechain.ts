@@ -9,7 +9,7 @@ import {
   LayerZeroMessager,
   Messager
 } from "./messager";
-import {BridgeEndpoint} from "./bridge";
+import {BridgeProtocol} from "./bridge";
 
 export interface OnlineChainContract {
   proxyAdmin?: ProxyAdmin
@@ -25,6 +25,8 @@ export interface OnlineChainInfo {
 export class Onlinechain {
 
   private readonly _onlinechainMap: Record<string, OnlineChainInfo> = {};
+  private readonly _messagerMap: Record<string, Messager> = {};
+  private readonly _protocolMap: Record<string, BridgeProtocol> = {};
 
   constructor() {
   }
@@ -63,20 +65,38 @@ export class Onlinechain {
   }
 
   messager(oci: OnlineChainInfo, cm: ChainMessager): Messager {
+    const mapKey = `${oci.chain.code}:${cm.name}`;
+    let messager: Messager = this._messagerMap[mapKey]
+    if (messager) {
+      return messager;
+    }
     switch (cm.name) {
       case "eth2arb-receive":
-        return new Eth2ArbReceiveService(cm.address!, oci.provider);
+        messager = new Eth2ArbReceiveService(cm.address!, oci.provider);
+        break;
       case "eth2arb-send":
-        return new Eth2ArbSendService(cm.address!, oci.provider);
+        messager = new Eth2ArbSendService(cm.address!, oci.provider);
+        break;
       case "msgline":
-        return new DarwiniaMsglineMessager(cm.address!, oci.provider);
+        messager = new DarwiniaMsglineMessager(cm.address!, oci.provider);
+        break;
       case "layerzero":
-        return new LayerZeroMessager(cm.address!, oci.provider);
+        messager = new LayerZeroMessager(cm.address!, oci.provider);
+        break;
     }
+    this._messagerMap[mapKey] = messager;
+    return messager;
   }
 
-  bridgeEndpoint(oci: OnlineChainInfo, protocol: HelixProtocol): BridgeEndpoint {
-    return new BridgeEndpoint(protocol, oci.provider);
+  protocol(oci: OnlineChainInfo, protocol: HelixProtocol): BridgeProtocol {
+    const mapKey = `${oci.chain.code}:${protocol.name}`;
+    let bp = this._protocolMap[mapKey];
+    if (bp) {
+      return bp;
+    }
+    bp = new BridgeProtocol(protocol, oci.provider);
+    this._protocolMap[mapKey] = bp;
+    return bp;
   }
 
   async proxyAdminOwner(oci: OnlineChainInfo) {
