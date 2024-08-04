@@ -11,6 +11,8 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+  - name: msgline
+    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 indexers:
   - type: thegraph
     endpoint: https://api.studio.thegraph.com/query/59403/lnv3-polygon/v1.0.0
