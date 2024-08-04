@@ -1,31 +1,31 @@
-export function mergeObjects(obj1, obj2) {
-  for (let key in obj1) {
-    if (!obj1.hasOwnProperty(key)) {
+export function mergeObjects(from, to) {
+  for (let key in from) {
+    if (!from.hasOwnProperty(key)) {
       continue;
     }
 
-    if (Array.isArray(obj1[key])) {
-      if (!Array.isArray(obj2[key])) {
-        obj2[key] = [];
+    if (Array.isArray(from[key])) {
+      if (!Array.isArray(to[key])) {
+        to[key] = [];
       }
-      obj2[key] = mergeArrays(obj1[key], obj2[key]);
-    } else if (typeof obj1[key] === 'object' && obj1[key] !== null) {
-      if (typeof obj2[key] !== 'object' || obj2[key] === null) {
-        obj2[key] = {};
+      to[key] = mergeArrays(to[key], from[key]);
+    } else if (typeof from[key] === 'object' && from[key] !== null) {
+      if (typeof to[key] !== 'object' || to[key] === null) {
+        to[key] = {};
       }
-      mergeObjects(obj1[key], obj2[key]);
-    } else if (!(key in obj2)) {
-      obj2[key] = obj1[key];
+      mergeObjects(from[key], to[key]);
+    } else if (!(key in to)) {
+      to[key] = from[key];
     }
   }
-  return obj2;
+  return to;
 }
 
-export function mergeArrays(arr1, arr2) {
-  arr1.forEach(item1 => {
-    if (Array.isArray(item1)) {
-      arr2.push(mergeArrays(item1, []));
-    } else if (typeof item1 === 'object' && item1 !== null) {
+export function mergeArrays(from, to) {
+  from.forEach(ltm => {
+    if (Array.isArray(ltm)) {
+      to.push(mergeArrays(ltm, []));
+    } else if (typeof ltm === 'object' && ltm !== null) {
       // let found = false;
       // for (let i = 0; i < arr2.length; i++) {
       //   if (typeof arr2[i] === 'object' && arr2[i] !== null && !Array.isArray(arr2[i])) {
@@ -38,11 +38,33 @@ export function mergeArrays(arr1, arr2) {
       //   }
       // }
       // if (!found) {
-        arr2.push(mergeObjects(item1, {}));
+
+      // arr2.push(mergeObjects(item1, {}));
+
+      to.push({
+        ...mergeObjects(ltm, {}),
+        '_customize': true,
+      });
+
       // }
-    } else if (!arr2.includes(item1)) {
-      arr2.push(item1);
+    } else if (!to.includes(ltm)) {
+      to.push(ltm);
     }
   });
-  return arr2;
+  return to;
+}
+
+export function filterArray(array, condition, mark = '_customize') {
+  return array.reduce((acc, current) => {
+    const existing = acc.find(item => condition ? condition(item, current) : false);
+    if (existing) {
+      if (current[mark]) {
+        const index = acc.indexOf(existing);
+        acc[index] = current;
+      }
+    } else {
+      acc.push(current);
+    }
+    return acc;
+  }, [])
 }

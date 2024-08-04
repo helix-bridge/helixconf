@@ -3,6 +3,7 @@ export type MessagerName = 'eth2arb-receive' | 'eth2arb-send' | 'msgline' | 'lay
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
 export type HelixContractName = 'proxy-admin' | 'protocol-fee-receiver';
+export type ChainIndexerType = 'thegraph' | 'ponder' | 'hyperindex';
 
 
 export interface ChainMessager {
@@ -12,11 +13,17 @@ export interface ChainMessager {
 
 export interface ChainToken {
   symbol: string
+  name: string
   address: string
   decimals: number
   type: TokenType
   alias: string[]
   logo: string
+}
+
+export interface ChainIndexer {
+  type: ChainIndexerType
+  endpoint: string
 }
 
 export interface ChainCouple {
@@ -55,6 +62,23 @@ export interface CoupleFilter {
   symbol?: string
 }
 
+export interface PickRPCOptions {
+  strategy: PickRPCStrategy,
+  picker?: (rpcs: string[]) => Promise<string>,
+}
+
+export interface PickRPCOptionsSync {
+  strategy: PickRPCStrategy,
+  picker?: (rpcs: string[]) => string,
+}
+
+export enum PickRPCStrategy {
+  Custom,
+  First,
+  Best,
+  Random,
+}
+
 export interface HelixChainConfType {
   _network: _NetworkType
   id: bigint
@@ -66,6 +90,7 @@ export interface HelixChainConfType {
   contract: Record<HelixContractName, string>
   additional: Record<string, string>
   messagers: ChainMessager[]
+  indexers: ChainIndexer[],
   tokens: ChainToken[]
   couples: ChainCouple[]
 }
@@ -85,6 +110,14 @@ export class HelixChainConf {
     return this._data._network;
   }
 
+  get testnet(): boolean {
+    return this._network === 'testnets';
+  }
+
+  get nativeCurrency(): ChainToken {
+    return this.tokens.find(item => item.type === 'native')!;
+  }
+
   get id(): bigint {
     return this._data.id;
   }
@@ -99,6 +132,10 @@ export class HelixChainConf {
 
   get name(): string {
     return this._data.name;
+  }
+
+  get indexers(): ChainIndexer[] {
+    return this._data.indexers;
   }
 
   get rpcs(): string[] {
@@ -129,6 +166,10 @@ export class HelixChainConf {
     return this._data.couples;
   }
 
+  get rpc(): string {
+    return this.pickRpcSync();
+  }
+
   get<K extends keyof HelixChainConfType>(key: K): HelixChainConfType[K] {
     return this._data[key];
   }
@@ -136,6 +177,41 @@ export class HelixChainConf {
   // set<K extends keyof HelixChainConfType>(key: K, value: HelixChainConfType[K]): void {
   //   this._data[key] = value;
   // }
+
+  pickRpcSync(options?: PickRPCOptionsSync): string {
+    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    switch (strategy) {
+      case PickRPCStrategy.Custom: {
+        if (!(options?.picker)) {
+          return this.rpcs[0];
+        }
+        return options.picker(this.rpcs);
+      }
+      case PickRPCStrategy.Random: {
+        const len = this.rpcs.length;
+        return this.rpcs[Math.floor(Math.random() * len)];
+      }
+      case PickRPCStrategy.Best: // todo: pick best rpc url, maybe check latency
+      case PickRPCStrategy.First:
+      default:
+        return this.rpcs[0];
+    }
+  }
+
+  async pickRpc(options?: PickRPCOptions): Promise<string> {
+    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    if (strategy === PickRPCStrategy.Custom) {
+      if (!(options?.picker)) {
+        return this.rpcs[0];
+      }
+      return await options.picker(this.rpcs);
+    }
+    return this.pickRpcSync({strategy: strategy});
+  }
+
+  indexer(type: ChainIndexerType): ChainIndexer | undefined {
+    return this.indexers.find(item => item.type === type);
+  }
 
   keys(): Array<keyof HelixChainConfType> {
     return Object.keys(this._data) as Array<keyof HelixChainConfType>;
@@ -218,6 +294,7 @@ export class HelixChainConf {
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
+      indexers: this.indexers,
       protocol: this.protocol,
       messagers: this.messagers,
       tokens: this.tokens,
@@ -236,6 +313,7 @@ export class HelixChainConf {
       code: json.code,
       name: json.name,
       rpcs: json.rpcs,
+      indexers: json.indexers,
       protocol: json.protocol,
       messagers: json.messagers,
       tokens: json.tokens,

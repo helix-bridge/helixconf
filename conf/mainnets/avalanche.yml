@@ -10,6 +10,9 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+indexers:
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: AVAX
     address: '0x0000000000000000000000000000000000000000'

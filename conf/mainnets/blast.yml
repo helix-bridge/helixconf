@@ -14,6 +14,9 @@ messagers:
     address: '0x98982b1685a63596834a05C1288dA7fbF27d684E'
   - name: layerzero
     address: '0x8A87497488073307E1a17e8A12475a94Afcb413f'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-blast/v1.0.0
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'

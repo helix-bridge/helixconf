@@ -15,6 +15,11 @@ messagers:
     address: '0x509354A4ebf98aCC7a65d2264694A65a2938cac9'
   - name: eth2arb-receive
     address: '0xc95D939Da72ECe8Bd794d42EaEd28974CDb0ADa2'
+indexers:
+  - type: thegraph
+    endpoint: https://api.studio.thegraph.com/query/59403/lnv3-arbitrum/v2.0.0
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
@@ -97,7 +102,7 @@ couples:
   - chain: darwinia-dvm
     symbol: RING
     protocol: lnv3
-    fee: '10000000000000000000'
+    fee: '30000000000000000000'
     messager: msgline
 
   ## usdt

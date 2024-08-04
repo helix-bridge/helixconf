@@ -3,6 +3,11 @@ code: darwinia-dvm
 name: Darwinia
 rpcs:
   - https://rpc.darwinia.network
+indexers:
+  - type: thegraph
+    endpoint: https://thegraph-g1.darwinia.network/helix/subgraphs/name/lnv3/darwinia
+  - type: hyperindex
+    endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
 tokens:
   - symbol: RING
     address: '0x0000000000000000000000000000000000000000'
@@ -41,7 +46,7 @@ couples:
   - chain: arbitrum
     symbol: RING
     protocol: lnv3
-    fee: '100000000000000000000'
+    fee: '30000000000000000000'
     messager: msgline
   - chain: ethereum
     symbol: RING
@@ -57,7 +62,7 @@ couples:
   - chain: polygon
     symbol: RING/Ring
     protocol: lnv3
-    fee: '100000000000000000000'
+    fee: '30000000000000000000'
     messager: msgline
 
   ## CRAB
