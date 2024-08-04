@@ -5,10 +5,8 @@ name: Ethereum
 rpcs:
   - https://eth.llamarpc.com
   - https://ethereum-rpc.publicnode.com
-contract:
-  eth2arb-send: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
 messagers:
-  - name: arbitrum-l2
+  - name: eth2arb-send
     address: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
   - name: msgline
     address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
@@ -28,7 +26,7 @@ couples:
     symbol: RING
     protocol: lnv2-default
     fee: '100000000000000000000'
-    messager: arbitrum-l2
+    messager: eth2arb-send
   - chain: darwinia-dvm
     symbol: RING
     protocol: lnv2-default

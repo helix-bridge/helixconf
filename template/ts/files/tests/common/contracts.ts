@@ -212,18 +212,18 @@ export abstract class LnBridgeContract extends LnAccessController {
     return await this.contract['paused']();
   }
 
-  abstract messager(remoteChainId: number): Promise<MessagerService>;
-  abstract tokenRegistered(remoteChainId: number, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean>;
+  abstract messager(remoteChainId: bigint): Promise<MessagerService>;
+  abstract tokenRegistered(remoteChainId: bigint, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean>;
 }
 
 export class LnDefaultBridgeContract extends LnBridgeContract {
   constructor(address: string, signer: CSigner) {
     super(address, abiLnDefaultBridge, signer);
   }
-  async messager(remoteChainId: number): Promise<MessagerService> {
+  async messager(remoteChainId: bigint): Promise<MessagerService> {
     return await this.contract['messagers'](remoteChainId);
   }
-  async tokenRegistered(remoteChainId: number, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
+  async tokenRegistered(remoteChainId: bigint, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
     // TODO
     return true;
   }
@@ -233,10 +233,10 @@ export class LnOppositeBridgeContract extends LnBridgeContract {
   constructor(address: string, signer: CSigner) {
     super(address, abiLnOppositeBridge, signer);
   }
-  async messager(remoteChainId: number): Promise<MessagerService> {
+  async messager(remoteChainId: bigint): Promise<MessagerService> {
     return await this.contract['messagers'](remoteChainId);
   }
-  async tokenRegistered(remoteChainId: number, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
+  async tokenRegistered(remoteChainId: bigint, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
     // TODO
     return true;
   }
@@ -261,22 +261,22 @@ export class Lnv3BridgeContract extends LnBridgeContract {
   constructor(address: string, signer: CSigner) {
     super(address, abiLnv3Bridge, signer);
   }
-  private tokenKey(remoteChainId: number, sourceToken: string, targetToken: string): string {
+  private tokenKey(remoteChainId: bigint, sourceToken: string, targetToken: string): string {
     return ethers.solidityPackedKeccak256([
       "uint256",
       "address",
       "address",
     ], [remoteChainId, sourceToken, targetToken]);
   }
-  async messager(remoteChainId: number): Promise<MessagerService> {
+  async messager(remoteChainId: bigint): Promise<MessagerService> {
     return await this.contract['messagers'](remoteChainId);
   }
-  async tokenRegistered(remoteChainId: number, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
+  async tokenRegistered(remoteChainId: bigint, srcToken: string, dstToken: string, srcDecimals: number, dstDecimals: number): Promise<boolean> {
     const tokenInfo = await this.tokenInfo(remoteChainId, srcToken, dstToken);
     const tokenKey = this.tokenKey(remoteChainId, srcToken, dstToken);
     return tokenInfo.config.sourceDecimals === srcDecimals && tokenInfo.config.targetDecimals === dstDecimals && tokenKey === await this.indexToTokenKey(tokenInfo.index);
   }
-  async tokenInfo(remoteChainId: number, sourceToken: string, targetToken: string): Promise<Lnv3TokenInfo> {
+  async tokenInfo(remoteChainId: bigint, sourceToken: string, targetToken: string): Promise<Lnv3TokenInfo> {
     const encode = this.tokenKey(remoteChainId, sourceToken, targetToken);
     return await this.contract['tokenInfos'](encode);
   }

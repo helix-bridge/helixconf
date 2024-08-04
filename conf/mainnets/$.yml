@@ -8,8 +8,8 @@ messagers:
     address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 additional:
   dao: '0xD0a0899c5dc2FEb253D57Ab0b7c6d1b1Fcbbf824'
+  operator: '0x88a39B052d477CfdE47600a7C9950a441Ce61cb4'
 contract:
   proxy-admin: '0x601dE3B81c7cE04BecE3b29e5cEe4F3251d250dB'
-  operator: '0x88a39B052d477CfdE47600a7C9950a441Ce61cb4'
   protocol-fee-receiver: '0x88a39B052d477CfdE47600a7C9950a441Ce61cb4'
 

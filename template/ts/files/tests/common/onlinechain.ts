@@ -1,7 +1,15 @@
-import { ethers } from "ethers";
+import {ethers} from "ethers";
 
-import {ChainToken, HelixChainConf} from "../../src/";
+import {ChainMessager, ChainToken, HelixChainConf, HelixProtocol} from "../../src/";
 import {Erc20, ProxyAdmin} from "./contracts"
+import {
+  DarwiniaMsglineMessager,
+  Eth2ArbReceiveService,
+  Eth2ArbSendService,
+  LayerZeroMessager,
+  Messager
+} from "./messager";
+import {BridgeEndpoint} from "./bridge";
 
 export interface OnlineChainContract {
   proxyAdmin?: ProxyAdmin
@@ -13,8 +21,6 @@ export interface OnlineChainInfo {
   provider: ethers.JsonRpcProvider
   contract: OnlineChainContract
 }
-
-// type CheckCallback = (code: string, oci: OnlineChainInfo) => Promise<void>;
 
 export class Onlinechain {
 
@@ -38,11 +44,11 @@ export class Onlinechain {
     }
 
     const provider = await new ethers.JsonRpcProvider(chain.rpcs[0]);
-    const cct = chain.contract;
+    const contract = chain.contract;
 
     let contractProxyAdmin;
-    if (cct["proxy-admin"]) {
-      contractProxyAdmin = new ProxyAdmin(cct["proxy-admin"], provider);
+    if (contract["proxy-admin"]) {
+      contractProxyAdmin = new ProxyAdmin(contract["proxy-admin"], provider);
     }
 
     this._onlinechainMap[chain.code] = {
@@ -54,6 +60,23 @@ export class Onlinechain {
       },
     } as OnlineChainInfo;
     // console.log(`pushed ${chain.code} to onlinechains`);
+  }
+
+  messager(oci: OnlineChainInfo, cm: ChainMessager): Messager {
+    switch (cm.name) {
+      case "eth2arb-receive":
+        return new Eth2ArbReceiveService(cm.address!, oci.provider);
+      case "eth2arb-send":
+        return new Eth2ArbSendService(cm.address!, oci.provider);
+      case "msgline":
+        return new DarwiniaMsglineMessager(cm.address!, oci.provider);
+      case "layerzero":
+        return new LayerZeroMessager(cm.address!, oci.provider);
+    }
+  }
+
+  bridgeEndpoint(oci: OnlineChainInfo, protocol: HelixProtocol): BridgeEndpoint {
+    return new BridgeEndpoint(protocol, oci.provider);
   }
 
   async proxyAdminOwner(oci: OnlineChainInfo) {

@@ -1,12 +1,12 @@
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
+export type MessagerName = 'eth2arb-receive' | 'eth2arb-send' | 'msgline' | 'layerzero';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
-export type HelixContractName = 'proxy-admin' | 'operator'
-  | 'protocol-fee-receiver' | 'eth2arb-receive' | 'eth2arb-send';
+export type HelixContractName = 'proxy-admin' | 'protocol-fee-receiver';
 
 
 export interface ChainMessager {
-  name: string
+  name: MessagerName
   address?: string
 }
 
