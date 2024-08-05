@@ -122,7 +122,7 @@ export class Onlinechain {
     });
   }
 
-  async proxyAdminOwner(oci: OnlineChainInfo): Promise<string> {
+  async proxyAdminOwner(oci: OnlineChainInfo): Promise<string | undefined> {
     const {contract} = oci;
     return await contract.proxyAdmin?.owner();
   }
