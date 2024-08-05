@@ -1,6 +1,6 @@
 import {ethers} from "ethers";
 
-import {ChainMessager, ChainToken, HelixChainConf, HelixProtocol} from "../../src/";
+import {ChainCouple, ChainMessager, ChainToken, HelixChain, HelixChainConf, HelixProtocol} from "../../src/";
 import {Erc20, ProxyAdmin} from "./contracts"
 import {
   DarwiniaMsglineMessager,
@@ -9,7 +9,7 @@ import {
   LayerZeroMessager,
   Messager
 } from "./messager";
-import {BridgeProtocol} from "./bridge";
+import {Bridge, BridgeProtocol} from "./bridge";
 
 export interface OnlineChainContract {
   proxyAdmin?: ProxyAdmin
@@ -65,7 +65,7 @@ export class Onlinechain {
   }
 
   messager(oci: OnlineChainInfo, cm: ChainMessager): Messager {
-    const mapKey = `${oci.chain.code}:${cm.name}`;
+    const mapKey = `${oci.chain.code}:${cm.address || cm.name}`;
     let messager: Messager = this._messagerMap[mapKey]
     if (messager) {
       return messager;
@@ -89,7 +89,7 @@ export class Onlinechain {
   }
 
   protocol(oci: OnlineChainInfo, protocol: HelixProtocol): BridgeProtocol {
-    const mapKey = `${oci.chain.code}:${protocol.name}`;
+    const mapKey = `${oci.chain.code}:${protocol.address}`;
     let bp = this._protocolMap[mapKey];
     if (bp) {
       return bp;
@@ -97,6 +97,29 @@ export class Onlinechain {
     bp = new BridgeProtocol(protocol, oci.provider);
     this._protocolMap[mapKey] = bp;
     return bp;
+  }
+
+  async bridge(soci: OnlineChainInfo, couple: ChainCouple): Promise<Bridge> {
+    const toci = await this.onlinechain(HelixChain.get(couple.chain.code)!);
+    const targetCouples = toci.chain.filterCouples({
+      chain: soci.chain.code,
+      symbolFrom: couple.symbol.to,
+      symbolTo: couple.symbol.from,
+    });
+    if (!targetCouples.length)
+      throw new Error(`not found target couple [${toci.chain.code}>${soci.chain.code}] [${couple.symbol.to}>${couple.symbol.from}]`);
+    const targetCouple = targetCouples[0];
+    const targetMessager = this.messager(toci, targetCouple.messager);
+    return new Bridge({
+      sourceChain: soci.chain,
+      targetChain: toci.chain,
+      sourceBridgeProtocol: this.protocol(soci, couple.protocol),
+      targetBridgeProtocol: this.protocol(toci, couple.protocol),
+      sourceMessager: this.messager(soci, couple.messager),
+      targetMessager: targetMessager,
+      sourceProtocol: couple.protocol,
+      targetProtocol: targetCouple.protocol,
+    });
   }
 
   async proxyAdminOwner(oci: OnlineChainInfo) {

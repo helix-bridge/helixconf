@@ -276,7 +276,7 @@ export class HelixChainConf {
       }
       if (filter.symbol) {
         const eq = _equalsIgnoreCase(item.symbol.from, filter.symbol)
-          || _equalsIgnoreCase(item.symbol.to, filter.symbol);
+          && _equalsIgnoreCase(item.symbol.to, filter.symbol);
         if (!eq) return false;
       }
       return true;
