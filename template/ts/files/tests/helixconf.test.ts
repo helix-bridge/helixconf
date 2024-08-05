@@ -77,7 +77,8 @@ describe.each(TestSource.chains())
     }
     const oci = await oc.onlinechain(chain);
     const owner = await oc.proxyAdminOwner(oci);
-    expect(chain.additional.dao.toLowerCase()).toBe(owner.toLowerCase());
+    expect(owner).toBeTruthy();
+    expect(chain.additional.dao.toLowerCase()).toBe(owner!.toLowerCase());
   });
 
   describe.each(messagers)(`check messager [${code}]: $name`, message => {
