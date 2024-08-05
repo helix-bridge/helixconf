@@ -1,5 +1,5 @@
 import {Onlinechain} from "./common/onlinechain";
-import {TestSource} from "./common/testsource";
+import {Category, TestSource} from "./common/testsource";
 import {HelixChain} from "../src";
 
 const oc = new Onlinechain();
