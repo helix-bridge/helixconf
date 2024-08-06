@@ -39,11 +39,11 @@ export class ProxyAdmin extends EthereumContract {
   }
 
   async owner(): Promise<string> {
-    return await this.contract['owner']();
+    return await this.contract['owner']().catch(e => console.error(e));
   }
 
   async getProxyAdmin(proxy: string): Promise<string> {
-    return await this.contract['getProxyAdmin'](proxy);
+    return await this.contract['getProxyAdmin'](proxy).catch(e => console.error(e));
   }
 }
 
@@ -54,19 +54,19 @@ export class Erc20 extends EthereumContract {
 
   // view
   async symbol(): Promise<string> {
-    return await this.contract['symbol']();
+    return await this.contract['symbol']().catch(e => console.error(e));
   }
 
   async name(): Promise<string> {
-    return await this.contract['name']();
+    return await this.contract['name']().catch(e => console.error(e));
   }
 
   async decimals(): Promise<number> {
-    return await this.contract['decimals']();
+    return await this.contract['decimals']().catch(e => console.error(e));
   }
 
   async balanceOf(address: string): Promise<bigint> {
-    return await this.contract['balanceOf'](address);
+    return await this.contract['balanceOf'](address).catch(e => console.error(e));
   }
 }
 
@@ -77,15 +77,15 @@ export class LnAccessController extends EthereumContract {
   }
 
   async dao(): Promise<string> {
-    return await this.contract['dao']();
+    return await this.contract['dao']().catch(e => console.error(e));
   }
 
   async operator(): Promise<string> {
-    return await this.contract['operator']();
+    return await this.contract['operator']().catch(e => console.error(e));
   }
 
   async callerWhiteList(sender: string): Promise<boolean> {
-    return await this.contract['callerWhiteList'](sender);
+    return await this.contract['callerWhiteList'](sender).catch(e => console.error(e));
   }
 }
 
@@ -104,11 +104,13 @@ export class Eth2ArbSendServiceContract extends MessagerContract {
   }
 
   async remoteMessager(): Promise<string> {
-    return (await this.contract['remoteMessager']()).toLowerCase();
+    const messager = await this.contract['remoteMessager']().catch(e => console.error(e));
+    return messager.toLowerCase();
   }
 
   async appPair(localApp: string): Promise<string> {
-    return (await this.contract['appPairs'](localApp)).toLowerCase();
+    const pair = await this.contract['appPairs'](localApp).catch(e => console.error(e));
+    return pair.toLowerCase();
   }
 }
 
@@ -118,7 +120,8 @@ export class Eth2ArbReceiveServiceContract extends MessagerContract {
   }
 
   async remoteMessagerAlias(): Promise<string> {
-    return (await this.contract['remoteMessagerAlias']()).toLowerCase();
+    const alias = await this.contract['remoteMessagerAlias']().catch(e => console.error(e));
+    return alias.toLowerCase();
   }
 
   async remoteMessager(): Promise<string> {
@@ -128,7 +131,8 @@ export class Eth2ArbReceiveServiceContract extends MessagerContract {
   }
 
   async appPair(localApp: string): Promise<string> {
-    return (await this.contract['appPairs'](localApp)).toLowerCase();
+    const pair = await this.contract['appPairs'](localApp).catch(e => console.error(e));
+    return pair.toLowerCase();
   }
 }
 
@@ -143,7 +147,7 @@ export class LayerZeroMessagerContract extends MessagerContract {
   }
 
   async remoteMessager(remoteChainId: bigint): Promise<RemoteMessager> {
-    return await this.contract['remoteMessagers'](remoteChainId);
+    return await this.contract['remoteMessagers'](remoteChainId).catch(e => console.error(e));
   }
 
   async remoteAppReceiver(remoteChainId: bigint, localApp: string): Promise<string> {
@@ -153,7 +157,8 @@ export class LayerZeroMessagerContract extends MessagerContract {
       "address",
     ], [remoteMessager.lzRemoteChainId, localApp]);
 
-    return (await this.contract['remoteAppReceivers'](hash)).toLowerCase();
+    const receiver = await this.contract['remoteAppReceivers'](hash).catch(e => console.error(e));
+    return receiver.toLowerCase();
   }
 
   async remoteAppSender(remoteChainId: bigint, localApp: string): Promise<string> {
@@ -163,7 +168,8 @@ export class LayerZeroMessagerContract extends MessagerContract {
       "address",
     ], [remoteMessager.lzRemoteChainId, localApp]);
 
-    return (await this.contract['remoteAppSenders'](hash)).toLowerCase();
+    const sender = await this.contract['remoteAppSenders'](hash).catch(e => console.error(e));
+    return sender.toLowerCase();
   }
 }
 
@@ -178,7 +184,7 @@ export class DarwiniaMsglineMessagerContract extends MessagerContract {
   }
 
   async remoteMessager(remoteChainId: bigint): Promise<MsglineRemoteMessager> {
-    return await this.contract['remoteMessagers'](remoteChainId);
+    return await this.contract['remoteMessagers'](remoteChainId).catch(e => console.error(e));
   }
 
   async remoteAppReceiver(remoteChainId: bigint, localApp: string): Promise<string> {
@@ -188,7 +194,8 @@ export class DarwiniaMsglineMessagerContract extends MessagerContract {
       "address",
     ], [remoteMessager.msglineRemoteChainId, localApp]);
 
-    return (await this.contract['remoteAppReceivers'](hash)).toLowerCase();
+    const receiver = await this.contract['remoteAppReceivers'](hash).catch(e => console.error(e));
+    return receiver.toLowerCase();
   }
 
   async remoteAppSender(remoteChainId: bigint, localApp: string): Promise<string> {
@@ -198,7 +205,8 @@ export class DarwiniaMsglineMessagerContract extends MessagerContract {
       "address",
     ], [remoteMessager.msglineRemoteChainId, localApp]);
 
-    return (await this.contract['remoteAppSenders'](hash)).toLowerCase();
+    const sender = await this.contract['remoteAppSenders'](hash).catch(e => console.error(e));
+    return sender.toLowerCase();
   }
 }
 
@@ -213,7 +221,7 @@ export abstract class LnBridgeContract extends LnAccessController {
   }
 
   async paused(): Promise<boolean> {
-    return await this.contract['paused']();
+    return await this.contract['paused']().catch(e => console.error(e));
   }
 
   abstract messager(remoteChainId: bigint): Promise<MessagerService>;
@@ -231,7 +239,7 @@ export class LnDefaultBridgeContract extends LnBridgeContract {
   }
 
   async messager(remoteChainId: bigint): Promise<MessagerService> {
-    return await this.contract['messagers'](remoteChainId);
+    return await this.contract['messagers'](remoteChainId).catch(e => console.error(e));
   }
 
   async tokenRegistered(
@@ -250,7 +258,7 @@ export class LnOppositeBridgeContract extends LnBridgeContract {
   }
 
   async messager(remoteChainId: bigint): Promise<MessagerService> {
-    return await this.contract['messagers'](remoteChainId);
+    return await this.contract['messagers'](remoteChainId).catch(e => console.error(e));
   }
 
   async tokenRegistered(
@@ -292,7 +300,7 @@ export class Lnv3BridgeContract extends LnBridgeContract {
   }
 
   async messager(remoteChainId: bigint): Promise<MessagerService> {
-    return await this.contract['messagers'](remoteChainId);
+    return await this.contract['messagers'](remoteChainId).catch(e => console.error(e));
   }
 
   async tokenRegistered(
@@ -313,11 +321,11 @@ export class Lnv3BridgeContract extends LnBridgeContract {
 
   async tokenInfo(remoteChainId: bigint, sourceToken: string, targetToken: string): Promise<Lnv3TokenInfo> {
     const encode = this.tokenKey(remoteChainId, sourceToken, targetToken);
-    return await this.contract['tokenInfos'](encode);
+    return await this.contract['tokenInfos'](encode).catch(e => console.error(e));
   }
 
   async indexToTokenKey(index: number): Promise<string> {
-    return await this.contract['tokenIndexer'](index);
+    return await this.contract['tokenIndexer'](index).catch(e => console.error(e));
   }
 }
 
