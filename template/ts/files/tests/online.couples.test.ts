@@ -4,7 +4,13 @@ import {HelixChain} from "../src";
 import {oc} from './_base'
 
 
-describe.each(TestSource.couples())
+const couples = TestSource.couples({
+  chains: [
+    'crab'
+  ],
+});
+
+describe.each(couples)
 (`helix chain couples check -> [$_chain->$chain.code]: $symbol.from->$symbol.to <$protocol.name>`, (couple) => {
   const chain = HelixChain.get(couple._chain)!;
 

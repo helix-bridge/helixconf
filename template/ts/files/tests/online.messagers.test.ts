@@ -3,8 +3,9 @@ import {HelixChain} from "../src";
 
 import {oc} from './_base'
 
+const messagers = TestSource.messagers({});
 
-describe.each(TestSource.messagers())('helix chain messagers verify -> [$_chain]:$name', (message) => {
+describe.each(messagers)('helix chain messagers verify -> [$_chain]:$name', (message) => {
   const chain = HelixChain.get(message._chain)!;
 
   test(`check message dao > [${chain.code}]:${message.name}`, async () => {

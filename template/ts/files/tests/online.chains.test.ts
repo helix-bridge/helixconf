@@ -3,7 +3,11 @@ import {Category, TestSource} from "./common/testsource";
 import {oc} from './_base'
 
 
-describe.each(TestSource.chains({category: Category.ProxyAdmin}))('helix chain contract verify -> $_data.code', (chain) => {
+const chains = TestSource.chains({
+  category: Category.ProxyAdmin
+});
+
+describe.each(chains)('helix chain contract verify -> $_data.code', (chain) => {
   const {tokens, code, rpcs, couples, messagers} = chain;
 
   test(`should configure the correct proxy admin dao > ${code}`, async () => {

@@ -11,6 +11,7 @@ export enum Category {
 export interface TestSourceChainsOptions {
   category?: Category
   network?: _NetworkType
+  chains?: string[]
 }
 
 export interface IsSkipOptions {
@@ -33,7 +34,13 @@ export interface TestChainMessager extends ChainMessager {
 
 export class TestSource {
   public static chains(options?: TestSourceChainsOptions): HelixChainConf[] {
-    const chains = HelixChain.chains({network: options?.network ?? 'mainnets'});
+    let chains = HelixChain.chains({network: options?.network ?? 'mainnets'});
+    const allows = (options?.chains ?? []).filter(item => item.toLowerCase());
+    if (allows.length) {
+      chains = chains.filter(
+        item => allows.includes(item.id.toString()) || allows.includes(item.code.toLowerCase().toString())
+      );
+    }
     const category = options?.category ?? Category.Default;
     switch (category) {
       case Category.ProxyAdmin:
