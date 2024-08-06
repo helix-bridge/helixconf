@@ -4,6 +4,7 @@ code: linea
 name: Linea
 rpcs:
   - https://1rpc.io/linea
+  - https://linea.drpc.org
   - https://linea.decubate.com
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
