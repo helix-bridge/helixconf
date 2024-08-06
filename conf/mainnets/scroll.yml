@@ -2,7 +2,11 @@ id: "534352"
 code: scroll
 name: Scroll
 rpcs:
+  - https://rpc.ankr.com/scroll
+  - https://rpc.scroll.io
   - https://scroll-mainnet.public.blastapi.io
+  - https://rpc.ankr.com/scroll/$ANKR_KEY
+  - https://scroll-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: null

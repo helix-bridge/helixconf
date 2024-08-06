@@ -3,6 +3,8 @@ code: zksync
 name: zksync
 rpcs:
   - https://mainnet.era.zksync.io
+  - https://rpc.ankr.com/zksync_era/$ANKR_KEY
+  - https://zksync-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: '0x767Bc046c989f5e63683fB530f939DD34b91ceAC'
   lnv2-opposite: null

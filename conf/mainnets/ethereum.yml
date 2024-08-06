@@ -3,6 +3,10 @@ code: ethereum
 name: Ethereum
 rpcs:
   - https://eth.llamarpc.com
+  - https://eth-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://mainnet.infura.io/v3/$INFURA_KEY
+  - https://rpc.ankr.com/eth/$ANKR_KEY
+  - https://eth-mainnet.blastapi.io/$BLAST_KEY
 messagers:
   - name: arbitrum-l2
     address: '0x78a6831Da2293fbEFd0d8aFB4D1f7CBB751e0119'
