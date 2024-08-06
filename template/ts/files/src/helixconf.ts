@@ -1,3 +1,5 @@
+import {pascalCase} from "change-case";
+
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
@@ -17,6 +19,11 @@ export interface ChainToken {
   type: TokenType
   alias: string[]
   logo: string
+}
+
+export interface ChainRpcOptions {
+  provider: string
+  endpoint: string
 }
 
 export interface ChainIndexer {
@@ -82,12 +89,66 @@ export interface HelixChainConfType {
   id: bigint
   code: string
   name: string
-  rpcs: string[]
+  rpcs: ChainRpc[]
   protocol: Partial<Record<HelixProtocolName, string>>
   messagers: ChainMessager[]
   indexers: ChainIndexer[],
   tokens: ChainToken[]
   couples: ChainCouple[]
+}
+
+export interface EndpointOptions {
+  key?: string
+  ankrKey?: string
+  infuraKey?: string
+  alchemyKey?: string
+  blastKey?: string
+}
+
+export class ChainRpc {
+  constructor(
+    private readonly options: ChainRpcOptions
+  ) {
+  }
+
+  private readEnv(key: string): string {
+    const isNodeEnv = process && process['env'];
+    return isNodeEnv ? process.env[key] : '';
+  }
+
+  endpoint(options?: EndpointOptions): string | undefined {
+    const {provider, endpoint} = this.options;
+    if (!endpoint) return;
+    if (!provider) {
+      return endpoint.indexOf('$') >= -1
+        ? undefined
+        : endpoint;
+    }
+    const stdProvider = provider.toLowerCase();
+    let replaceVar, authKey;
+    switch (stdProvider) {
+      case 'ankr':
+        replaceVar = '$ANKR_KEY';
+        authKey = options?.ankrKey ?? options?.key ?? this.readEnv('ANKR_KEY');
+        break;
+      case 'alchemy':
+        replaceVar = '$ALCHEMY_KEY';
+        authKey = options?.alchemyKey ?? options?.key ?? this.readEnv('ALCHEMY_KEY');
+        break;
+      case 'infura':
+        replaceVar = '$INFURA_KEY';
+        authKey = options?.infuraKey ?? options?.key ?? this.readEnv('INFURA_KEY');
+        break;
+      case 'blast':
+        replaceVar = '$BLAST_KEY';
+        authKey = options?.blastKey ?? options?.key ?? this.readEnv('BLAST_KEY');
+        break;
+      default:
+        return undefined;
+    }
+    return endpoint.replace(replaceVar, authKey);
+  }
+
 }
 
 export class HelixChainConf {
@@ -156,6 +217,16 @@ export class HelixChainConf {
   // set<K extends keyof HelixChainConfType>(key: K, value: HelixChainConfType[K]): void {
   //   this._data[key] = value;
   // }
+
+  private availableRpcs(options?: EndpointOptions): string[] {
+    const rpcs = [];
+    for (const rpc of this._data.rpcs) {
+      const endpoint = rpc.endpoint(options);
+      if (!endpoint) continue;
+      rpcs.push(rpc);
+    }
+    return rpcs;
+  }
 
   pickRpcSync(options?: PickRPCOptionsSync): string {
     const strategy = options?.strategy ?? PickRPCStrategy.First;
