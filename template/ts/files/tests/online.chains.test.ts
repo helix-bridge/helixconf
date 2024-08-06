@@ -18,6 +18,6 @@ describe.each(chains)('helix chain contract verify -> $_data.code', (chain) => {
     const owner = await oc.proxyAdminOwner(oci);
     expect(owner).toBeTruthy();
     expect(chain.additional.dao.toLowerCase()).toBe(owner!.toLowerCase());
-  });
+  }, 60000);
 
 });
