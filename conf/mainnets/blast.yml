@@ -2,6 +2,7 @@ id: "81457"
 code: blast
 name: Blast
 rpcs:
+  - https://rpc.ankr.com/blast
   - https://rpc.blast.io
   - https://blast-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://rpc.ankr.com/blast/$ANKR_KEY

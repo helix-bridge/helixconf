@@ -2,6 +2,8 @@ id: "10"
 code: op
 name: Op
 rpcs:
+  - https://rpc.ankr.com/optimism
+  - https://mainnet.optimism.io
   - https://optimism-rpc.publicnode.com
   - https://opt-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://rpc.ankr.com/optimism/$ANKR_KEY

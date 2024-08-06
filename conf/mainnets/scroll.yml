@@ -2,6 +2,8 @@ id: "534352"
 code: scroll
 name: Scroll
 rpcs:
+  - https://rpc.ankr.com/scroll
+  - https://rpc.scroll.io
   - https://scroll-mainnet.public.blastapi.io
   - https://rpc.ankr.com/scroll/$ANKR_KEY
   - https://scroll-mainnet.blastapi.io/$BLAST_KEY

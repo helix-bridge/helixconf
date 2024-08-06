@@ -2,6 +2,7 @@ id: "137"
 code: polygon
 name: Polygon
 rpcs:
+  - https://polygon-rpc.com
   - https://polygon-bor-rpc.publicnode.com
   - https://polygon-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://polygon-mainnet.infura.io/v3/$INFURA_KEY
