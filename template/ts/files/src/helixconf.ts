@@ -1,5 +1,3 @@
-import {pascalCase} from "change-case";
-
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
