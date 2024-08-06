@@ -5,6 +5,10 @@ name: Polygon
 rpcs:
   - https://polygon-rpc.com
   - https://polygon-bor-rpc.publicnode.com
+  - https://polygon-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://polygon-mainnet.infura.io/v3/$INFURA_KEY
+  - https://rpc.ankr.com/polygon/$ANKR_KEY
+  - https://polygon-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: null
@@ -193,7 +197,7 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
-  - chain: bsc 
+  - chain: bsc
     symbol: WBTC
     protocol: lnv3
     fee: '100'
@@ -203,7 +207,7 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
-  - chain: avalanche 
+  - chain: avalanche
     symbol: WBTC
     protocol: lnv3
     fee: '100'

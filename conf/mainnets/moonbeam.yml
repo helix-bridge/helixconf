@@ -3,6 +3,8 @@ code: moonbeam
 name: Moonbeam
 rpcs:
   - https://moonbeam-rpc.dwellir.com
+  - https://rpc.ankr.com/moonbeam/$ANKR_KEY
+  - https://moonbeam.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: null
   lnv2-opposite: null

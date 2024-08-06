@@ -4,6 +4,9 @@ name: Blast
 rpcs:
   - https://rpc.ankr.com/blast
   - https://rpc.blast.io
+  - https://blast-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://rpc.ankr.com/blast/$ANKR_KEY
+  - https://blastl2-mainnet.blastapi.io/$BLAST_KEY
 contract:
   proxy-admin: '0x7684389eAa307e25Af38A31873E31Cc3B513EE01'
 protocol:
