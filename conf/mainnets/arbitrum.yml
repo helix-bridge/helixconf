@@ -37,6 +37,18 @@ tokens:
     address: '0x9e523234D36973f9e38642886197D023C88e307e'
     decimals: 18
     type: erc20
+  - symbol: WBTC
+    address: '0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f'
+    decimals: 8
+    type: erc20
+  - symbol: DAI
+    address: '0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1'
+    decimals: 18
+    type: erc20
+  - symbol: LINK
+    address: '0xf97f4df75117a78c1A5a0DBb814Af92458539FB4'
+    decimals: 18
+    type: erc20
 couples:
 
   ## eth
@@ -187,6 +199,12 @@ couples:
     fee: '100000'
     messager: layerzero
     category: usdt
+  - chain: avalanche
+    symbol: USDT
+    protocol: lnv3
+    fee: '100000'
+    messager: layerzero
+    category: usdt
 
   ## usdc
   - chain: mantle
@@ -238,4 +256,65 @@ couples:
     symbol: USDC
     protocol: lnv3
     fee: '100000'
+    messager: layerzero
+
+  # wbtc
+  - chain: polygon
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: bsc 
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: op
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: avalanche 
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+
+  # dai
+  - chain: polygon
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: op
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: avalanche
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: DAI/xDAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+
+  # link
+  - chain: polygon
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: op
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: avalanche
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
     messager: layerzero

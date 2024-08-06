@@ -18,7 +18,7 @@ tokens:
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
-  - symbol: USDt
+  - symbol: USDT
     address: '0x9702230A8Ea53601f5cD2dc00fDBc13d4dF4A8c7'
     decimals: 6
     type: erc20
@@ -26,6 +26,19 @@ tokens:
     address: '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E'
     decimals: 6
     type: erc20
+  - symbol: WBTC
+    address: '0x152b9d0FdC40C096757F570A51E494bd4b943E50'
+    decimals: 8
+    type: erc20
+  - symbol: DAI
+    address: '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70'
+    decimals: 18
+    type: erc20
+  - symbol: LINK
+    address: '0x5947BB275c521040051D82396192181b413227A3'
+    decimals: 18
+    type: erc20
+
 couples:
   ## usdc
   - chain: base
@@ -69,3 +82,85 @@ couples:
     fee: '100000'
     messager: layerzero
 
+  # usdt
+  - chain: polygon
+    symbol: USDT
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: bsc 
+    symbol: USDT
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: op
+    symbol: USDT
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: arbitrum 
+    symbol: USDT
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+
+  # wbtc
+  - chain: polygon
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: bsc 
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: op
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+  - chain: arbitrum 
+    symbol: WBTC
+    protocol: lnv3
+    fee: '100'
+    messager: layerzero
+
+  # dai
+  - chain: polygon
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: op
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: DAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: gnosis
+    symbol: DAI/xDAI
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+
+  # link
+  - chain: polygon
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: op
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
+  - chain: arbitrum
+    symbol: LINK
+    protocol: lnv3
+    fee: '10000'
+    messager: layerzero
