@@ -3,6 +3,7 @@ lzid: '102'
 code: bsc
 name: bsc
 rpcs:
+  - https://binance.llamarpc.com
   - https://bsc-rpc.publicnode.com
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
@@ -76,11 +77,6 @@ couples:
   - chain: polygon
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
-    messager: layerzero
-  - chain: polygon-zkEvm
-    symbol: USDT
-    protocol: lnv2-default
     fee: '100000000000000000'
     messager: layerzero
   - chain: mantle

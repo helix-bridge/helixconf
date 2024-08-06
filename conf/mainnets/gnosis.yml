@@ -3,7 +3,7 @@ lzid: '145'
 code: gnosis
 name: Gnosis
 rpcs:
-  - https://gnosis-rpc.publicnode.com
+  - https://rpc.gnosischain.com
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: null

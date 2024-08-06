@@ -3,6 +3,8 @@ lzid: '214'
 code: scroll
 name: Scroll
 rpcs:
+  - https://rpc.ankr.com/scroll
+  - https://rpc.scroll.io
   - https://scroll-mainnet.public.blastapi.io
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'

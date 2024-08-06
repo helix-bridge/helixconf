@@ -3,6 +3,7 @@ lzid: '183'
 code: linea
 name: Linea
 rpcs:
+  - https://rpc.linea.build
   - https://linea.drpc.org
   - https://linea.decubate.com
   - https://1rpc.io/linea

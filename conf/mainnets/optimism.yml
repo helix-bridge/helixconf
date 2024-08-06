@@ -3,6 +3,8 @@ lzid: '111'
 code: op
 name: Op
 rpcs:
+  - https://rpc.ankr.com/optimism
+  - https://mainnet.optimism.io
   - https://optimism-rpc.publicnode.com
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'

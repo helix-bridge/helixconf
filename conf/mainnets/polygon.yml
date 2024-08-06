@@ -3,6 +3,7 @@ lzid: '109'
 code: polygon
 name: Polygon
 rpcs:
+  - https://polygon-rpc.com
   - https://polygon-bor-rpc.publicnode.com
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
@@ -68,11 +69,6 @@ couples:
     messager: msgline
 
   ## USDT
-  - chain: polygon-zkEvm
-    symbol: USDT
-    protocol: lnv2-default
-    fee: '100000'
-    messager: layerzero
   - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default
