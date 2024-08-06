@@ -2,6 +2,7 @@ import * as helper from './_helper.mjs'
 
 export function standardization(global, ccf) {
   _stdGeneric(global, ccf);
+  _stdRpcs(global, ccf);
   _stdMessagers(global, ccf);
   _stdIndexers(global, ccf);
   _stdTokens(global, ccf);
@@ -24,6 +25,20 @@ function _stdMessagers(global, ccf) {
 
 function _stdIndexers(global, ccf) {
   ccf.indexers = helper.filterArray(ccf.indexers, (one, two) => one.type === two.type);
+}
+
+function _stdRpcs(global, ccf) {
+  ccf.rpcs = ccf.rpcs.map(item => {
+    const rgv = /(\$.*?_KEY)/.exec(item.toString());
+    if (!rgv || !rgv.length) {
+      return {provider: 'PUBLIC', endpoint: item};
+    }
+    const rgvf = rgv[0];
+    return {
+      provider: rgvf.replace('$', '').replace('_KEY', ''),
+      endpoint: item,
+    };
+  });
 }
 
 function _stdCouples(global, ccf) {

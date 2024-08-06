@@ -185,7 +185,7 @@ describe.each(HelixChain.chains())(`$_data.name`, ({ tokens, code, id, rpcs, cou
           );
           const contractDecimals = await contract.decimals();
           expect(contractDecimals).toBe(BigInt(token.decimals));
-          
+
           if (id.toString() === '1' && token.symbol === 'RING') {
             // https://etherscan.io/address/0x9469D013805bFfB7D3DEBe5E7839237e535ec483#readContract#F8
           } else {

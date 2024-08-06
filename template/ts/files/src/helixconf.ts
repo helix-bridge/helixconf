@@ -68,12 +68,14 @@ export interface CoupleFilter {
 }
 
 export interface PickRPCOptions {
-  strategy: PickRPCStrategy,
-  picker?: (rpcs: string[]) => Promise<string>,
+  strategy: PickRPCStrategy
+  auth: AuthOptions
+  picker?: (rpcs: string[]) => Promise<string>
 }
 
 export interface PickRPCOptionsSync {
-  strategy: PickRPCStrategy,
+  strategy: PickRPCStrategy
+  auth?: AuthOptions
   picker?: (rpcs: string[]) => string,
 }
 
@@ -82,6 +84,8 @@ export enum PickRPCStrategy {
   First,
   Best,
   Random,
+  PrivateFirst,
+  PublicFirst,
 }
 
 export interface HelixChainConfType {
@@ -97,7 +101,7 @@ export interface HelixChainConfType {
   couples: ChainCouple[]
 }
 
-export interface EndpointOptions {
+export interface AuthOptions {
   key?: string
   ankrKey?: string
   infuraKey?: string
@@ -111,12 +115,24 @@ export class ChainRpc {
   ) {
   }
 
-  private readEnv(key: string): string {
-    const isNodeEnv = process && process['env'];
-    return isNodeEnv ? process.env[key] : '';
+  public static fromOptions(options: ChainRpcOptions[]): ChainRpc[] {
+    return options.map(item => new ChainRpc(item));
   }
 
-  endpoint(options?: EndpointOptions): string | undefined {
+  get provider(): string {
+    return this.options.provider;
+  }
+
+  get endpoint(): string {
+    return this.options.endpoint;
+  }
+
+  private readEnv(key: string): string {
+    const isNodeEnv = process && process['env'];
+    return isNodeEnv ? (process.env[key] ?? '') : '';
+  }
+
+  rpc(options?: AuthOptions): string | undefined {
     const {provider, endpoint} = this.options;
     if (!endpoint) return;
     if (!provider) {
@@ -127,6 +143,8 @@ export class ChainRpc {
     const stdProvider = provider.toLowerCase();
     let replaceVar, authKey;
     switch (stdProvider) {
+      case 'public':
+        break;
       case 'ankr':
         replaceVar = '$ANKR_KEY';
         authKey = options?.ankrKey ?? options?.key ?? this.readEnv('ANKR_KEY');
@@ -146,7 +164,12 @@ export class ChainRpc {
       default:
         return undefined;
     }
-    return endpoint.replace(replaceVar, authKey);
+    if (replaceVar && authKey) {
+      return endpoint.replace(replaceVar, authKey);
+    }
+    return stdProvider === 'public'
+      ? endpoint
+      : undefined;
   }
 
 }
@@ -187,7 +210,7 @@ export class HelixChainConf {
   }
 
   get rpcs(): string[] {
-    return this._data.rpcs;
+    return this.availableRpcs();
   }
 
   get protocol(): Partial<Record<HelixProtocolName, string>> {
@@ -218,18 +241,18 @@ export class HelixChainConf {
   //   this._data[key] = value;
   // }
 
-  private availableRpcs(options?: EndpointOptions): string[] {
+  private availableRpcs(options?: AuthOptions): string[] {
     const rpcs = [];
     for (const rpc of this._data.rpcs) {
-      const endpoint = rpc.endpoint(options);
+      const endpoint = rpc.rpc(options);
       if (!endpoint) continue;
-      rpcs.push(rpc);
+      rpcs.push(endpoint);
     }
     return rpcs;
   }
 
   pickRpcSync(options?: PickRPCOptionsSync): string {
-    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    const strategy = options?.strategy ?? PickRPCStrategy.PrivateFirst;
     switch (strategy) {
       case PickRPCStrategy.Custom: {
         if (!(options?.picker)) {
@@ -241,6 +264,32 @@ export class HelixChainConf {
         const len = this.rpcs.length;
         return this.rpcs[Math.floor(Math.random() * len)];
       }
+      case PickRPCStrategy.PrivateFirst: {
+        const privateRpcs = this._data.rpcs
+          .filter(item => item.provider !== 'PUBLIC')
+          .map(item => item.rpc(options?.auth));
+        const firstWorkRpc = privateRpcs.find(item => item);
+        const nextOptions = {
+          ...options,
+          strategy: PickRPCStrategy.First,
+        };
+        return firstWorkRpc
+          ? firstWorkRpc
+          : this.pickRpcSync(nextOptions)
+      }
+      case PickRPCStrategy.PublicFirst: {
+        const privateRpcs = this._data.rpcs
+          .filter(item => item.provider === 'PUBLIC')
+          .map(item => item.rpc(options?.auth));
+        const firstWorkRpc = privateRpcs.find(item => item);
+        const nextOptions = {
+          ...options,
+          strategy: PickRPCStrategy.First,
+        };
+        return firstWorkRpc
+          ? firstWorkRpc
+          : this.pickRpcSync(nextOptions)
+      }
       case PickRPCStrategy.Best: // todo: pick best rpc url, maybe check latency
       case PickRPCStrategy.First:
       default:
@@ -249,7 +298,7 @@ export class HelixChainConf {
   }
 
   async pickRpc(options?: PickRPCOptions): Promise<string> {
-    const strategy = options?.strategy ?? PickRPCStrategy.First;
+    const strategy = options?.strategy ?? PickRPCStrategy.PrivateFirst;
     if (strategy === PickRPCStrategy.Custom) {
       if (!(options?.picker)) {
         return this.rpcs[0];
@@ -356,7 +405,7 @@ export class HelixChainConf {
       id: BigInt(json.id),
       code: json.code,
       name: json.name,
-      rpcs: json.rpcs,
+      rpcs: ChainRpc.fromOptions(json.rpcs),
       indexers: json.indexers,
       protocol: json.protocol,
       messagers: json.messagers,
