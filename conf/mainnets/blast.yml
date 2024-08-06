@@ -3,6 +3,9 @@ code: blast
 name: Blast
 rpcs:
   - https://rpc.blast.io
+  - https://blast-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://rpc.ankr.com/blast/$ANKR_KEY
+  - https://blastl2-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: null
   lnv2-opposite: null
