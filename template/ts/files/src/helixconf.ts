@@ -244,7 +244,7 @@ export class HelixChainConf {
     }, []);
   }
 
-  filterCouples(filter: CoupleFilter): ChainCouple[] {
+  filterCouples(filter?: CoupleFilter): ChainCouple[] {
     if (!filter) return this.couples;
     return this.couples.filter(item => {
       if (filter.category) {

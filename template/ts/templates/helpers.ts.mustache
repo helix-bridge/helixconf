@@ -29,14 +29,10 @@ export class HelixChain {
   }
 
   static get(chain: string | number | bigint): HelixChainConf | undefined {
-    const typeofName = typeof chain;
-    if (typeofName === 'string') {
-      const upperCaseChainName = chain.toString().toUpperCase();
-      return HelixChain.chains().find(item => item.code.toUpperCase() === upperCaseChainName);
-    }
-    if (typeofName === 'number' || typeofName === 'bigint') {
-      return HelixChain.chains().find(item => item.id.toString() === chain.toString());
-    }
+    const upperCaseChainName = chain.toString().toUpperCase();
+    return HelixChain.chains().find(
+      item => item.code.toUpperCase() === upperCaseChainName || item.id.toString() === upperCaseChainName
+    );
   }
 }
 
