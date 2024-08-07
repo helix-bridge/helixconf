@@ -33,14 +33,14 @@ async function readConf(lifecycle) {
 }
 
 function reorganizationConf(conf) {
-  const names = Object.keys(conf);
+  const codes = Object.keys(conf);
   const newChainConf = {};
-  for (const name of names) {
-    const ccf = conf[name];
+  for (const code of codes) {
+    const ccf = conf[code];
     const nccf = helper.mergeObjects(ccf._global, ccf);
     stdconf.standardization(conf, nccf);
 
-    newChainConf[name] = nccf;
+    newChainConf[code] = nccf;
   }
   return newChainConf;
 }

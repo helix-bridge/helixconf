@@ -1,11 +1,13 @@
 export type HelixProtocolName = 'lnv2-default' | 'lnv2-opposite' | 'lnv3';
+export type MessagerName = 'eth2arb-receive' | 'eth2arb-send' | 'msgline' | 'layerzero';
 export type TokenType = 'native' | 'erc20';
 export type _NetworkType = 'mainnets' | 'testnets';
+export type HelixContractName = 'proxy-admin' | 'protocol-fee-receiver';
 export type ChainIndexerType = 'thegraph' | 'ponder' | 'hyperindex';
 
 
 export interface ChainMessager {
-  name: string
+  name: MessagerName
   address?: string
 }
 
@@ -67,7 +69,7 @@ export interface CoupleFilter {
 
 export interface PickRPCOptions {
   strategy: PickRPCStrategy
-  auth: AuthOptions
+  auth?: AuthOptions
   picker?: (rpcs: string[]) => Promise<string>
 }
 
@@ -89,14 +91,21 @@ export enum PickRPCStrategy {
 export interface HelixChainConfType {
   _network: _NetworkType
   id: bigint
+  lzid?: bigint
   code: string
   name: string
   rpcs: ChainRpc[]
-  protocol: Partial<Record<HelixProtocolName, string>>
+  protocol: Record<HelixProtocolName, string>
+  contract: Record<HelixContractName, string>
+  additional: Record<string, string>
   messagers: ChainMessager[]
   indexers: ChainIndexer[],
   tokens: ChainToken[]
   couples: ChainCouple[]
+}
+
+export interface ChainsOptions {
+  network?: _NetworkType
 }
 
 export interface AuthOptions {
@@ -195,6 +204,10 @@ export class HelixChainConf {
     return this._data.id;
   }
 
+  get lzid(): bigint | undefined {
+    return this._data.lzid;
+}
+
   get code(): string {
     return this._data.code;
   }
@@ -211,7 +224,15 @@ export class HelixChainConf {
     return this.availableRpcs();
   }
 
-  get protocol(): Partial<Record<HelixProtocolName, string>> {
+  get additional(): Record<string, string> {
+    return this._data.additional;
+  }
+
+  get contract(): Record<HelixContractName, string> {
+    return this._data.contract
+  }
+
+  get protocol(): Record<HelixProtocolName, string> {
     return this._data.protocol;
   }
 
@@ -341,7 +362,7 @@ export class HelixChainConf {
     }, []);
   }
 
-  filterCouples(filter: CoupleFilter): ChainCouple[] {
+  filterCouples(filter?: CoupleFilter): ChainCouple[] {
     if (!filter) return this.couples;
     return this.couples.filter(item => {
       if (filter.category) {
@@ -355,8 +376,8 @@ export class HelixChainConf {
         if (!eq) return false;
       }
       if (filter.protocol) {
-        const eq = _equalsIgnoreCase(item.protocol.name, filter.messager)
-          || _equalsIgnoreCase(item.protocol.address, filter.messager);
+        const eq = _equalsIgnoreCase(item.protocol.name, filter.protocol)
+          || _equalsIgnoreCase(item.protocol.address, filter.protocol);
         if (!eq) return false;
       }
       if (filter.chain) {
@@ -373,7 +394,7 @@ export class HelixChainConf {
       }
       if (filter.symbol) {
         const eq = _equalsIgnoreCase(item.symbol.from, filter.symbol)
-          || _equalsIgnoreCase(item.symbol.to, filter.symbol);
+          && _equalsIgnoreCase(item.symbol.to, filter.symbol);
         if (!eq) return false;
       }
       return true;
@@ -385,6 +406,9 @@ export class HelixChainConf {
     return {
       _network: this._network,
       id: this.id,
+      lzid: this.lzid,
+      contract: this.contract,
+      additional: this.additional,
       code: this.code,
       name: this.name,
       rpcs: this.rpcs,
@@ -401,6 +425,9 @@ export class HelixChainConf {
     return new HelixChainConf({
       _network: json._network,
       id: BigInt(json.id),
+      lzid: json.lzid ? BigInt(json.lzid) : undefined,
+      contract: json.contract,
+      additional: json.additional,
       code: json.code,
       name: json.name,
       rpcs: ChainRpc.fromOptions(json.rpcs),

@@ -1,39 +1,38 @@
 {{#chains}}
-import { {{ name | camel_case }}Chain } from './{{ network }}/{{ name }}'
+import { {{ code | camel_case }}Chain } from './{{ network }}/{{ code }}'
 {{/chains}}
-import { HelixChainConf } from './helixconf'
+import { HelixChainConf, ChainsOptions } from './helixconf'
 
 
 export class HelixChain {
 {{#chains}}
-  static {{ name | camel_case }}: HelixChainConf = {{ name | camel_case }}Chain;
+  static {{ code | camel_case }}: HelixChainConf = {{ code | camel_case }}Chain;
 {{/chains}}
 
-  static names(): string[] {
+  static codes(): string[] {
     return [
       {{#chains}}
-      '{{ name | camel_case }}',
+      '{{ code }}',
       {{/chains}}
     ];
   }
 
-  static chains(): HelixChainConf[] {
-    return [
+  static chains(options?: ChainsOptions): HelixChainConf[] {
+    const chains = [
       {{#chains}}
-      HelixChain.{{ name | camel_case }},
+      HelixChain.{{ code | camel_case }},
       {{/chains}}
     ];
+    const network = options?.network;
+    if (!network) return chains;
+    return chains.filter(item => item._network === network);
   }
 
   static get(chain: string | number | bigint): HelixChainConf | undefined {
-    const typeofName = typeof chain;
-    if (typeofName === 'string') {
-      const upperCaseChainName = chain.toString().toUpperCase();
-      return HelixChain.chains().find(item => item.code.toUpperCase() === upperCaseChainName);
-    }
-    if (typeofName === 'number' || typeofName === 'bigint') {
-      return HelixChain.chains().find(item => item.id.toString() === chain.toString());
-    }
+    const upperCaseChainName = chain.toString().toUpperCase();
+    return HelixChain.chains().find(
+      item => item.code.toUpperCase() === upperCaseChainName || item.id.toString() === upperCaseChainName
+    );
   }
 }
 

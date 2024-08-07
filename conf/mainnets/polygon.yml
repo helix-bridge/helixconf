@@ -1,4 +1,5 @@
-id: "137"
+id: '137'
+lzid: '109'
 code: polygon
 name: Polygon
 rpcs:
@@ -15,6 +16,8 @@ protocol:
 messagers:
   - name: layerzero
     address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+  - name: msgline
+    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 indexers:
   - type: thegraph
     endpoint: https://api.studio.thegraph.com/query/59403/lnv3-polygon/v1.0.0
@@ -61,7 +64,7 @@ couples:
   - chain: arbitrum
     symbol: Ring/RING
     protocol: lnv3
-    fee: '100000000000000000000'
+    fee: '30000000000000000000'
     messager: layerzero
   - chain: darwinia-dvm
     symbol: Ring/RING
@@ -70,11 +73,6 @@ couples:
     messager: msgline
 
   ## USDT
-  - chain: polygon-zkEvm
-    symbol: USDT
-    protocol: lnv2-default
-    fee: '100000'
-    messager: layerzero
   - chain: arbitrum
     symbol: USDT
     protocol: lnv2-default
@@ -199,57 +197,61 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: bsc
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: op
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: avalanche
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
 
   # dai
   - chain: arbitrum
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: op
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: gnosis
     symbol: DAI/xDAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
 
   # link
   - chain: arbitrum
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: op
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero

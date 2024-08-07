@@ -5,6 +5,7 @@
 node_modules
 
 /generated
+/coverage
 dist
 _tmp
 

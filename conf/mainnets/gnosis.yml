@@ -1,4 +1,5 @@
-id: "100"
+id: '100'
+lzid: '145'
 code: gnosis
 name: Gnosis
 rpcs:
@@ -151,20 +152,24 @@ couples:
   - chain: polygon
     symbol: xDAI/DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
+    category: dai
   - chain: op
     symbol: xDAI/DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
+    category: dai
   - chain: avalanche
     symbol: xDAI/DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
+    category: dai
   - chain: arbitrum
     symbol: xDAI/DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
+    category: dai

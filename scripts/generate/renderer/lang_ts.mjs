@@ -28,17 +28,17 @@ async function clean(lifecycle) {
 
 async function renderChain(lifecycle) {
   const {conf, langTs} = lifecycle;
-  const chainNames = Object.keys(conf);
+  const chainCodes = Object.keys(conf);
   const chainTpl = await fs.readFile(`${langTs.templateDir}/chain.ts.mustache`, 'utf8');
 
   const chainList = [];
-  for (const name of chainNames) {
-    const cf = conf[name];
+  for (const code of chainCodes) {
+    const cf = conf[code];
     const networkDir = `${langTs.srcDir}/${cf._network}`;
     await fs.mkdirp(networkDir);
     const output = Mustache.render(chainTpl, {chain: cf});
-    await fs.writeFile(`${networkDir}/${name}.ts`, output);
-    chainList.push({network: cf._network, name: name});
+    await fs.writeFile(`${networkDir}/${code}.ts`, output);
+    chainList.push({network: cf._network, code: code, name: cf.name});
   }
   chainList[chainList.length - 1].last = true
 
@@ -48,7 +48,7 @@ async function renderChain(lifecycle) {
 }
 
 async function copyFiles(lifecycle) {
-  const {conf, langTs} = lifecycle;
+  const {workdir, conf, langTs} = lifecycle;
   const notCopies = [
     '/node_modules'
   ];
@@ -61,4 +61,5 @@ async function copyFiles(lifecycle) {
       return true;
     },
   });
+  await fs.copy(`${workdir}/abis`, `${langTs.baseDir}/tests/abis`);
 }

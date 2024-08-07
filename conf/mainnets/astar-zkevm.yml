@@ -1,8 +1,11 @@
-id: "3776"
+id: '3776'
+lzid: '257'
 code: astar-zkevm
 name: Astar zkEVM
 rpcs:
   - https://rpc.startale.com/astar-zkevm
+contract:
+  proxy-admin: '0x7684389eAa307e25Af38A31873E31Cc3B513EE01'
 protocol:
   lnv2-default: null
   lnv2-opposite: null

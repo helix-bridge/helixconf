@@ -1,4 +1,4 @@
-id: "46"
+id: '46'
 code: darwinia-dvm
 name: Darwinia
 rpcs:
@@ -8,6 +8,9 @@ indexers:
     endpoint: https://thegraph-g1.darwinia.network/helix/subgraphs/name/lnv3/darwinia
   - type: hyperindex
     endpoint: https://indexer.bigdevenergy.link/e5a45aa/v1/graphql
+messagers:
+  - name: msgline
+    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 tokens:
   - symbol: RING
     address: '0x0000000000000000000000000000000000000000'

@@ -1,9 +1,12 @@
-id: "44"
+id: '44'
 code: crab-dvm
 name: Crab
 rpcs:
   - https://crab-rpc.dcdao.box
   - https://crab-rpc.darwinia.network
+messagers:
+  - name: msgline
+    address: '0x65Be094765731F394bc6d9DF53bDF3376F1Fc8B0'
 tokens:
   - symbol: CRAB
     address: '0x0000000000000000000000000000000000000000'
@@ -16,9 +19,7 @@ tokens:
     decimals: 18
     type: erc20
     logo: ring.png
-
 couples:
-
   ## CRAB
   - chain: darwinia-dvm
     symbol: CRAB/xWCRAB

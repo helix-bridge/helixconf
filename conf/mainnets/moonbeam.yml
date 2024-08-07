@@ -1,4 +1,5 @@
-id: "1284"
+id: '1284'
+lzid: '126'
 code: moonbeam
 name: Moonbeam
 rpcs:
@@ -50,14 +51,14 @@ couples:
     symbol: xcUSDT/USDT
     protocol: lnv3
     fee: '1000'
-    messager: msgline
+    messager: layerzero
     category: usdt
 
   ## pingk
   - chain: darwinia-dvm
     symbol: xcPINK/ahPINK
     protocol: lnv3
-    fee: '1000'
+    fee: '10000000'
     messager: msgline
     category: pink
 
