@@ -268,7 +268,7 @@ export class LnOppositeBridgeContract extends LnBridgeContract {
 }
 
 export interface Lnv3TokenConfigure {
-  protocolFee: number;
+  protocolFee: bigint;
   penalty: number;
   sourceDecimals: bigint;
   targetDecimals: bigint;
@@ -310,6 +310,7 @@ export class Lnv3BridgeContract extends LnBridgeContract {
     return {
       sourceDecimals: tokenInfo.config.sourceDecimals,
       targetDecimals: tokenInfo.config.targetDecimals,
+      protocolFee: tokenInfo.config.protocolFee,
       buildTokenKey: tokenKey.toLowerCase(),
       indexToTokenKey: indexToTokenKey.toLowerCase(),
     };
@@ -328,6 +329,7 @@ export class Lnv3BridgeContract extends LnBridgeContract {
 export interface TokenRegisteredInfo {
   sourceDecimals: bigint
   targetDecimals: bigint
+  protocolFee: bigint
   buildTokenKey: string
   indexToTokenKey: string
 }

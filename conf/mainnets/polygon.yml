@@ -64,7 +64,7 @@ couples:
   - chain: arbitrum
     symbol: Ring/RING
     protocol: lnv3
-    fee: '100000000000000000000'
+    fee: '30000000000000000000'
     messager: layerzero
   - chain: darwinia-dvm
     symbol: Ring/RING
@@ -221,37 +221,37 @@ couples:
   - chain: arbitrum
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: op
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: gnosis
     symbol: DAI/xDAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
 
   # link
   - chain: arbitrum
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: op
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero

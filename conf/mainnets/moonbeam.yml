@@ -58,7 +58,7 @@ couples:
   - chain: darwinia-dvm
     symbol: xcPINK/ahPINK
     protocol: lnv3
-    fee: '1000'
+    fee: '10000000'
     messager: msgline
     category: pink
 

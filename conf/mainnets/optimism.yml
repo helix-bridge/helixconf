@@ -213,37 +213,37 @@ couples:
   - chain: polygon
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: arbitrum
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: DAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
   - chain: gnosis
     symbol: DAI/xDAI
     protocol: lnv3
-    fee: '10000'
+    fee: '10000000000000000'
     messager: layerzero
 
   # link
   - chain: polygon
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: arbitrum
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: LINK
     protocol: lnv3
-    fee: '10000'
+    fee: '1000000000000000'
     messager: layerzero

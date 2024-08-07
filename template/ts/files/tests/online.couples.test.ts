@@ -63,6 +63,7 @@ describe.each(couples)
       expect(tokenRegistered).toBeTruthy();
       expect(sourceToken.decimals.toString()).toBe(tokenRegistered!.sourceDecimals.toString());
       expect(targetToken.decimals.toString()).toBe(tokenRegistered!.targetDecimals.toString());
+      expect(couple.fee.toString()).toBe(tokenRegistered!.protocolFee.toString());
       expect(tokenRegistered!.buildTokenKey).toBe(tokenRegistered!.indexToTokenKey);
     },
     60000
