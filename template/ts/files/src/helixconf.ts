@@ -69,7 +69,7 @@ export interface CoupleFilter {
 
 export interface PickRPCOptions {
   strategy: PickRPCStrategy
-  auth: AuthOptions
+  auth?: AuthOptions
   picker?: (rpcs: string[]) => Promise<string>
 }
 
