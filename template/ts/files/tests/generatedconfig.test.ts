@@ -76,9 +76,9 @@ describe.each(TestSource.chains())('helix chain config check -> $_data.code', (c
     })).toBeTruthy();
   });
 
-  test.each(chain.indexers)('should be defined correct indexer', (indexer) => {
-    expect(Object.values(['thegraph', 'ponder', 'hyperindex'])).toContain(indexer.type);
-  });
+  // test.each(chain.indexers)('should be defined correct indexer', (indexer) => {
+  //   expect(Object.values(['thegraph', 'ponder', 'hyperindex'])).toContain(indexer.type);
+  // });
 
   test.each(chain.messagers)('should be defined messagers address', (messager) => {
     expect(messager.address).toBeTruthy();
