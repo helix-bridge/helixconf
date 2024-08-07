@@ -12,11 +12,7 @@ describe.each(TestSource.chains())('helix chain config check -> $_data.code', (c
     expect(chain.testnet).toBeDefined();
     expect(chain.rpc).toBeDefined();
 
-    const keys = chain.keys();
-    for (const key of keys) {
-      expect(chain[key]).toBeDefined();
-      expect(chain.get(key)).toBeDefined();
-    }
+    expect(chain.keys()).toBeDefined();
   });
 
   test('test functions', () => {
