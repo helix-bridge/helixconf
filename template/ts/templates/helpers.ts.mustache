@@ -9,10 +9,10 @@ export class HelixChain {
   static {{ name | camel_case }}: HelixChainConf = {{ name | camel_case }}Chain;
 {{/chains}}
 
-  static names(): string[] {
+  static codes(): string[] {
     return [
       {{#chains}}
-      '{{ name | camel_case }}',
+      '{{ code }}',
       {{/chains}}
     ];
   }

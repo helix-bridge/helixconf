@@ -49,8 +49,8 @@ describe.each(TestSource.chains())('helix chain config check -> $_data.code', (c
     expect(chain.toJSON()).toBeDefined();
 
 
-    for (const name of HelixChain.names()) {
-      expect(HelixChain.get(name)).toBeDefined();
+    for (const code of HelixChain.codes()) {
+      expect(HelixChain.get(code)).toBeDefined();
     }
 
     expect(HelixChain.get(1)).toBeDefined();
