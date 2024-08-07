@@ -60,12 +60,12 @@ describe.each(couples)
         targetToken,
         targetChain
       );
-      if (!tokenRegistered) return;
       expect(tokenRegistered).toBeTruthy();
       expect(sourceToken.decimals.toString()).toBe(tokenRegistered!.sourceDecimals.toString());
       expect(targetToken.decimals.toString()).toBe(tokenRegistered!.targetDecimals.toString());
       expect(tokenRegistered!.buildTokenKey).toBe(tokenRegistered!.indexToTokenKey);
-    }
+    },
+    60000
   )
 
 });
