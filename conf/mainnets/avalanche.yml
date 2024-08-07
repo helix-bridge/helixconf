@@ -4,6 +4,10 @@ code: avalanche
 name: Avalanche
 rpcs:
   - https://rpc.ankr.com/avalanche
+  - https://avax-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://avalanche-mainnet.infura.io/v3/$INFURA_KEY
+  - https://rpc.ankr.com/avalanche/$ANKR_KEY
+  - https://ava-mainnet.blastapi.io/$BLAST_KEY/ext/bc/C/rpc
 protocol:
   lnv2-default: null
   lnv2-opposite: null
@@ -89,7 +93,7 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
-  - chain: bsc 
+  - chain: bsc
     symbol: USDT
     protocol: lnv3
     fee: '100'
@@ -99,7 +103,7 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
-  - chain: arbitrum 
+  - chain: arbitrum
     symbol: USDT
     protocol: lnv3
     fee: '100'
@@ -112,7 +116,7 @@ couples:
     fee: '100'
     messager: layerzero
     category: btc
-  - chain: bsc 
+  - chain: bsc
     symbol: WBTC
     protocol: lnv3
     fee: '100'
@@ -124,7 +128,7 @@ couples:
     fee: '100'
     messager: layerzero
     category: btc
-  - chain: arbitrum 
+  - chain: arbitrum
     symbol: WBTC
     protocol: lnv3
     fee: '100'

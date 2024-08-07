@@ -7,6 +7,9 @@ rpcs:
   - https://linea.drpc.org
   - https://linea.decubate.com
   - https://1rpc.io/linea
+  - https://linea-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
+  - https://linea-mainnet.infura.io/v3/$INFURA_KEY
+  - https://linea-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
   lnv2-opposite: null
