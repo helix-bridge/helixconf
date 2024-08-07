@@ -132,31 +132,29 @@ export class Bridge {
     return await this.sourceMessager.isConnected(this.targetChain, this.targetMessager.address());
   }
 
-  // async isTargetConnectedSource(): Promise<boolean> {
-  //   return await this.targetMessager.isConnected(this.sourceChain, this.sourceMessager.address());
-  // }
-
   async isSourceAppConnectedTarget(): Promise<boolean> {
-    return this.sourceMessager[
-      this.sourceProtocol.name === 'lnv2-default'
-        ? 'remoteAppIsReceiver'
-        : 'remoteAppIsSender'
-      ](
-      this.targetChain.id,
-      this.sourceBridgeProtocol.address,
-      this.targetBridgeProtocol.address,
-    );
+    if (this.sourceProtocol.name === 'lnv3') {
+        return await this.sourceMessager.remoteAppIsReceiver(
+            this.targetChain,
+            this.sourceBridgeProtocol.address,
+            this.targetBridgeProtocol.address
+        ) && await this.sourceMessager.remoteAppIsSender(
+            this.targetChain,
+            this.sourceBridgeProtocol.address,
+            this.targetBridgeProtocol.address
+        );
+    } else if (this.sourceProtocol.name === 'lnv2-default') {
+        return await this.sourceMessager.remoteAppIsReceiver(
+            this.targetChain,
+            this.sourceBridgeProtocol.address,
+            this.targetBridgeProtocol.address
+        );
+    } else {
+        return await this.sourceMessager.remoteAppIsSender(
+            this.targetChain,
+            this.sourceBridgeProtocol.address,
+            this.targetBridgeProtocol.address
+        );
+    }
   }
-
-  // async isTargetAppConnectedSource(): Promise<boolean> {
-  //   return this.targetMessager[
-  //     this.targetProtocol.name === 'lnv2-default'
-  //       ? 'remoteAppIsSender'
-  //       : 'remoteAppIsReceiver'
-  //     ](
-  //     this.sourceChain.id,
-  //     this.targetBridgeProtocol.address,
-  //     this.sourceBridgeProtocol.address,
-  //   )
-  // }
 }

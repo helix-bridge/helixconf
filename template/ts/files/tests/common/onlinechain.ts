@@ -105,16 +105,17 @@ export class Onlinechain {
       chain: soci.chain.code,
       symbolFrom: couple.symbol.to,
       symbolTo: couple.symbol.from,
+      protocol: couple.protocol.name,
     });
-    if (!targetCouples.length)
-      throw new Error(`not found target couple [${toci.chain.code}>${soci.chain.code}] [${couple.symbol.to}>${couple.symbol.from}]`);
+    if (targetCouples.length !== 1)
+      throw new Error(`couples size ${targetCouples.length} invalid [${toci.chain.code}>${soci.chain.code}] [${couple.symbol.to}>${couple.symbol.from}]`);
     const targetCouple = targetCouples[0];
     const targetMessager = this.messager(toci, targetCouple.messager);
     return new Bridge({
       sourceChain: soci.chain,
       targetChain: toci.chain,
       sourceBridgeProtocol: this.protocol(soci, couple.protocol),
-      targetBridgeProtocol: this.protocol(toci, couple.protocol),
+      targetBridgeProtocol: this.protocol(toci, targetCouple.protocol),
       sourceMessager: this.messager(soci, couple.messager),
       targetMessager: targetMessager,
       sourceProtocol: couple.protocol,

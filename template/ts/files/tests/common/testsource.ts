@@ -75,6 +75,10 @@ export class TestSource {
     return couples;
   }
 
+  public static validCategorys(): string[] {
+    return ["USDT", "RING", "DAI", "LINK", "ETH", "BTC", "USDC", "PINK"];
+  }
+
   public static messagers(options?: TestSourceChainsOptions): TestChainMessager[] {
     const chains = TestSource.chains(options);
     const messagers = [];

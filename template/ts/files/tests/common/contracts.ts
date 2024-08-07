@@ -150,23 +150,21 @@ export class LayerZeroMessagerContract extends MessagerContract {
     return await this.contract['remoteMessagers'](remoteChainId).catch(e => console.error(e));
   }
 
-  async remoteAppReceiver(remoteChainId: bigint, localApp: string): Promise<string> {
-    const remoteMessager = await this.remoteMessager(remoteChainId);
+  async remoteAppReceiver(remoteLzId: bigint, localApp: string): Promise<string> {
     const hash = ethers.solidityPackedKeccak256([
       "uint16",
       "address",
-    ], [remoteMessager.lzRemoteChainId, localApp]);
+    ], [remoteLzId, localApp]);
 
     const receiver = await this.contract['remoteAppReceivers'](hash).catch(e => console.error(e));
     return receiver.toLowerCase();
   }
 
-  async remoteAppSender(remoteChainId: bigint, localApp: string): Promise<string> {
-    const remoteMessager = await this.remoteMessager(remoteChainId);
+  async remoteAppSender(remoteLzId: bigint, localApp: string): Promise<string> {
     const hash = ethers.solidityPackedKeccak256([
       "uint16",
       "address",
-    ], [remoteMessager.lzRemoteChainId, localApp]);
+    ], [remoteLzId, localApp]);
 
     const sender = await this.contract['remoteAppSenders'](hash).catch(e => console.error(e));
     return sender.toLowerCase();
@@ -188,22 +186,20 @@ export class DarwiniaMsglineMessagerContract extends MessagerContract {
   }
 
   async remoteAppReceiver(remoteChainId: bigint, localApp: string): Promise<string> {
-    const remoteMessager = await this.remoteMessager(remoteChainId);
     const hash = ethers.solidityPackedKeccak256([
       "uint256",
       "address",
-    ], [remoteMessager.msglineRemoteChainId, localApp]);
+    ], [remoteChainId, localApp]);
 
     const receiver = await this.contract['remoteAppReceivers'](hash).catch(e => console.error(e));
     return receiver.toLowerCase();
   }
 
   async remoteAppSender(remoteChainId: bigint, localApp: string): Promise<string> {
-    const remoteMessager = await this.remoteMessager(remoteChainId);
     const hash = ethers.solidityPackedKeccak256([
       "uint256",
       "address",
-    ], [remoteMessager.msglineRemoteChainId, localApp]);
+    ], [remoteChainId, localApp]);
 
     const sender = await this.contract['remoteAppSenders'](hash).catch(e => console.error(e));
     return sender.toLowerCase();

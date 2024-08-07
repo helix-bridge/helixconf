@@ -193,21 +193,25 @@ couples:
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: bsc 
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: op
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
   - chain: avalanche 
     symbol: WBTC
     protocol: lnv3
     fee: '100'
     messager: layerzero
+    category: btc
 
   # dai
   - chain: arbitrum

@@ -258,8 +258,8 @@ export class HelixChainConf {
         if (!eq) return false;
       }
       if (filter.protocol) {
-        const eq = _equalsIgnoreCase(item.protocol.name, filter.messager)
-          || _equalsIgnoreCase(item.protocol.address, filter.messager);
+        const eq = _equalsIgnoreCase(item.protocol.name, filter.protocol)
+          || _equalsIgnoreCase(item.protocol.address, filter.protocol);
         if (!eq) return false;
       }
       if (filter.chain) {

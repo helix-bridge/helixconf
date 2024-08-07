@@ -1,4 +1,5 @@
 id: '1284'
+lzid: '126'
 code: moonbeam
 name: Moonbeam
 rpcs:
@@ -48,7 +49,7 @@ couples:
     symbol: xcUSDT/USDT
     protocol: lnv3
     fee: '1000'
-    messager: msgline
+    messager: layerzero
     category: usdt
 
   ## pingk

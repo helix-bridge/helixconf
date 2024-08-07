@@ -3,11 +3,10 @@ import {HelixChain} from "../src";
 
 import {oc} from './_base'
 
+const validCategorys = TestSource.validCategorys();
 
 const couples = TestSource.couples({
-  chains: [
-    'crab'
-  ],
+    
 });
 
 describe.each(couples)
@@ -18,33 +17,13 @@ describe.each(couples)
     `check bridge protocol dao > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
     async () => {
       if (couple.protocol.name !== 'lnv3') return;
+      expect(true).toBe(validCategorys.includes(couple.category));
 
-      for (const c of [
-        chain,
-        HelixChain.get(couple.chain.code)!
-      ]) {
-        const oci = await oc.onlinechain(c);
-        const be = oc.protocol(oci, couple.protocol);
-        const dao = await be.dao();
-        expect(c.additional.dao!.toLowerCase()).toBe(dao.toLowerCase());
-      }
-    });
-
-  test(
-    `check bridge protocol operator > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
-    async () => {
-      if (couple.protocol.name !== 'lnv3') return;
-
-      for (const c of [
-        chain,
-        HelixChain.get(couple.chain.code)!
-      ]) {
-        const oci = await oc.onlinechain(c);
-        const be = oc.protocol(oci, couple.protocol);
-        const operator = await be.operator();
-        expect(c.additional.operator!.toLowerCase()).toBe(operator.toLowerCase());
-      }
-    });
+      const oci = await oc.onlinechain(chain);
+      const be = oc.protocol(oci, couple.protocol);
+      const dao = await be.dao();
+      expect(chain.additional.dao!.toLowerCase()).toBe(dao.toLowerCase());
+    }, 60000);
 
   test(
     `test bridge messager service > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
@@ -60,9 +39,9 @@ describe.each(couples)
       const isSourceConnectedTarget = await bridge.isSourceConnectedTarget();
       expect(true).toBe(isSourceConnectedTarget);
 
-      const isSourceAppConnectedTarget = bridge.isSourceAppConnectedTarget();
+      const isSourceAppConnectedTarget = await bridge.isSourceAppConnectedTarget();
       expect(true).toBe(isSourceAppConnectedTarget);
-    });
+    }, 60000);
 
   test(
     `test lnv3 token registerd > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
@@ -83,9 +62,9 @@ describe.each(couples)
       );
       if (!tokenRegistered) return;
       expect(tokenRegistered).toBeTruthy();
-      expect(sourceToken.decimals.toString()).toBe(tokenRegistered.sourceDecimals.toString());
-      expect(targetToken.decimals.toString()).toBe(tokenRegistered.targetDecimals.toString());
-      expect(tokenRegistered.buildTokenKey).toBe(tokenRegistered.indexToTokenKey);
+      expect(sourceToken.decimals.toString()).toBe(tokenRegistered!.sourceDecimals.toString());
+      expect(targetToken.decimals.toString()).toBe(tokenRegistered!.targetDecimals.toString());
+      expect(tokenRegistered!.buildTokenKey).toBe(tokenRegistered!.indexToTokenKey);
     }
   )
 

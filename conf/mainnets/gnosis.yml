@@ -151,18 +151,22 @@ couples:
     protocol: lnv3
     fee: '10000'
     messager: layerzero
+    category: dai
   - chain: op
     symbol: xDAI/DAI
     protocol: lnv3
     fee: '10000'
     messager: layerzero
+    category: dai
   - chain: avalanche
     symbol: xDAI/DAI
     protocol: lnv3
     fee: '10000'
     messager: layerzero
+    category: dai
   - chain: arbitrum
     symbol: xDAI/DAI
     protocol: lnv3
     fee: '10000'
     messager: layerzero
+    category: dai
