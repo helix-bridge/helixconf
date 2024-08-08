@@ -82,7 +82,7 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
-  - chain: zircuit
+  - chain: zircuit-sepolia
     symbol: USDC
     protocol: lnv3
     fee: '1000000000000000'
@@ -154,7 +154,7 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
     category: usdt
-  - chain: zircuit
+  - chain: zircuit-sepolia
     symbol: USDT
     protocol: lnv3
     fee: '1000000000000000'

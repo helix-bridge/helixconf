@@ -1,8 +1,8 @@
 id: "48899"
-code: zircuit
-name: zircuit
+code: zircuit-sepolia
+name: Zircuit sepolia
 rpcs:
-  - https://zircuit1.p2pify.com
+  - https://zircuit1-testnet.p2pify.com/
 protocol:
   lnv2-default: null
   lnv2-opposite: null
