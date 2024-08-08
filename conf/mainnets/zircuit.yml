@@ -1,0 +1,28 @@
+id: '48900'
+lzid: '303'
+code: zircuit
+name: Zircuit
+rpcs:
+  - https://zircuit1-mainnet.p2pify.com
+protocol:
+  lnv2-default: null
+  lnv2-opposite: null
+  lnv3: '0xbA5D580B18b6436411562981e02c8A9aA1776D10'
+messagers:
+  - name: layerzero
+    address: '0x61B6B8c7C00aA7F060a2BEDeE6b11927CC9c3eF1'
+indexers:
+  - type: thegraph
+    endpoint: https://thegraph-g1.darwinia.network/helix/subgraphs/name/lnv3/zircuit
+tokens:
+  - symbol: ETH
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+couples:
+  ## ETH
+  - chain: arbitrum
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero

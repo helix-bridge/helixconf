@@ -26,5 +26,5 @@ describe.each(tokens)('helix chain tokens verify -> [$_chain]:$symbol', (token) 
       //const contractSymbol = await erc20.symbol();
       //expect(contractSymbol).toBe(token.symbol);
     //}
-  }, 60000);
+  }, 120000);
 });

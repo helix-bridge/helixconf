@@ -91,6 +91,11 @@ couples:
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
+  - chain: zircuit
+    symbol: ETH
+    protocol: lnv3
+    fee: '10000000000000'
+    messager: layerzero
 
   ## ring
   - chain: ethereum
