@@ -6,8 +6,8 @@ rpcs:
   - https://rpc.ankr.com/bsc
   - https://binance.llamarpc.com
   - https://bsc-rpc.publicnode.com
-  - https://bnb-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://rpc.ankr.com/bsc/$ANKR_KEY
+  - https://bnb-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://bsc-mainnet.blastapi.io/$BLAST_KEY
 protocol:
   lnv2-default: '0x94C614DAeFDbf151E1BB53d6A201ae5fF56A9337'
