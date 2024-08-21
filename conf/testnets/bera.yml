@@ -33,6 +33,7 @@ couples:
   ## usdc
   - chain: arbitrum-sepolia
     symbol: USDC
-    protocol: lnv2-default
+    protocol: lnv3
     fee: '100000000000000000'
     messager: layerzero
+
