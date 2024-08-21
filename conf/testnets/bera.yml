@@ -1,12 +1,12 @@
-id: '80085'
+id: '80084'
 code: bera
 name: bera
 rpcs:
-  - https://artio.rpc.berachain.com
+  - https://bartio.rpc.berachain.com
 protocol:
   lnv2-default: null
   lnv2-opposite: null
-  lnv3: '0x00e7EFf0826dfCDf2AA5945dFF710B48f4AA7E64'
+  lnv3: '0x5fc7BC9F21e5dAd364756CC92c43C1E553580107'
 tokens:
   - symbol: BERA
     address: '0x0000000000000000000000000000000000000000'
@@ -14,11 +14,11 @@ tokens:
     type: native
     logo: bera.svg
   - symbol: USDT
-    address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+    address: '0x1E58fE2262301bdC13D9F691D01808045B4D3d0B'
     decimals: 18
     type: erc20
   - symbol: USDC
-    address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+    address: '0x4F20B4631dB09A699477550cc83503E5925E3654'
     decimals: 18
     type: erc20
 
@@ -26,25 +26,13 @@ couples:
   ## usdt
   - chain: arbitrum-sepolia
     symbol: USDT
-    protocol: lnv2-default
-    fee: '100000'
-    messager: layerzero
-  - chain: arbitrum-sepolia
-    symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '100000000000000000'
     messager: layerzero
 
   ## usdc
   - chain: arbitrum-sepolia
     symbol: USDC
     protocol: lnv2-default
-    fee: '100000'
+    fee: '100000000000000000'
     messager: layerzero
-
-  - chain: arbitrum-sepolia
-    symbol: USDC
-    protocol: lnv3
-    fee: '100000'
-    messager: layerzero
-
