@@ -23,12 +23,6 @@ couples:
     fee: '100000000000000000'
     messager: layerzero
     category: usdc
-  - chain: bera
-    symbol: USDC
-    protocol: lnv2-default
-    fee: '100000000000000000'
-    messager: layerzero
-    category: usdc
   - chain: taiko-hekla
     symbol: USDC
     protocol: lnv2-default
@@ -90,12 +84,6 @@ couples:
     category: usdc
 
   - chain: morph
-    symbol: USDT
-    protocol: lnv2-default
-    fee: '100000000000000000'
-    messager: layerzero
-    category: usdt
-  - chain: bera
     symbol: USDT
     protocol: lnv2-default
     fee: '100000000000000000'
