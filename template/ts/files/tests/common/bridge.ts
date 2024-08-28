@@ -1,34 +1,39 @@
 import {
-  CSigner, LayerZeroMessagerContract,
   LnBridgeContract,
   LnDefaultBridgeContract,
   LnOppositeBridgeContract,
-  Lnv3BridgeContract, MessagerService, TokenRegisteredInfo
+  Lnv3BridgeContract,
+  MessagerService,
+  TokenRegisteredInfo
 } from "./contracts";
 import {ChainToken, HelixChainConf, HelixProtocol} from "../../src";
 import {Messager} from "./messager";
+import {OnlineChainInfo} from "./onlinechain";
 
 
 export class BridgeProtocol {
 
   public _daoOnChain?: string;
   public _operatorOnChain?: string;
+  public _messagerOnChain?: MessagerService;
+  private _tokenRegisteredMap: Record<string, TokenRegisteredInfo> = {};
 
   private readonly bridgeContract: LnBridgeContract;
 
   constructor(
     protocol: HelixProtocol,
-    signer: CSigner
+    oci: OnlineChainInfo
   ) {
+    const provider = oci.provider;
     switch (protocol.name) {
       case "lnv2-default":
-        this.bridgeContract = new LnDefaultBridgeContract(protocol.address, signer);
+        this.bridgeContract = new LnDefaultBridgeContract(protocol.address, provider);
         break
       case "lnv2-opposite":
-        this.bridgeContract = new LnOppositeBridgeContract(protocol.address, signer);
+        this.bridgeContract = new LnOppositeBridgeContract(protocol.address, provider);
         break
       case "lnv3":
-        this.bridgeContract = new Lnv3BridgeContract(protocol.address, signer);
+        this.bridgeContract = new Lnv3BridgeContract(protocol.address, provider);
         break
     }
   }
@@ -37,8 +42,9 @@ export class BridgeProtocol {
     return this.bridgeContract.address;
   }
 
-  messager(remoteChainId: bigint): Promise<MessagerService> {
-    return this.bridgeContract.messager(remoteChainId);
+  async messager(remoteChainId: bigint): Promise<MessagerService> {
+    this._messagerOnChain ||= await this.bridgeContract.messager(remoteChainId);
+    return this._messagerOnChain;
   }
 
   async dao(): Promise<string> {
@@ -56,11 +62,16 @@ export class BridgeProtocol {
     tokenTo: ChainToken,
     targetChain: HelixChainConf
   ): Promise<TokenRegisteredInfo | undefined> {
-    return await this.bridgeContract.tokenRegistered(
+    const _ck = `${targetChain.code}__${tokenFrom.address}__${tokenTo.address}`;
+    if (this._tokenRegisteredMap[_ck]) {
+      return this._tokenRegisteredMap[_ck];
+    }
+    this._tokenRegisteredMap[_ck] = await this.bridgeContract.tokenRegistered(
       targetChain.id,
       tokenFrom.address,
       tokenTo.address,
     );
+    return this._tokenRegisteredMap[_ck]
   }
 
 }
@@ -134,27 +145,27 @@ export class Bridge {
 
   async isSourceAppConnectedTarget(): Promise<boolean> {
     if (this.sourceProtocol.name === 'lnv3') {
-        return await this.sourceMessager.remoteAppIsReceiver(
-            this.targetChain,
-            this.sourceBridgeProtocol.address,
-            this.targetBridgeProtocol.address
-        ) && await this.sourceMessager.remoteAppIsSender(
-            this.targetChain,
-            this.sourceBridgeProtocol.address,
-            this.targetBridgeProtocol.address
-        );
+      return await this.sourceMessager.remoteAppIsReceiver(
+        this.targetChain,
+        this.sourceBridgeProtocol.address,
+        this.targetBridgeProtocol.address
+      ) && await this.sourceMessager.remoteAppIsSender(
+        this.targetChain,
+        this.sourceBridgeProtocol.address,
+        this.targetBridgeProtocol.address
+      );
     } else if (this.sourceProtocol.name === 'lnv2-default') {
-        return await this.sourceMessager.remoteAppIsReceiver(
-            this.targetChain,
-            this.sourceBridgeProtocol.address,
-            this.targetBridgeProtocol.address
-        );
+      return await this.sourceMessager.remoteAppIsReceiver(
+        this.targetChain,
+        this.sourceBridgeProtocol.address,
+        this.targetBridgeProtocol.address
+      );
     } else {
-        return await this.sourceMessager.remoteAppIsSender(
-            this.targetChain,
-            this.sourceBridgeProtocol.address,
-            this.targetBridgeProtocol.address
-        );
+      return await this.sourceMessager.remoteAppIsSender(
+        this.targetChain,
+        this.sourceBridgeProtocol.address,
+        this.targetBridgeProtocol.address
+      );
     }
   }
 }

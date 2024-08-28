@@ -13,5 +13,5 @@ describe.each(messagers)('helix chain messagers verify -> [$_chain]:$name', (mes
     const messager = await oc.messager(oci, message);
     const dao = await messager.dao();
     expect(chain.additional.dao.toLowerCase()).toBe(dao.toLowerCase());
-  }, 120000);
+  }, 60000);
 });

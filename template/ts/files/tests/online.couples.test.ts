@@ -6,7 +6,7 @@ import {oc} from './_base'
 const validCategorys = TestSource.validCategorys();
 
 const couples = TestSource.couples({
-    
+
 });
 
 describe.each(couples)
@@ -23,7 +23,7 @@ describe.each(couples)
       const be = oc.protocol(oci, couple.protocol);
       const dao = await be.dao();
       expect(chain.additional.dao!.toLowerCase()).toBe(dao.toLowerCase());
-    }, 120000);
+    }, 60000);
 
   test(
     `test bridge messager service > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
@@ -41,7 +41,7 @@ describe.each(couples)
 
       const isSourceAppConnectedTarget = await bridge.isSourceAppConnectedTarget();
       expect(true).toBe(isSourceAppConnectedTarget);
-    }, 120000);
+    }, 60000);
 
   test(
     `test lnv3 token registerd > [${chain.code}->${couple.chain.code}]: ${couple.symbol.from}->${couple.symbol.to} (${couple.protocol.name})`,
@@ -66,7 +66,7 @@ describe.each(couples)
       expect(couple.fee.toString()).toBe(tokenRegistered!.protocolFee.toString());
       expect(tokenRegistered!.buildTokenKey).toBe(tokenRegistered!.indexToTokenKey);
     },
-    120000
+    60000
   )
 
 });

@@ -1,7 +1,6 @@
 import {ethers} from "ethers";
 
 import {ChainCouple, ChainMessager, ChainToken, HelixChain, HelixChainConf, HelixProtocol} from "../../src/";
-import {Erc20, ProxyAdmin} from "./contracts"
 import {
   DarwiniaMsglineMessager,
   Eth2ArbReceiveService,
@@ -10,10 +9,11 @@ import {
   Messager
 } from "./messager";
 import {Bridge, BridgeProtocol} from "./bridge";
+import {WErc20, WProxyAdmin} from "./wcontracts";
 
 export interface OnlineChainContract {
-  proxyAdmin?: ProxyAdmin
-  erc20?: Record<string, Erc20>
+  proxyAdmin?: WProxyAdmin
+  erc20?: Record<string, WErc20>
 }
 
 export interface OnlineChainInfo {
@@ -50,7 +50,7 @@ export class Onlinechain {
 
     let contractProxyAdmin;
     if (contract["proxy-admin"]) {
-      contractProxyAdmin = new ProxyAdmin(contract["proxy-admin"], provider);
+      contractProxyAdmin = new WProxyAdmin(contract["proxy-admin"], provider);
     }
 
     this._onlinechainMap[chain.code] = {
@@ -94,7 +94,7 @@ export class Onlinechain {
     if (bp) {
       return bp;
     }
-    bp = new BridgeProtocol(protocol, oci.provider);
+    bp = new BridgeProtocol(protocol, oci);
     this._protocolMap[mapKey] = bp;
     return bp;
   }
@@ -128,7 +128,7 @@ export class Onlinechain {
     return await contract.proxyAdmin?.owner();
   }
 
-  async erc20(oci: OnlineChainInfo, token: ChainToken) {
+  async erc20(oci: OnlineChainInfo, token: ChainToken): Promise<WErc20> {
     const {provider, contract} = oci;
     if (!contract.erc20) {
       contract.erc20 = {};
@@ -136,7 +136,7 @@ export class Onlinechain {
     if (contract.erc20[token.symbol]) {
       return contract.erc20[token.symbol];
     }
-    const contractErc20 = new Erc20(token.address, provider);
+    const contractErc20 = new WErc20(token.address, provider);
     contract.erc20[token.symbol] = contractErc20;
     return contractErc20;
   }

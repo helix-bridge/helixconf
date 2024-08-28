@@ -98,6 +98,7 @@ export class MessagerContract extends LnAccessController {
   }
 }
 
+
 export class Eth2ArbSendServiceContract extends MessagerContract {
   constructor(address: string, signer: CSigner) {
     super(address, abiEth2ArbSendService, signer, "Eth2ArbSendService");
