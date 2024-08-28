@@ -66,11 +66,14 @@ export class BridgeProtocol {
     if (this._tokenRegisteredMap[_ck]) {
       return this._tokenRegisteredMap[_ck];
     }
-    this._tokenRegisteredMap[_ck] = await this.bridgeContract.tokenRegistered(
+    const tokenRegisteredInfo = await this.bridgeContract.tokenRegistered(
       targetChain.id,
       tokenFrom.address,
       tokenTo.address,
     );
+    if (tokenRegisteredInfo) {
+      this._tokenRegisteredMap[_ck] = tokenRegisteredInfo;
+    }
     return this._tokenRegisteredMap[_ck]
   }
 
