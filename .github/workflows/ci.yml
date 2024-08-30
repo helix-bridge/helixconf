@@ -28,9 +28,11 @@ jobs:
           echo '```' > jest-test.local.log
           npm run test:ts:ci 2>&1 | tee jest-test.local.log
           echo '```' > jest-test.local.log
+          cat jest-test.local.log
 
       - name: Find Comment
         uses: peter-evans/find-comment@v3
+        if: failure()
         id: fc
         with:
           issue-number: ${{ github.event.number }}
@@ -38,6 +40,7 @@ jobs:
 
       - name: Comment configurate
         uses: GrantBirki/comment@v2
+        if: failure()
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           file: jest-test.local.log
