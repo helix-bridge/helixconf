@@ -27,7 +27,7 @@ jobs:
         run: |
           echo '## Jest Test Errored Report' > jest-test.local.log
           echo '```' > jest-test.local.log
-          npm run test:ts:ci 2>&1 | tee jest-test.local.log
+          npm run test:ts:ci 2> jest-test.local.log
           echo '```' > jest-test.local.log
           cat jest-test.local.log
 

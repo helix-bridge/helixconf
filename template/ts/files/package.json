@@ -17,7 +17,7 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest --verbose --coverage",
-    "test:ci": "jest --coverage --ci"
+    "test:ci": "jest --coverage --ci --no-color"
   },
   "author": "HelixBridge",
   "license": "MIT",
