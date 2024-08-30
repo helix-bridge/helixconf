@@ -16,7 +16,8 @@
   "homepage": "https://github.com/helix-bridge/helixconf",
   "scripts": {
     "build": "rm -rf dist && tsc",
-    "test": "jest --verbose"
+    "test": "jest --verbose --coverage",
+    "test:ci": "jest --coverage"
   },
   "author": "HelixBridge",
   "license": "MIT",
