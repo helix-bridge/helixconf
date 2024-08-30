@@ -32,6 +32,7 @@ jobs:
           sed -i '1i\```' jest-test.local.log
           sed -i '1i\## Jest Test Errored Report' jest-test.local.log
           echo '```' >> jest-test.local.log
+          sed -ir "s/\x1B\[[0-9;]*[JKmsu]//g" jest-test.local.log
           cat jest-test.local.log
 
       - name: Find Comment
