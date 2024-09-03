@@ -4,10 +4,10 @@ code: avalanche
 name: Avalanche
 rpcs:
   - https://rpc.ankr.com/avalanche
+  - https://rpc.ankr.com/avalanche/$ANKR_KEY
   - https://ava-mainnet.blastapi.io/$BLAST_KEY/ext/bc/C/rpc
   - https://avax-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://avalanche-mainnet.infura.io/v3/$INFURA_KEY
-  - https://rpc.ankr.com/avalanche/$ANKR_KEY
 protocol:
   lnv2-default: null
   lnv2-opposite: null
