@@ -24,4 +24,30 @@ jobs:
         run: npm run build:ts
 
       - name: Check test:ts
-        run: npm run test:ts
+        run: npm run test:ts:ci 2> jest-test.local.log
+
+      - name: Prepare report
+        if: failure()
+        run: |
+          sed -i '1i\```' jest-test.local.log
+          sed -i '1i\## Jest Test Errored Report' jest-test.local.log
+          echo '```' >> jest-test.local.log
+          sed -ir "s/\x1B\[[0-9;]*[JKmsu]//g" jest-test.local.log
+          cat jest-test.local.log
+
+      - name: Find Comment
+        uses: peter-evans/find-comment@v3
+        if: failure()
+        id: fc
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: 'Jest Test Errored Report'
+
+      - name: Comment configurate
+        uses: GrantBirki/comment@v2
+        if: failure()
+        with:
+          comment-id: ${{ steps.fc.outputs.comment-id }}
+          file: jest-test.local.log
+          edit-mode: replace
+

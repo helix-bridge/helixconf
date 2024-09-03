@@ -1,6 +1,6 @@
 import {Category, TestSource} from "./common/testsource";
 
-import {oc} from './_base'
+import base from './_base'
 
 
 const chains = TestSource.chains({
@@ -14,10 +14,9 @@ describe.each(chains)('helix chain contract verify -> $_data.code', (chain) => {
     if (TestSource.isSkip({category: Category.ProxyAdmin, chain})) {
       return;
     }
-    const oci = await oc.onlinechain(chain);
-    const owner = await oc.proxyAdminOwner(oci);
+    const owner = await base.proxyAdminOwner(chain);
     expect(owner).toBeTruthy();
     expect(chain.additional.dao.toLowerCase()).toBe(owner!.toLowerCase());
-  }, 120000);
+  }, 60000);
 
 });

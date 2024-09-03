@@ -75,21 +75,21 @@ export class TestSource {
     return couples;
   }
 
-  public static validCategorys(): string[] {
+  public static validCategories(): string[] {
     return ["USDT", "RING", "DAI", "LINK", "ETH", "BTC", "USDC", "PINK"];
   }
 
-  public static messagers(options?: TestSourceChainsOptions): TestChainMessager[] {
-    const chains = TestSource.chains(options);
-    const messagers = [];
-    for (const chain of chains) {
-      const chainMessagers = chain.messagers.map(item => {
-        return {...item, _chain: chain.code} as TestChainMessager
-      });
-      messagers.push(...chainMessagers);
-    }
-    return messagers;
-  }
+  // public static messagers(options?: TestSourceChainsOptions): TestChainMessager[] {
+  //   const chains = TestSource.chains(options);
+  //   const messagers = [];
+  //   for (const chain of chains) {
+  //     const chainMessagers = chain.messagers.map(item => {
+  //       return {...item, _chain: chain.code} as TestChainMessager
+  //     });
+  //     messagers.push(...chainMessagers);
+  //   }
+  //   return messagers;
+  // }
 
 
   public static isSkip(options: IsSkipOptions) {

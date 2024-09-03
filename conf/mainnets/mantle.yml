@@ -61,11 +61,6 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-  - chain: scroll
-    symbol: USDT
-    protocol: lnv2-default
-    fee: '100000'
-    messager: layerzero
   - chain: bsc
     symbol: USDT
     protocol: lnv2-default

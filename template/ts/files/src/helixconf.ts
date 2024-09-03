@@ -60,7 +60,8 @@ export interface HelixProtocol {
 export interface CoupleFilter {
   category?: string
   messager?: string
-  protocol?: string
+  relatedProtocol?: HelixProtocolName // lnv2 has different protocol names in both directions, and perhaps others as well
+  protocol?: HelixProtocolName
   chain?: string
   symbolFrom?: string
   symbolTo?: string
@@ -379,6 +380,25 @@ export class HelixChainConf {
         const eq = _equalsIgnoreCase(item.protocol.name, filter.protocol)
           || _equalsIgnoreCase(item.protocol.address, filter.protocol);
         if (!eq) return false;
+      } else {
+        if (filter.relatedProtocol) {
+          let expectProtocols: HelixProtocolName[] = [];
+          switch (filter.relatedProtocol) {
+            case 'lnv2-default':
+              expectProtocols = ['lnv2-opposite', 'lnv2-default']
+              break;
+            case 'lnv2-opposite':
+              expectProtocols = ['lnv2-opposite', 'lnv2-default']
+              break;
+          }
+          if (expectProtocols.length) {
+            const found = expectProtocols.find(
+              ep => _equalsIgnoreCase(item.protocol.name, ep)
+                || _equalsIgnoreCase(item.protocol.address, ep)
+            );
+            if (!found) return false;
+          }
+        }
       }
       if (filter.chain) {
         const eq = _equalsIgnoreCase(item.chain.id.toString(), filter.chain)
