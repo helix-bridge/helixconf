@@ -27,7 +27,7 @@ jobs:
         run: npm run test:ts:ci 2> jest-test.local.log
 
       - name: Prepare report
-        if: failure()
+        if: ${{ failure() && github.event_name == 'pull_request' }}
         run: |
           sed -i '1i\```' jest-test.local.log
           sed -i '1i\## Jest Test Errored Report' jest-test.local.log
@@ -37,7 +37,7 @@ jobs:
 
       - name: Find Comment
         uses: peter-evans/find-comment@v3
-        if: failure()
+        if: ${{ failure() && github.event_name == 'pull_request' }}
         id: fc
         with:
           issue-number: ${{ github.event.number }}
@@ -45,7 +45,7 @@ jobs:
 
       - name: Comment configurate
         uses: GrantBirki/comment@v2
-        if: failure()
+        if: ${{ failure() && github.event_name == 'pull_request' }}
         with:
           comment-id: ${{ steps.fc.outputs.comment-id }}
           file: jest-test.local.log
