@@ -1,23 +1,23 @@
-id: '2710'
+id: '2810'
 code: morph
 name: morph
 rpcs:
-  - https://rpc-testnet.morphl2.io
+  - https://rpc-holesky.morphl2.io
 protocol:
   lnv2-default: null
   lnv2-opposite: null
-  lnv3: '0xD476650e03a45E70202b0bcAfa04E1513920f83a'
+  lnv3: '0x5fc7BC9F21e5dAd364756CC92c43C1E553580107'
 tokens:
   - symbol: ETH
     address: '0x0000000000000000000000000000000000000000'
     decimals: 18
     type: native
   - symbol: USDT
-    address: '0x463D1730a8527CA58d48EF70C7460B9920346567'
+    address: '0xBBFb503e37de678074f26b7178b45dA2FCDaA8A4'
     decimals: 18
     type: erc20
   - symbol: USDC
-    address: '0x89AF830781A2C1d3580Db930bea11094F55AfEae'
+    address: '0x5d016cC247CF6bF03524489C104C1F5016B01Bff'
     decimals: 18
     type: erc20
 couples:
@@ -26,25 +26,11 @@ couples:
   - chain: arbitrum-sepolia
     symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '100000000000000000'
     messager: layerzero
-
-
   # usdc
   - chain: arbitrum-sepolia
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
-    messager: layerzero
-
-  - chain: arbitrum-sepolia
-    symbol: ETH
-    protocol: lnv3
-    fee: '100000'
-    messager: layerzero
-
-  - chain: arbitrum-sepolia
-    symbol: ETH
-    protocol: lnv2-default
-    fee: '100000'
+    fee: '100000000000000000'
     messager: layerzero
