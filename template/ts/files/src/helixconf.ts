@@ -94,6 +94,7 @@ export interface HelixChainConfType {
   id: bigint
   lzid?: bigint
   code: string
+  alias: string[]
   name: string
   rpcs: ChainRpc[]
   protocol: Record<HelixProtocolName, string>
@@ -211,6 +212,10 @@ export class HelixChainConf {
 
   get code(): string {
     return this._data.code;
+  }
+
+  get alias(): string[] {
+    return this._data.alias;
   }
 
   get name(): string {
@@ -430,6 +435,7 @@ export class HelixChainConf {
       contract: this.contract,
       additional: this.additional,
       code: this.code,
+      alias: this.alias,
       name: this.name,
       rpcs: this.rpcs,
       indexers: this.indexers,
@@ -449,6 +455,7 @@ export class HelixChainConf {
       contract: json.contract,
       additional: json.additional,
       code: json.code,
+      alias: json.alias,
       name: json.name,
       rpcs: ChainRpc.fromOptions(json.rpcs),
       indexers: json.indexers,

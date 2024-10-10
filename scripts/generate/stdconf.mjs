@@ -2,6 +2,7 @@ import * as helper from './_helper.mjs'
 
 export function standardization(global, ccf) {
   _stdGeneric(global, ccf);
+  _stdAlias(global, ccf);
   _stdRpcs(global, ccf);
   _stdMessagers(global, ccf);
   _stdIndexers(global, ccf);
@@ -17,6 +18,18 @@ function _stdGeneric(global, ccf) {
   if (!ccf.rpcs) ccf.rpcs = [];
   if (!ccf.protocol) ccf.protocol = {};
   if (!ccf.indexers) ccf.indexers = [];
+  if (!ccf.alias) ccf.alias = [];
+}
+
+function _stdAlias(global, ccf) {
+  if (!ccf.alias.length) {
+    ccf.alias.push(ccf.code);
+    return;
+  }
+  if (ccf.alias.find(item => item.toUpperCase() === ccf.code.toUpperCase())) {
+    return ccf.alias;
+  }
+  ccf.alias.push(ccf.code);
 }
 
 function _stdMessagers(global, ccf) {

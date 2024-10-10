@@ -1,5 +1,7 @@
 id: '44'
 code: crab-dvm
+alias:
+  - crab
 name: Crab
 rpcs:
   - https://crab-rpc.dcdao.box

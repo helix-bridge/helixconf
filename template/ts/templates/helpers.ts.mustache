@@ -30,8 +30,12 @@ export class HelixChain {
 
   static get(chain: string | number | bigint): HelixChainConf | undefined {
     const upperCaseChainName = chain.toString().toUpperCase();
-    return HelixChain.chains().find(
+    const pickedChain = HelixChain.chains().find(
       item => item.code.toUpperCase() === upperCaseChainName || item.id.toString() === upperCaseChainName
+    );
+    if (pickedChain) return pickedChain;
+    return HelixChain.chains().find(
+      item => item.alias.find(alias => alias.toUpperCase() === upperCaseChainName)
     );
   }
 }
