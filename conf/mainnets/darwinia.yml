@@ -1,5 +1,7 @@
 id: '46'
 code: darwinia-dvm
+alias:
+  - darwinia
 name: Darwinia
 rpcs:
   - https://rpc.darwinia.network
