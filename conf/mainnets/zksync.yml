@@ -12,6 +12,7 @@ protocol:
   lnv3: null
 additional:
   dao: '0x38b9145b6F4f363C42C83F62Ee09df0Ade6F8Dec'
+  multicallAddress: '0xF9cda624FBC7e059355ce98a31693d299FACd963'
 contract:
   proxy-admin: '0xA0d8a3C04580a8503ed3Ff30deBb22B83EE615F4'
 messagers:
