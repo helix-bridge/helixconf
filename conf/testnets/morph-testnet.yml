@@ -1,6 +1,6 @@
 id: '2810'
-code: morph
-name: morph
+code: morph-testnet
+name: morph-testnet
 rpcs:
   - https://rpc-holesky.morphl2.io
 protocol:
