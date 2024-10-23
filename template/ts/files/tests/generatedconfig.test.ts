@@ -78,7 +78,7 @@ describe.each(TestSource.chains())('helix chain config check -> $_data.code', (c
 
   if (chain.indexers.length) {
     test.each(chain.indexers)('should be defined correct indexer', (indexer) => {
-      expect(Object.values(['thegraph', 'ponder', 'hyperindex'])).toContain(indexer.type);
+      expect(Object.values(['thegraph', 'ponder', 'hyperindex', 'superindex'])).toContain(indexer.type);
     });
   }
 
