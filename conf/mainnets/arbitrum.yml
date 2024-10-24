@@ -96,11 +96,11 @@ couples:
     protocol: lnv3
     fee: '10000000000000'
     messager: layerzero
-  - chain: morph
-    symbol: ETH
-    protocol: lnv3
-    fee: '10000000000000'
-    messager: msgline
+  # - chain: morph
+  #   symbol: ETH
+  #   protocol: lnv3
+  #   fee: '10000000000000'
+  #   messager: msgline
 
   ## ring
   - chain: ethereum
