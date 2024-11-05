@@ -4,10 +4,10 @@
   "description": "Generate Helix conf",
   "scripts": {
     "codegen": "zx scripts/generate/index.mjs",
-    "build:ts": "npm run codegen -- --language=ts --verbose && cd generated/typescript && npm i && npm run build",
+    "build:ts": "npm run codegen -- --language=ts --verbose && npm run patch && cd generated/typescript && npm i && npm run build",
     "patch": "cp patch/constants.js generated/typescript/node_modules/ethers-multicall-provider/lib/constants.js",
-    "test:ts": "npm run build:ts && npm run patch && cd generated/typescript && npm run test",
-    "test:ts:ci": "npm run build:ts && npm run patch && cd generated/typescript && npm run test:ci"
+    "test:ts": "npm run build:ts && cd generated/typescript && npm run test",
+    "test:ts:ci": "npm run build:ts && cd generated/typescript && npm run test:ci"
   },
   "author": "",
   "license": "MIT",

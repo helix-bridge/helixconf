@@ -6,16 +6,18 @@ exports.multicall2Address = "0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696";
 // same address on all networks: https://www.multicall3.com/deployments
 exports.multicall3Address = "0xcA11bde05977b3631167028862bE2a173976CA11";
 exports.multicall3ZkSyncAddress = "0xF9cda624FBC7e059355ce98a31693d299FACd963";
+exports.multicall3MorphAddress = "0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB";
 exports.multicallAddresses = new Set([
     exports.multicall2Address.toLowerCase(),
     exports.multicall3Address.toLowerCase(),
     exports.multicall3ZkSyncAddress.toLowerCase(),
+    exports.multicall3MorphAddress.toLowerCase(),
 ]);
 exports.multicall3ChainAddress = {
     280: exports.multicall3ZkSyncAddress, // zkSync Era Goerli
     300: exports.multicall3ZkSyncAddress, // zkSync Era Sepolia
     324: exports.multicall3ZkSyncAddress, // zkSync Era
-    2818: "0x876A4f6eCF13EEb101F9E75FCeF58f19Ff383eEB",
+    2818: exports.multicall3MorphAddress,
 };
 exports.multicall3DeploymentBlockNumbers = {
     1: 14353601, // Mainnet
