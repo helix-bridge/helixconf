@@ -140,7 +140,7 @@ couples:
   - chain: mantle
     symbol: USDT
     protocol: lnv3
-    fee: '200000'
+    fee: '100000'
     messager: layerzero
   - chain: zksync
     symbol: USDT
