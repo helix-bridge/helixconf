@@ -76,7 +76,7 @@ couples:
   - chain: arbitrum
     symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: bsc
     symbol: USDT
@@ -86,7 +86,7 @@ couples:
   - chain: bsc
     symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: polygon
     symbol: USDT
@@ -96,7 +96,7 @@ couples:
   - chain: polygon
     symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: linea
     symbol: USDT
@@ -116,7 +116,7 @@ couples:
   - chain: op
     symbol: USDT
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: gnosis
     symbol: USDT
@@ -128,7 +128,11 @@ couples:
     protocol: lnv3
     fee: '100000'
     messager: layerzero
-
+  - chain: avalanche
+    symbol: USDT
+    protocol: lnv3
+    fee: '200000'
+    messager: layerzero
 
   ## USDC
   - chain: mantle
@@ -139,45 +143,45 @@ couples:
   - chain: arbitrum
     symbol: USDC
     protocol: lnv2-default
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: arbitrum
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: base
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: gnosis
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: bsc
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: polygon
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: op
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: mantle
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero
   - chain: avalanche
     symbol: USDC
     protocol: lnv3
-    fee: '100000'
+    fee: '200000'
     messager: layerzero

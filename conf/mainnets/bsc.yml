@@ -51,7 +51,7 @@ couples:
   - chain: arbitrum
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: op
     symbol: USDT
@@ -61,7 +61,7 @@ couples:
   - chain: op
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: linea
     symbol: USDT
@@ -81,7 +81,7 @@ couples:
   - chain: polygon
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: mantle
     symbol: USDT
@@ -101,7 +101,7 @@ couples:
   - chain: scroll
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: gnosis
     symbol: USDT
@@ -116,7 +116,7 @@ couples:
   - chain: avalanche
     symbol: USDT
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
 
   ## USDC
@@ -128,42 +128,42 @@ couples:
   - chain: base
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: gnosis
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: arbitrum
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: scroll
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: polygon
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: op
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: mantle
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   - chain: avalanche
     symbol: USDC
     protocol: lnv3
-    fee: '100000000000000000'
+    fee: '200000000000000000'
     messager: layerzero
   # wbtc
   - chain: polygon
