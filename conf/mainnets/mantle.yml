@@ -3,8 +3,8 @@ lzid: '181'
 code: mantle
 name: Mantle
 rpcs:
-  - https://rpc.ankr.com/mantle
   - https://rpc.mantle.xyz
+  - https://rpc.ankr.com/mantle
   - https://mantle-rpc.publicnode.com
   - https://rpc.ankr.com/mantle/$ANKR_KEY
   - https://mantle-mainnet.blastapi.io/$BLAST_KEY
