@@ -1,6 +1,8 @@
 id: '56'
 lzid: '102'
 code: bsc
+alias:
+  - binance-smart-chain
 name: bsc
 rpcs:
   - https://rpc.ankr.com/bsc

@@ -1,6 +1,9 @@
 id: '10'
 lzid: '111'
 code: op
+alias:
+  - optimistic
+  - optimistic-ethereum
 name: Op
 rpcs:
   - https://rpc.ankr.com/optimism

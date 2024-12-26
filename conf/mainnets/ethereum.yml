@@ -1,6 +1,8 @@
 id: '1'
 lzid: '101'
 code: ethereum
+alias:
+  - mainnet
 name: Ethereum
 rpcs:
   - https://eth.llamarpc.com

@@ -1,6 +1,8 @@
 id: '2818'
 lzid: ''
 code: morph
+alias:
+  - morph-l2
 name: Morph 
 rpcs:
   - https://rpc.morphl2.io
