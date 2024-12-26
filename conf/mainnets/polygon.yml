@@ -1,6 +1,8 @@
 id: '137'
 lzid: '109'
 code: polygon
+alias:
+  - polygon-pos
 name: Polygon
 rpcs:
   - https://polygon-rpc.com
