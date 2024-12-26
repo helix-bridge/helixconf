@@ -1,6 +1,8 @@
 id: '42161'
 lzid: '110'
 code: arbitrum
+alias:
+  - arbitrum-one
 name: Arbitrum
 rpcs:
   - https://arb1.arbitrum.io/rpc
