@@ -1,6 +1,7 @@
 id: '421614'
 code: arbitrum-sepolia
 name: Arbitrum sepolia
+logo: https://sepolia.arbiscan.io/assets/arbsepolia/images/svg/logos/chain-light.svg?v=24.12.3.1
 rpcs:
   - https://public.stackup.sh/api/v1/node/arbitrum-sepolia
 tokens:

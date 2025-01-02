@@ -1,7 +1,8 @@
 id: '8453'
 lzid: '184'
 code: base
-name: base
+name: Base
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/base.png?raw=true
 rpcs:
   - https://mainnet.base.org
   - https://base-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY

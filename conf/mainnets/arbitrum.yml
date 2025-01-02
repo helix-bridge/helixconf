@@ -4,6 +4,7 @@ code: arbitrum
 alias:
   - arbitrum-one
 name: Arbitrum
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/arbitrum.png?raw=true
 rpcs:
   - https://arb1.arbitrum.io/rpc
   - https://arb-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY

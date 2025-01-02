@@ -2,6 +2,7 @@ id: '1284'
 lzid: '126'
 code: moonbeam
 name: Moonbeam
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/moonbeam.png?raw=true
 rpcs:
   - https://moonbeam-rpc.dwellir.com
   - https://rpc.ankr.com/moonbeam/$ANKR_KEY

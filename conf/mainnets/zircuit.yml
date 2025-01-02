@@ -2,6 +2,7 @@ id: '48900'
 lzid: '303'
 code: zircuit
 name: Zircuit
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/zircuit.png?raw=true
 rpcs:
   - https://zircuit1-mainnet.p2pify.com
 protocol:

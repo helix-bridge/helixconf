@@ -2,6 +2,7 @@ id: '81457'
 lzid: '243'
 code: blast
 name: Blast
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/blast.png?raw=true
 rpcs:
   - https://rpc.ankr.com/blast
   - https://rpc.blast.io

@@ -2,6 +2,7 @@ id: '5000'
 lzid: '181'
 code: mantle
 name: Mantle
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/mantle.png?raw=true
 rpcs:
   - https://rpc.mantle.xyz
   - https://rpc.ankr.com/mantle

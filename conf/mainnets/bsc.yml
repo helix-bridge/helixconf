@@ -4,6 +4,7 @@ code: bsc
 alias:
   - binance-smart-chain
 name: bsc
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/bsc.png?raw=true
 rpcs:
   - https://rpc.ankr.com/bsc
   - https://binance.llamarpc.com
