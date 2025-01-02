@@ -2,6 +2,7 @@ id: '534352'
 lzid: '214'
 code: scroll
 name: Scroll
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/scroll.png?raw=true
 rpcs:
   - https://rpc.ankr.com/scroll
   - https://rpc.scroll.io

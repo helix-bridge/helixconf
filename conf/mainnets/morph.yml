@@ -3,7 +3,8 @@ lzid: ''
 code: morph
 alias:
   - morph-l2
-name: Morph 
+name: Morph
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/morph.png?raw=true
 rpcs:
   - https://rpc.morphl2.io
 additional:

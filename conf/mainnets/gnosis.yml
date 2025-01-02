@@ -2,6 +2,7 @@ id: '100'
 lzid: '145'
 code: gnosis
 name: Gnosis
+logpo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/gnosis.png?raw=true
 rpcs:
   - https://rpc.gnosischain.com
   - https://gnosis-rpc.publicnode.com

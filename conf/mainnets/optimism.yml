@@ -4,7 +4,8 @@ code: op
 alias:
   - optimistic
   - optimistic-ethereum
-name: Op
+name: Optimistic
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/optimism.png?raw=true
 rpcs:
   - https://rpc.ankr.com/optimism
   - https://mainnet.optimism.io

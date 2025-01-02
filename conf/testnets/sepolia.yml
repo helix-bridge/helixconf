@@ -1,6 +1,7 @@
 id: '11155111'
 code: sepolia
 name: Sepolia
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/sepolia.png?raw=true
 rpcs:
   - https://ethereum-sepolia-rpc.publicnode.com
 tokens:

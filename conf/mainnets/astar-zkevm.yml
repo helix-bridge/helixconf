@@ -2,6 +2,7 @@ id: '3776'
 lzid: '257'
 code: astar-zkevm
 name: Astar zkEVM
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/astar.png?raw=true
 rpcs:
   - https://rpc.startale.com/astar-zkevm
 contract:

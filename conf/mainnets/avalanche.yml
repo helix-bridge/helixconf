@@ -2,6 +2,7 @@ id: '43114'
 lzid: '106'
 code: avalanche
 name: Avalanche
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/avax.png?raw=true
 rpcs:
   - https://rpc.ankr.com/avalanche
   - https://rpc.ankr.com/avalanche/$ANKR_KEY
@@ -108,7 +109,7 @@ couples:
     protocol: lnv3
     fee: '200000'
     messager: layerzero
-  - chain: scroll 
+  - chain: scroll
     symbol: USDT
     protocol: lnv3
     fee: '200000'
