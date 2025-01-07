@@ -3,6 +3,7 @@ lzid: '165'
 code: zksync
 name: zksync
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/zksync.png?raw=true
+explorer: https://explorer.zksync.io/
 rpcs:
   - https://mainnet.era.zksync.io
   - https://rpc.ankr.com/zksync_era/$ANKR_KEY

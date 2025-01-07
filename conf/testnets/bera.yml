@@ -1,6 +1,7 @@
 id: '80084'
 code: bera
 name: bera
+explorer: https://berachain.nodefleet.net/
 rpcs:
   - https://bartio.rpc.berachain.com
 protocol:

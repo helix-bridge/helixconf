@@ -1,6 +1,7 @@
 id: '300'
 code: zksync-sepolia
 name: zksync-sepolia
+explorer: https://sepolia.explorer.zksync.io/
 rpcs:
   - https://zksync-sepolia.drpc.org
 protocol:

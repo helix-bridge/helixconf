@@ -2,6 +2,7 @@ id: '84532'
 code: base-sepolia
 name: base-sepolia
 logo: https://sepolia.basescan.org/assets/basesepolia/images/svg/logos/chain-light.svg?v=24.12.3.1
+explorer: https://sepolia.basescan.org/
 rpcs:
   - https://sepolia.base.org
 protocol:

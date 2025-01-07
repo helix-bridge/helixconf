@@ -4,6 +4,7 @@ alias:
   - crab
 name: Crab
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/crab.png?raw=true
+explorer: https://crab-scan.darwinia.network/
 rpcs:
   - https://crab-rpc.dcdao.box
   - https://crab-rpc.darwinia.network
