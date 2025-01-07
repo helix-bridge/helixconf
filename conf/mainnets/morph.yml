@@ -5,6 +5,7 @@ alias:
   - morph-l2
 name: Morph
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/morph.png?raw=true
+explorer: https://explorer.morphl2.io/
 rpcs:
   - https://rpc.morphl2.io
 additional:

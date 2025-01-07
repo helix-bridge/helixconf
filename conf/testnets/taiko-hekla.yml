@@ -2,6 +2,7 @@ id: '167009'
 code: taiko-hekla
 name: taiko-hekla
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/taiko.png?raw=true
+explorer: https://hekla.taikoscan.io/
 rpcs:
   - https://rpc.hekla.taiko.xyz
 protocol:

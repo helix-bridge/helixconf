@@ -5,6 +5,7 @@ alias:
   - polygon-pos
 name: Polygon
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/polygon.png?raw=true
+explorer: https://polygonscan.com/
 rpcs:
   - https://polygon-rpc.com
   - https://polygon-bor-rpc.publicnode.com

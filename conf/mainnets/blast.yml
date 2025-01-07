@@ -3,6 +3,7 @@ lzid: '243'
 code: blast
 name: Blast
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/blast.png?raw=true
+explorer: https://blastscan.io/
 rpcs:
   - https://rpc.ankr.com/blast
   - https://rpc.blast.io

@@ -4,6 +4,7 @@ alias:
   - darwinia
 name: Darwinia
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/darwinia.png?raw=true
+explorer: https://explorer.darwinia.network/
 rpcs:
   - https://rpc.darwinia.network
 indexers:

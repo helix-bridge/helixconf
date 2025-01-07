@@ -3,6 +3,7 @@ lzid: '303'
 code: zircuit
 name: Zircuit
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/zircuit.png?raw=true
+explorer: https://explorer.zircuit.com/
 rpcs:
   - https://zircuit1-mainnet.p2pify.com
 protocol:

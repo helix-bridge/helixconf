@@ -3,6 +3,7 @@ lzid: '183'
 code: linea
 name: Linea
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/linea.png?raw=true
+explorer: https://lineascan.build/
 rpcs:
   - https://rpc.linea.build
   - https://linea.drpc.org

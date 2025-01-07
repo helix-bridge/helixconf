@@ -2,10 +2,12 @@ id: '10'
 lzid: '111'
 code: op
 alias:
+  - optimism
   - optimistic
   - optimistic-ethereum
-name: Optimistic
+name: Optimism
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/optimism.png?raw=true
+explorer: https://optimistic.etherscan.io/
 rpcs:
   - https://rpc.ankr.com/optimism
   - https://mainnet.optimism.io

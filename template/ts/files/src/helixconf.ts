@@ -97,6 +97,7 @@ export interface HelixChainConfType {
   alias: string[]
   name: string
   logo?: string
+  explorer?: string
   rpcs: ChainRpc[]
   protocol: Record<HelixProtocolName, string>
   contract: Record<HelixContractName, string>
@@ -225,6 +226,10 @@ export class HelixChainConf {
 
   get logo(): string | undefined {
     return this._data.logo;
+  }
+
+  get explorer(): string | undefined {
+    return this._data.explorer;
   }
 
   get indexers(): ChainIndexer[] {
@@ -443,6 +448,7 @@ export class HelixChainConf {
       alias: this.alias,
       name: this.name,
       logo: this.logo,
+      explorer: this.explorer,
       rpcs: this.rpcs,
       indexers: this.indexers,
       protocol: this.protocol,
@@ -464,6 +470,7 @@ export class HelixChainConf {
       alias: json.alias,
       name: json.name,
       logo: json.logo,
+      explorer: json.explorer,
       rpcs: ChainRpc.fromOptions(json.rpcs),
       indexers: json.indexers,
       protocol: json.protocol,
