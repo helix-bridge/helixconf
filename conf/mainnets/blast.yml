@@ -5,8 +5,9 @@ name: Blast
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/blast.png?raw=true
 explorer: https://blastscan.io/
 rpcs:
-  - https://rpc.ankr.com/blast
+  - https://blast-rpc.publicnode.com
   - https://rpc.blast.io
+  - https://rpc.ankr.com/blast
   - https://blast-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://rpc.ankr.com/blast/$ANKR_KEY
   - https://blastl2-mainnet.blastapi.io/$BLAST_KEY

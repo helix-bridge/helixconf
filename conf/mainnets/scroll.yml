@@ -5,8 +5,8 @@ name: Scroll
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/scroll.png?raw=true
 explorer: https://scrollscan.com/
 rpcs:
-  - https://rpc.ankr.com/scroll
   - https://rpc.scroll.io
+  - https://rpc.ankr.com/scroll
   - https://scroll-mainnet.public.blastapi.io
   - https://rpc.ankr.com/scroll/$ANKR_KEY
   - https://scroll-mainnet.blastapi.io/$BLAST_KEY

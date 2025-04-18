@@ -5,9 +5,9 @@ name: Avalanche
 logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/avax.png?raw=true
 explorer: https://avascan.info/
 rpcs:
-  - https://rpc.ankr.com/avalanche
-  - https://rpc.ankr.com/avalanche/$ANKR_KEY
+  - https://avalanche-c-chain-rpc.publicnode.com
   - https://ava-mainnet.blastapi.io/$BLAST_KEY/ext/bc/C/rpc
+  - https://rpc.ankr.com/avalanche/$ANKR_KEY
   - https://avax-mainnet.g.alchemy.com/v2/$ALCHEMY_KEY
   - https://avalanche-mainnet.infura.io/v3/$INFURA_KEY
 protocol:
