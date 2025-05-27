@@ -1,0 +1,19 @@
+id: '146'
+code: sonic
+alias:
+  - sonic
+name: Sonic
+logo: https://github.com/helix-bridge/helixconf/blob/main/assets/chains/sonic.png?raw=true
+explorer: https://sonicscan.org/
+rpcs:
+  - https://rpc.soniclabs.com
+  - https://sonic.drpc.org
+  - https://sonic-rpc.publicnode.com
+  - https://sonic.api.onfinality.io/public
+messagers:
+tokens:
+  - symbol: S
+    address: '0x0000000000000000000000000000000000000000'
+    decimals: 18
+    type: native
+couples: 
